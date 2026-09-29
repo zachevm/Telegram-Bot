@@ -1,28 +1,50 @@
 name: Telegram Bot Scheduler
+
 on:
-  schedule:
-    - cron: "*/15 * * * *"
+  repository_dispatch:
+    types: [token_scan]
+
   workflow_dispatch:
+
 permissions:
   contents: write
-concurrency: bot-run
+
+concurrency:
+  group: token-bot
+  cancel-in-progress: false
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - run: pip install -r requirements.txt
-      - name: Run the bot
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run token scanner
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python main.py
+
       - name: Save seen tokens
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add seen.json
-          git diff --staged --quiet || (git commit -m "Update seen tokens" && git push)
+
+          if git diff --staged --quiet; then
+            echo "No changes to seen.json"
+          else
+            git commit -m "Update seen tokens"
+            git push
+          fi
