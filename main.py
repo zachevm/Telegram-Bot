@@ -16,11 +16,26 @@ from urllib3.util.retry import Retry
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 
+# Supports multiple Telegram destinations.
+# Example:
+# TELEGRAM_CHAT_IDS="123456789,-1001234567890"
+#
+# Falls back to the old TELEGRAM_CHAT_ID if the new secret
+# has not been connected to GitHub Actions yet.
 CHAT_IDS = [
     chat_id.strip()
-    for chat_id in os.environ["TELEGRAM_CHAT_IDS"].split(",")
+    for chat_id in os.environ.get(
+        "TELEGRAM_CHAT_IDS",
+        os.environ.get("TELEGRAM_CHAT_ID", "")
+    ).split(",")
     if chat_id.strip()
 ]
+
+if not CHAT_IDS:
+    raise RuntimeError(
+        "No Telegram chat IDs configured. "
+        "Set TELEGRAM_CHAT_IDS or TELEGRAM_CHAT_ID."
+    )
 
 PROFILE_URL = "https://api.dexscreener.com/token-profiles/latest/v1"
 TOKEN_URL = "https://api.dexscreener.com/tokens/v1"
@@ -130,8 +145,7 @@ def calculate_discovery_score(pair):
     This is NOT a scam score.
     This is NOT a safety score.
 
-    It is only used to prioritize which fresh tokens
-    deserve a Telegram alert.
+    It is only used to prioritize fresh tokens.
     """
 
     score = 0
@@ -161,91 +175,58 @@ def calculate_discovery_score(pair):
 
     age = pair.get("pairCreatedAt")
 
-    # --------------------------------------------------------
     # Liquidity
-    # --------------------------------------------------------
-
     if liquidity >= 100_000:
         score += 25
-
     elif liquidity >= 50_000:
         score += 20
-
     elif liquidity >= 10_000:
         score += 12
-
     elif liquidity >= 5_000:
         score += 5
 
-    # --------------------------------------------------------
-    # 24h Volume
-    # --------------------------------------------------------
-
+    # 24h volume
     if volume >= 100_000:
         score += 20
-
     elif volume >= 50_000:
         score += 15
-
     elif volume >= 10_000:
         score += 10
-
     elif volume >= 1_000:
         score += 5
 
-    # --------------------------------------------------------
     # Trading activity
-    # --------------------------------------------------------
-
     if total_trades >= 500:
         score += 20
-
     elif total_trades >= 200:
         score += 15
-
     elif total_trades >= 50:
         score += 10
-
     elif total_trades >= 10:
         score += 5
 
-    # --------------------------------------------------------
     # Buy / sell balance
-    # --------------------------------------------------------
-
     if total_trades > 0:
-
         buy_ratio = buys / total_trades
 
         if 0.35 <= buy_ratio <= 0.65:
             score += 10
-
         elif 0.20 <= buy_ratio <= 0.80:
             score += 5
 
-    # --------------------------------------------------------
     # Liquidity relative to market cap
-    # --------------------------------------------------------
-
     if market_cap > 0:
-
         liquidity_ratio = liquidity / market_cap
 
         if liquidity_ratio >= 0.10:
             score += 15
-
         elif liquidity_ratio >= 0.05:
             score += 10
-
         elif liquidity_ratio >= 0.02:
             score += 5
 
-    # --------------------------------------------------------
     # Pair age
-    # --------------------------------------------------------
-
     if age:
-
         try:
             created = datetime.fromtimestamp(
                 age / 1000,
@@ -258,7 +239,6 @@ def calculate_discovery_score(pair):
 
             if 1 <= age_hours <= 72:
                 score += 10
-
             elif age_hours <= 168:
                 score += 5
 
@@ -367,7 +347,7 @@ def valid_url(url):
 
 
 # ============================================================
-# LINKS
+# TELEGRAM BUTTONS
 # ============================================================
 
 def build_buttons(token, dex_url):
@@ -486,18 +466,14 @@ def build_message(token, pair):
     )
 
     if price_change is not None:
-
         try:
             change = float(price_change)
             change_text = f"{change:+.2f}%"
-
         except (ValueError, TypeError):
             change_text = "N/A"
-
     else:
         change_text = "N/A"
 
-    # Escape dynamic values for Telegram HTML
     safe_name = html.escape(str(name))
     safe_symbol = html.escape(str(symbol))
     safe_chain = html.escape(str(chain))
@@ -606,6 +582,7 @@ def send_telegram(message, token, dex_url):
 
     return successful_sends
 
+
 # ============================================================
 # MAIN
 # ============================================================
@@ -621,10 +598,7 @@ def main():
     }
 
     sent = 0
-
-    # Prevent duplicate processing during this run
     run_processed = set()
-
     candidates = []
 
     try:
@@ -655,11 +629,9 @@ def main():
 
             token_id = f"{chain}:{address}"
 
-            # Already successfully processed
             if token_id in seen_set:
                 continue
 
-            # Duplicate within this API response
             if token_id in run_processed:
                 continue
 
@@ -701,7 +673,7 @@ def main():
 
                     continue
 
-                # Select the highest-liquidity pair
+                # Select highest-liquidity pair
                 pair = max(
                     pairs,
                     key=lambda p: float(
@@ -751,7 +723,7 @@ def main():
             )
 
         # ----------------------------------------------------
-        # RANK CANDIDATES
+        # RANK
         # ----------------------------------------------------
 
         candidates.sort(
@@ -782,7 +754,7 @@ def main():
                     pair
                 )
 
-                send_telegram(
+                destinations = send_telegram(
                     message,
                     token,
                     dex_url
@@ -790,14 +762,16 @@ def main():
 
                 sent += 1
 
-                # Only mark seen AFTER successful Telegram send
+                # Only mark seen after at least one
+                # successful Telegram delivery.
                 seen.append(token_id)
                 seen_set.add(token_id)
 
                 log.info(
-                    "Alert sent: %s | score=%d",
+                    "Alert sent: %s | score=%d | destinations=%d",
                     token_id,
-                    score
+                    score,
+                    destinations
                 )
 
             except Exception as e:
@@ -807,9 +781,6 @@ def main():
                     token_id,
                     e
                 )
-
-                # Do NOT mark as seen.
-                # Failed alerts can retry next run.
 
     finally:
 
