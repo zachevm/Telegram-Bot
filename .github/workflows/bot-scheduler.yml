@@ -1,6 +1,9 @@
 name: Telegram Bot Scheduler
 
 on:
+  schedule:
+    - cron: "*/10 * * * *"
+
   repository_dispatch:
     types: [token_scan]
 
@@ -32,7 +35,7 @@ jobs:
       - name: Run token scanner
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
         run: python main.py
 
       - name: Save seen tokens
