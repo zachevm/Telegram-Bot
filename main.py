@@ -23,7 +23,10 @@ TOKEN_URL = "https://api.dexscreener.com/tokens/v1"
 SEEN_FILE = "seen.json"
 BLACKLIST_FILE = "blacklist.json"
 
-MAX_PER_RUN = 10
+# Discovery controls
+MAX_CANDIDATES = 20
+MAX_ALERTS_PER_RUN = 5
+MIN_DISCOVERY_SCORE = 35
 
 
 # ============================================================
@@ -112,6 +115,159 @@ def get_token_pairs(chain, address):
 
 
 # ============================================================
+# DISCOVERY SCORING
+# ============================================================
+
+def calculate_discovery_score(pair):
+    """
+    Scores how interesting a token is for discovery.
+
+    This is NOT a scam score.
+    This is NOT a safety score.
+
+    It is only used to prioritize which fresh tokens
+    deserve a Telegram alert.
+    """
+
+    score = 0
+
+    liquidity = float(
+        (pair.get("liquidity") or {}).get("usd") or 0
+    )
+
+    volume = float(
+        (pair.get("volume") or {}).get("h24") or 0
+    )
+
+    market_cap = float(
+        pair.get("marketCap")
+        or pair.get("fdv")
+        or 0
+    )
+
+    transactions = (
+        pair.get("txns") or {}
+    ).get("h24") or {}
+
+    buys = int(transactions.get("buys") or 0)
+    sells = int(transactions.get("sells") or 0)
+
+    total_trades = buys + sells
+
+    age = pair.get("pairCreatedAt")
+
+    # --------------------------------------------------------
+    # Liquidity
+    # --------------------------------------------------------
+
+    if liquidity >= 100_000:
+        score += 25
+
+    elif liquidity >= 50_000:
+        score += 20
+
+    elif liquidity >= 10_000:
+        score += 12
+
+    elif liquidity >= 5_000:
+        score += 5
+
+    # --------------------------------------------------------
+    # 24h Volume
+    # --------------------------------------------------------
+
+    if volume >= 100_000:
+        score += 20
+
+    elif volume >= 50_000:
+        score += 15
+
+    elif volume >= 10_000:
+        score += 10
+
+    elif volume >= 1_000:
+        score += 5
+
+    # --------------------------------------------------------
+    # Trading activity
+    # --------------------------------------------------------
+
+    if total_trades >= 500:
+        score += 20
+
+    elif total_trades >= 200:
+        score += 15
+
+    elif total_trades >= 50:
+        score += 10
+
+    elif total_trades >= 10:
+        score += 5
+
+    # --------------------------------------------------------
+    # Buy / sell balance
+    # --------------------------------------------------------
+
+    if total_trades > 0:
+
+        buy_ratio = buys / total_trades
+
+        if 0.35 <= buy_ratio <= 0.65:
+            score += 10
+
+        elif 0.20 <= buy_ratio <= 0.80:
+            score += 5
+
+    # --------------------------------------------------------
+    # Liquidity relative to market cap
+    # --------------------------------------------------------
+
+    if market_cap > 0:
+
+        liquidity_ratio = liquidity / market_cap
+
+        if liquidity_ratio >= 0.10:
+            score += 15
+
+        elif liquidity_ratio >= 0.05:
+            score += 10
+
+        elif liquidity_ratio >= 0.02:
+            score += 5
+
+    # --------------------------------------------------------
+    # Pair age
+    # --------------------------------------------------------
+
+    if age:
+
+        try:
+            created = datetime.fromtimestamp(
+                age / 1000,
+                tz=timezone.utc
+            )
+
+            age_hours = (
+                datetime.now(timezone.utc) - created
+            ).total_seconds() / 3600
+
+            if 1 <= age_hours <= 72:
+                score += 10
+
+            elif age_hours <= 168:
+                score += 5
+
+        except (
+            ValueError,
+            TypeError,
+            OverflowError
+        ):
+            pass
+
+    return score
+
+
+# ============================================================
 # FORMATTING
 # ============================================================
 
@@ -172,7 +328,11 @@ def format_age(timestamp):
 
         return f"{hours // 24}d"
 
-    except (ValueError, TypeError, OverflowError):
+    except (
+        ValueError,
+        TypeError,
+        OverflowError
+    ):
         return "N/A"
 
 
@@ -192,8 +352,9 @@ def valid_url(url):
     try:
         parsed = urlparse(url)
 
-        return parsed.scheme in ("http", "https") and bool(
-            parsed.netloc
+        return (
+            parsed.scheme in ("http", "https")
+            and bool(parsed.netloc)
         )
 
     except Exception:
@@ -216,6 +377,7 @@ def build_buttons(token, dex_url):
     links = token.get("links") or []
 
     for link in links:
+
         if not isinstance(link, dict):
             continue
 
@@ -245,6 +407,7 @@ def build_buttons(token, dex_url):
     seen_urls = set()
 
     for button in buttons:
+
         if button["url"] in seen_urls:
             continue
 
@@ -318,15 +481,18 @@ def build_message(token, pair):
     )
 
     if price_change is not None:
+
         try:
             change = float(price_change)
             change_text = f"{change:+.2f}%"
+
         except (ValueError, TypeError):
             change_text = "N/A"
+
     else:
         change_text = "N/A"
 
-    # Escape token name/symbol/address/etc.
+    # Escape dynamic values for Telegram HTML
     safe_name = html.escape(str(name))
     safe_symbol = html.escape(str(symbol))
     safe_chain = html.escape(str(chain))
@@ -429,6 +595,8 @@ def main():
     # Prevent duplicate processing during this run
     run_processed = set()
 
+    candidates = []
+
     try:
         tokens = get_latest_tokens()
 
@@ -437,9 +605,13 @@ def main():
             len(tokens)
         )
 
+        # ----------------------------------------------------
+        # DISCOVERY
+        # ----------------------------------------------------
+
         for token in tokens:
 
-            if sent >= MAX_PER_RUN:
+            if len(candidates) >= MAX_CANDIDATES:
                 break
 
             if not isinstance(token, dict):
@@ -453,11 +625,11 @@ def main():
 
             token_id = f"{chain}:{address}"
 
-            # Already permanently processed
+            # Already successfully processed
             if token_id in seen_set:
                 continue
 
-            # Duplicate in same API response
+            # Duplicate within this API response
             if token_id in run_processed:
                 continue
 
@@ -468,6 +640,7 @@ def main():
             # ------------------------------------------------
 
             if address.lower() in blacklist:
+
                 log.info(
                     "Blacklisted token skipped: %s",
                     token_id
@@ -483,23 +656,22 @@ def main():
             # ------------------------------------------------
 
             try:
+
                 pairs = get_token_pairs(
                     chain,
                     address
                 )
 
                 if not pairs:
+
                     log.warning(
                         "No pair data: %s",
                         token_id
                     )
 
-                    # IMPORTANT:
-                    # Do NOT mark as seen.
-                    # It can be retried next run.
                     continue
 
-                # Pick highest-liquidity pair
+                # Select the highest-liquidity pair
                 pair = max(
                     pairs,
                     key=lambda p: float(
@@ -510,20 +682,71 @@ def main():
                 )
 
             except Exception as e:
+
                 log.exception(
-                    "Pair lookup failed for %s: %s",
+                    "Candidate analysis failed for %s: %s",
                     token_id,
                     e
                 )
 
-                # Do NOT mark as seen.
                 continue
 
             # ------------------------------------------------
-            # BUILD + SEND
+            # DISCOVERY SCORE
             # ------------------------------------------------
 
+            score = calculate_discovery_score(pair)
+
+            if score < MIN_DISCOVERY_SCORE:
+
+                log.info(
+                    "Rejected candidate: %s | score=%d",
+                    token_id,
+                    score
+                )
+
+                continue
+
+            candidates.append({
+                "token": token,
+                "pair": pair,
+                "token_id": token_id,
+                "score": score
+            })
+
+            log.info(
+                "Candidate accepted: %s | score=%d",
+                token_id,
+                score
+            )
+
+        # ----------------------------------------------------
+        # RANK CANDIDATES
+        # ----------------------------------------------------
+
+        candidates.sort(
+            key=lambda item: item["score"],
+            reverse=True
+        )
+
+        log.info(
+            "Qualified candidates: %d",
+            len(candidates)
+        )
+
+        # ----------------------------------------------------
+        # SEND TOP CANDIDATES
+        # ----------------------------------------------------
+
+        for candidate in candidates[:MAX_ALERTS_PER_RUN]:
+
+            token = candidate["token"]
+            pair = candidate["pair"]
+            token_id = candidate["token_id"]
+            score = candidate["score"]
+
             try:
+
                 message, dex_url = build_message(
                     token,
                     pair
@@ -542,15 +765,13 @@ def main():
                 seen_set.add(token_id)
 
                 log.info(
-                    "Alert sent: %s / %s",
-                    chain,
-                    pair.get("baseToken", {}).get(
-                        "symbol",
-                        "???"
-                    )
+                    "Alert sent: %s | score=%d",
+                    token_id,
+                    score
                 )
 
             except Exception as e:
+
                 log.exception(
                     "Telegram/send failed for %s: %s",
                     token_id,
@@ -561,6 +782,7 @@ def main():
                 # Failed alerts can retry next run.
 
     finally:
+
         # Keep state under control
         seen = seen[-1000:]
 
@@ -570,10 +792,15 @@ def main():
         )
 
         log.info(
-            "Run complete | alerts sent: %d",
-            sent
+            "Run complete | alerts sent: %d | candidates: %d",
+            sent,
+            len(candidates)
         )
 
+
+# ============================================================
+# ENTRY POINT
+# ============================================================
 
 if __name__ == "__main__":
     main()
