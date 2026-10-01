@@ -1,9 +1,4 @@
 [
-  "solana:9twiuSdTVkwtAC9XQDG57dFRhF4iqPih461HJfMZKci9",
-  "solana:H3vfXFZfFQnba2NV2seTMBdY92yLK2VJHsppUzYv6ua",
-  "bsc:0x026405b7c5De213e007aC536DD58059C01550BdE",
-  "solana:A4iMWtG66qGCHzgHMpa4ABidoiXzLLt76aS2nE3adots",
-  "solana:CUX5tkEZx5QBnnmpsS1jSXhyccxZbE8NXDBZuxvQYp76",
   "solana:CpeRPdXAyreMP3GajQZo8TxAjh3dAXfT29JEKAYuoinu",
   "near:x-prism-c382c8.prismpad.near",
   "solana:Je7nhMjeveSMcF9e9gqMCQfi4jDGgZu9LdsfAPDpump",
@@ -998,5 +993,10 @@
   "solana:9Ss1fyCM32dvCJJP3R4TQj5Wgx27A4jcbcaGWJAcpump",
   "solana:9WzofT56va8A9ABPUE1wXwRb7Vu8YyfwSoBVuUeQpump",
   "near:batman-13.nearlytrade.near",
-  "solana:NgGhiiGFR2bFBPSyCBTGajvfvpLV3QuMBzWDtV13zY1"
+  "solana:NgGhiiGFR2bFBPSyCBTGajvfvpLV3QuMBzWDtV13zY1",
+  "solana:6d82cCtC1LktWWgjUz5h3vMenFj5EDHLMBFvcpmvrRi",
+  "solana:3TtCNtvNLPTe21RnA8WbC2QRUYCABDZEqdLRPeErpump",
+  "solana:4AuMMtdJ6TMUMdos4vKM1R694UVEkiPis7u5Fcwbpump",
+  "solana:EhiPqEwxL4W1Gc9JMtnzvSPpZ9C8jXNkbaZzR4ZSvqap",
+  "solana:D7Tpbucj5MteDCZbk3sg89Awy1oNtVutjekFC154pump"
 ]
