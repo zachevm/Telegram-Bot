@@ -15,7 +15,12 @@ from urllib3.util.retry import Retry
 # ============================================================
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
-CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
+
+CHAT_IDS = [
+    chat_id.strip()
+    for chat_id in os.environ["TELEGRAM_CHAT_IDS"].split(",")
+    if chat_id.strip()
+]
 
 PROFILE_URL = "https://api.dexscreener.com/token-profiles/latest/v1"
 TOKEN_URL = "https://api.dexscreener.com/tokens/v1"
@@ -549,7 +554,6 @@ def send_telegram(message, token, dex_url):
     )
 
     payload = {
-        "chat_id": CHAT_ID,
         "text": message,
         "parse_mode": "HTML",
         "disable_web_page_preview": True,
@@ -565,16 +569,42 @@ def send_telegram(message, token, dex_url):
         f"bot{BOT_TOKEN}/sendMessage"
     )
 
-    response = requests.post(
-        url,
-        json=payload,
-        timeout=20
-    )
+    successful_sends = 0
 
-    response.raise_for_status()
+    for chat_id in CHAT_IDS:
 
-    return response.json()
+        payload["chat_id"] = chat_id
 
+        try:
+            response = requests.post(
+                url,
+                json=payload,
+                timeout=20
+            )
+
+            response.raise_for_status()
+
+            successful_sends += 1
+
+            log.info(
+                "Telegram alert sent to %s",
+                chat_id
+            )
+
+        except Exception as e:
+
+            log.exception(
+                "Telegram send failed for %s: %s",
+                chat_id,
+                e
+            )
+
+    if successful_sends == 0:
+        raise RuntimeError(
+            "Telegram alert failed for every destination"
+        )
+
+    return successful_sends
 
 # ============================================================
 # MAIN
