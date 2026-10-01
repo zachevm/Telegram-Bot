@@ -1,9 +1,4 @@
 [
-  "bsc:0x6a65557F0A5622C5E473Ebf05BEFb8D98F347777",
-  "solana:HBSBG4GXyw845RyeiEFgSY2wGUY54CkrjCyXRvE3pump",
-  "solana:7tVytFHbsyrVA7Tb2thLeb2WxUqqkeX3TWqi5tb8pump",
-  "solana:7UfcTJD2RSRg9AJ4k2V2rs71Ew8Zy2avaU5roc8bpump",
-  "solana:chadAco4UzujcqBERoxx5eMPyXK3rFozhgTT96wRVzH",
   "solana:CcAYnECixzDgGegpAqcziUUycTDM8EHGwt8YE1GNpump",
   "solana:CZhiyUF927C4NbSRDwytc44yRtTgr2tPRDrDPf9bsimp",
   "solana:7MYpDaZ1Uorg1QtkjWK25X2K4UoNk88854jfopAXxNKs",
@@ -998,5 +993,10 @@
   "robinhood:0x46da405b0E1345A1901cD522958CF7563Aa53bFa",
   "solana:GAb33KWScdb2AEGnjVFzYqZ4HM7EA752t4sccjhpump",
   "solana:4Q3YmSLc3EpR6FfwATP5rhg5f8v2yi2cUC15XCtdqNpm",
-  "near:babyninu.nearlytrade.near"
+  "near:babyninu.nearlytrade.near",
+  "solana:7KEPApdbBMByrmqihz3bht2uMhFQcatjfSFQCKq66kH3",
+  "solana:4K8V9yH6kKRLS46BTG68Te1QHLkb7an8J5YcWQ3ppump",
+  "solana:8QHCUwkKLSeuBfz9BVxSd4oXCJ3wMCYkRaSNXPnpump",
+  "solana:HCgMi3st7aFBQpwccxx6mEDEASAQTy2dQgADuKFJpump",
+  "solana:4wtT9CvG4f3548WSxjKnDsf69SJGEBL214vhUoQfCV8L"
 ]
