@@ -311,8 +311,13 @@ def build_message(token, pair):
 
 def send_bot_dm(message):
     """Sends the alert directly to your private bot chat using the Bot API."""
-    if not BOT_TOKEN or not USER_CHAT_ID:
+    if not BOT_TOKEN:
+        log.error("Bot DM skipped: TELEGRAM_BOT_TOKEN is missing from environment.")
         return
+    if not USER_CHAT_ID:
+        log.error("Bot DM skipped: TELEGRAM_USER_CHAT_ID is missing from environment.")
+        return
+        
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": USER_CHAT_ID,
@@ -321,7 +326,11 @@ def send_bot_dm(message):
         "disable_web_page_preview": True
     }
     try:
-        requests.post(url, json=payload, timeout=10)
+        response = requests.post(url, json=payload, timeout=10)
+        if response.status_code != 200:
+            log.error("Telegram Bot API Error %s: %s", response.status_code, response.text)
+        else:
+            log.info("Bot DM sent successfully to %s", USER_CHAT_ID)
     except Exception as e:
         log.exception("Failed to send DM via bot: %s", e)
 
