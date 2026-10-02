@@ -22,27 +22,15 @@ SESSION_STRING = os.environ["TELEGRAM_SESSION"]
 
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 USER_CHAT_ID = os.environ.get("TELEGRAM_USER_CHAT_ID")
+GROUP_ID = os.environ.get("TELEGRAM_GROUP_ID")
 
-# Parses CHAT_IDS and converts numeric IDs to integers for Telethon
-raw_chat_ids = os.environ.get(
-    "TELEGRAM_CHAT_IDS",
-    os.environ.get("TELEGRAM_CHAT_ID", "")
-).split(",")
-
-CHAT_IDS = []
-for cid in raw_chat_ids:
-    cid = cid.strip()
-    if cid:
-        try:
-            CHAT_IDS.append(int(cid))
-        except ValueError:
-            CHAT_IDS.append(cid)
-
-if not CHAT_IDS:
-    raise RuntimeError(
-        "No Telegram chat IDs configured. "
-        "Set TELEGRAM_CHAT_IDS or TELEGRAM_CHAT_ID."
-    )
+# The group is the Telethon destination used for Phanes analysis.
+GROUP_IDS = []
+if GROUP_ID:
+    try:
+        GROUP_IDS.append(int(GROUP_ID.strip()))
+    except ValueError:
+        GROUP_IDS.append(GROUP_ID.strip())
 
 PROFILE_URL = "https://api.dexscreener.com/token-profiles/latest/v1"
 TOKEN_URL = "https://api.dexscreener.com/tokens/v1"
@@ -337,7 +325,7 @@ def send_bot_dm(message):
 async def send_telegram(client, message):
     successful_sends = 0
 
-    for chat_id in CHAT_IDS:
+    for chat_id in GROUP_IDS:
         try:
             await client.send_message(
                 chat_id,
@@ -349,9 +337,6 @@ async def send_telegram(client, message):
             log.info("Telegram alert sent to %s", chat_id)
         except Exception as e:
             log.exception("Telegram send failed for %s: %s", chat_id, e)
-
-    if successful_sends == 0:
-        raise RuntimeError("Telegram alert failed for every destination")
 
     return successful_sends
 
@@ -445,9 +430,11 @@ async def main():
                     message = build_message(token, pair)
                     
                     # 1. Telethon sends to the group (triggers Phanes)
+                    #    This is independent from the private bot delivery.
                     destinations = await send_telegram(client, message)
                     
                     # 2. Bot API sends directly to your private chat
+                    #    This still runs even if the group send fails.
                     send_bot_dm(message)
 
                     sent += 1
