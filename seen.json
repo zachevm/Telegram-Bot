@@ -1,9 +1,4 @@
 [
-  "solana:Cb2pMbsRRvaeZoxpRqnTP6k6hLziSUf5pnqW9Jx5T3Wz",
-  "solana:G9Q51Jf7SYer6xv83UCa1myUCTcivMqAEVvUhA8ppump",
-  "near:hoot-8ecf65.launchpad.justhoot.near",
-  "solana:Gn3dnAX64jn7ftjG9FshEwb5BAy15CKsK2CEpt3Dpump",
-  "arc:0x1c2160d996605BABf45312CB01e0Dd957BF27e8a",
   "robinhood:0xAfd11A403EAd4e3C3B417eadEb8EAe73DDdF1D72",
   "solana:AUu5N3b5MR3QBGiSC5AbJ9JdSfAhqoucAWwkZ7mFExpv",
   "solana:FU36e3gRF3oJUgef7Xn18JPUQRuN548S8PhL65rECaYV",
@@ -998,5 +993,10 @@
   "solana:As7tF8sAqFrakNTT6V9x4ARM9VQgPB5NKy5qipFKpump",
   "solana:J98BvxSNtzCKsPaporUaAVmEB3wkpnKWeYo7EtmHpump",
   "solana:J9SjRyY24ZNPgbQUQYQSv43i2QgVrNYek4scbFgSpump",
-  "solana:9auxxjpRQFcKyteHhAESosvvqwyPJPCQJwbAddkfpump"
+  "solana:9auxxjpRQFcKyteHhAESosvvqwyPJPCQJwbAddkfpump",
+  "solana:8jjRE5D2pUnEF6U2dYkL2n1Nw4Lwn6sQY7QpZkqUjhXX",
+  "solana:9Vke8MJboctWv8N922NJXhcoZpC4xy5TSH5SQEopxR8x",
+  "solana:DBn1mFRGcnKoSCkgh7w7BFM64dZvpbtZQWeXnyBJanon",
+  "solana:HLh3E4eVRwqBUHHo1AxPFydSoAs2EYwJ6XVhfadvpump",
+  "solana:GtDd9j5kjNBCwsPJ3t4VvdFDiDutiWqL57xjRsmypump"
 ]
