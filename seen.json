@@ -1,9 +1,4 @@
 [
-  "robinhood:0x32cC99E041785f833F72fd5Bca1376fB94959169",
-  "robinhood:0x3627d6c7fb5d9F278931D9268CCf30f955e07961",
-  "robinhood:0xDc605041F02e41CbD8FDC347023e93C4c3fA243C",
-  "near:nearlotto-49eb03.launchpad.justhoot.near",
-  "robinhood:0x5b25286f12701FFFc4DcB30dDfEB8e63ab2e0676",
   "solana:FTa2QkKrc1oSkLciZCMS1o6zpRB1L8TZVkiPy56VQX4u",
   "solana:6weQ1xmYGVDnCe2R3CdRDX5BvXPDg4G2TJhABa8Vpump",
   "base:0x98c2545c9Eab108805Bc65b015d36caA73518901",
@@ -998,5 +993,10 @@
   "solana:AJPertGGMDmM75fb6jiB8MPfFu61ouLDtW6UBvf3pump",
   "solana:9HAcGAadLK2CMLT6KbafWseur5WqPWpCfzTJsHRqYxh3",
   "solana:GY1fBait7CdDDL3kJtiyEcT2tjCd8q8n43zUMi4QJdVg",
-  "solana:GADjtpMCWXD4wfNsYXHYvyJj4qEjVrHxFD6vag1CFf9B"
+  "solana:GADjtpMCWXD4wfNsYXHYvyJj4qEjVrHxFD6vag1CFf9B",
+  "solana:XLBLxbY1Mr7aadnqAbmqSBXLEyUdjvUXtXCnz8Mpump",
+  "robinhood:0x285A9ddf53BEF60ebCC55f5752724A30eF7b2D17",
+  "solana:jSC3hfcrTcxQzRQ3DhbhQvjB86z8ubFY5N6BsGw38pu",
+  "solana:7vG1DrC22SBy9FXjGeGW3zERTKveJQGyFjkyrdxENB7i",
+  "solana:DwFjMEzf4GYS3N5BGvtdvsdV9Z8UPRiMWHfT5H3Lpump"
 ]
