@@ -20,6 +20,9 @@ API_ID = int(os.environ["TELEGRAM_API_ID"])
 API_HASH = os.environ["TELEGRAM_API_HASH"]
 SESSION_STRING = os.environ["TELEGRAM_SESSION"]
 
+BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+USER_CHAT_ID = os.environ.get("TELEGRAM_USER_CHAT_ID")
+
 # Parses CHAT_IDS and converts numeric IDs to integers for Telethon
 raw_chat_ids = os.environ.get(
     "TELEGRAM_CHAT_IDS",
@@ -63,7 +66,7 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 # ============================================================
-# HTTP SESSION (For DexScreener)
+# HTTP SESSION (For DexScreener & Bot API)
 # ============================================================
 
 session = requests.Session()
@@ -303,8 +306,24 @@ def build_message(token, pair):
     return message
 
 # ============================================================
-# TELEGRAM SENDING (Async Telethon)
+# TELEGRAM SENDING
 # ============================================================
+
+def send_bot_dm(message):
+    """Sends the alert directly to your private bot chat using the Bot API."""
+    if not BOT_TOKEN or not USER_CHAT_ID:
+        return
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": USER_CHAT_ID,
+        "text": message,
+        "parse_mode": "HTML",
+        "disable_web_page_preview": True
+    }
+    try:
+        requests.post(url, json=payload, timeout=10)
+    except Exception as e:
+        log.exception("Failed to send DM via bot: %s", e)
 
 async def send_telegram(client, message):
     successful_sends = 0
@@ -415,9 +434,14 @@ async def main():
 
                 try:
                     message = build_message(token, pair)
+                    
+                    # 1. Telethon sends to the group (triggers Phanes)
                     destinations = await send_telegram(client, message)
-                    sent += 1
+                    
+                    # 2. Bot API sends directly to your private chat
+                    send_bot_dm(message)
 
+                    sent += 1
                     seen.append(token_id)
                     seen_set.add(token_id)
 
@@ -425,7 +449,6 @@ async def main():
                 except Exception as e:
                     log.exception("Telegram send failed for %s: %s", token_id, e)
         finally:
-            # Securely close the connection when finished
             await client.disconnect()
 
     finally:
