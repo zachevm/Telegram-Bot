@@ -1,6 +1,4 @@
 [
-  "ethereum:0x9a1b4Afc081f3f7713E8185c51917D27e81Aec65",
-  "solana:B62E44dVHV3o273Erwm5xCikMEoMWDMgBpVsd2B7pump",
   "solana:HHAQEJsajFvacbg6aS7g7HPkSyx7MspGQekv6gdMkQge",
   "solana:H89t6kfTyPR8Zzfqf8BqVMTAgKNynPHDckr7zLiGpump",
   "solana:458eEcXufhsLoS1NWa6donw9Yh9USfWMCtBmyFTypump",
@@ -998,5 +996,7 @@
   "solana:J9d68or9ZrCLAw6eYFo56KgykEnHkPkqnvZQnTLQfKUm",
   "solana:H7TuvDxEKygh27zGfGcjKG8JGWgrbyKpPtvJEpGosfas",
   "near:moon.nearcatcoin.near",
-  "solana:GFUZapBP2rp8sp7y2wTRMSRMKodh5QxDmzAmF2iKpump"
+  "solana:GFUZapBP2rp8sp7y2wTRMSRMKodh5QxDmzAmF2iKpump",
+  "solana:C9LrphMTimjgyth6o57ofMBHrCq3kHWjVX2vMrK8bJLb",
+  "solana:Dk3m5y5HxyHNRP4o8yYhRPdqimiCSMafrmEWg9RbyCPU"
 ]
