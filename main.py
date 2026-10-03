@@ -42,6 +42,7 @@ BLACKLIST_FILE = "blacklist.json"
 MAX_CANDIDATES = 20
 MAX_ALERTS_PER_RUN = 5
 MIN_DISCOVERY_SCORE = 35
+ALERT_DELAY_SECONDS = 30
 
 # ============================================================
 # LOGGING
@@ -420,7 +421,12 @@ async def main():
         await client.start()
 
         try:
-            for candidate in candidates[:MAX_ALERTS_PER_RUN]:
+            for alert_index, candidate in enumerate(candidates[:MAX_ALERTS_PER_RUN]):
+                # Pace consecutive scanner alerts; the first alert is sent immediately.
+                if alert_index > 0 and ALERT_DELAY_SECONDS > 0:
+                    log.info("Waiting %s seconds before the next alert", ALERT_DELAY_SECONDS)
+                    await asyncio.sleep(ALERT_DELAY_SECONDS)
+
                 token = candidate["token"]
                 pair = candidate["pair"]
                 token_id = candidate["token_id"]
