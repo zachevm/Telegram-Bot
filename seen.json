@@ -1,7 +1,4 @@
 [
-  "solana:2xCXK6rybVGdUhEWkHsRDJBiNz9ssL84eDbwiQQMaa1o",
-  "solana:13L7Q2svvmy65PCiJE4EF5iv6KYgZKrMsGExsv69Fpke",
-  "solana:77TCe4wVdj8wEaDYKLeoKkaamhm2HUGLBt1F58UBpR3H",
   "bsc:0xF6ff0473853BeFe26eF4587Cc3947c272608c6b1",
   "solana:3st8R9eftjF5GnuhaeeMNGSKMFQbBxFpKg1ZrKh9tBaV",
   "near:nearlee.nearlytrade.near",
@@ -998,5 +995,8 @@
   "bsc:0xa79E736482F55c89e42000151e04aF630f2b7777",
   "solana:3bdjLugQ7NKXWqArqzSmx9i2jxWGA9sXQ2s6KWzdpump",
   "solana:7pgL6BcXv3zs8Hkf4e7fPCptVn1BJUX7taR9BzEepump",
-  "bsc:0xF6251920892Be072946537652FED237a13b97777"
+  "bsc:0xF6251920892Be072946537652FED237a13b97777",
+  "solana:6tNAi8WFcq9zsJnzT7Q8VW4R2H44RHq3DLdnFrCwpump",
+  "bsc:0x433A5dBF616f6d55B33BECFca756508FbBE77777",
+  "bsc:0x4Cc0027587bFDaf69520224Ba43A02b3A5057777"
 ]
