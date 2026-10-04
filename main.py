@@ -3,6 +3,7 @@ import html
 import json
 import logging
 import os
+from collections import Counter
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 
@@ -112,45 +113,45 @@ def get_token_pairs(chain, address):
 # FILTERS & DISCOVERY SCORING
 # ============================================================
 
-def passes_hard_filters(pair):
-    """Reject clearly unsuitable pairs before they are scored."""
+def hard_filter_reason(pair):
+    """Return why a pair is rejected, or None if it passes every hard filter."""
     try:
         liquidity = float((pair.get("liquidity") or {}).get("usd") or 0)
         tx = (pair.get("txns") or {}).get("h24") or {}
         buys = int(tx.get("buys") or 0)
         sells = int(tx.get("sells") or 0)
     except (ValueError, TypeError):
-        return False
+        return "bad data"
 
     if liquidity < MIN_LIQUIDITY_USD:
-        return False
+        return "liquidity"
     if buys + sells < MIN_TOTAL_TRADES:
-        return False
+        return "trades"
     if sells < MIN_SELLS:
-        return False
+        return "sells"
 
     # Age gate: unknown age is rejected because "early" can't be verified
     created_at = pair.get("pairCreatedAt")
     if not created_at:
-        return False
+        return "no age"
     try:
         created = datetime.fromtimestamp(created_at / 1000, tz=timezone.utc)
         age_hours = (datetime.now(timezone.utc) - created).total_seconds() / 3600
     except (ValueError, TypeError, OverflowError):
-        return False
+        return "no age"
     if age_hours > MAX_PAIR_AGE_HOURS:
-        return False
+        return "age"
 
     # Price-change ceiling: a token already up massively is not early
     change = (pair.get("priceChange") or {}).get("h24")
     if change is not None:
         try:
             if float(change) > MAX_PRICE_CHANGE_24H:
-                return False
+                return "price change"
         except (ValueError, TypeError):
             pass
 
-    return True
+    return None
 
 def calculate_discovery_score(pair):
     score = 0
@@ -404,10 +405,12 @@ async def main():
     run_processed = set()
     candidates = []
     session_failed = False
+    stats = Counter()
 
     try:
         tokens = get_latest_tokens()
         log.info("DexScreener returned %d token profiles", len(tokens))
+        stats["profiles"] = len(tokens)
 
         # ----------------------------------------------------
         # DISCOVERY
@@ -421,7 +424,9 @@ async def main():
             if not chain or not address: continue
 
             token_id = f"{chain}:{address}"
-            if token_id in seen_set or token_id in run_processed: continue
+            if token_id in seen_set or token_id in run_processed:
+                stats["already seen"] += 1
+                continue
 
             run_processed.add(token_id)
 
@@ -435,6 +440,7 @@ async def main():
                 pairs = get_token_pairs(chain, address)
                 if not pairs:
                     log.warning("No pair data: %s", token_id)
+                    stats["no pair data"] += 1
                     continue
 
                 # Keep only pairs where the profiled token is the base token,
@@ -445,6 +451,7 @@ async def main():
                 ]
                 if not pairs:
                     log.info("Profiled token is not a base token in any pair: %s", token_id)
+                    stats["not base token"] += 1
                     continue
 
                 pair = max(
@@ -453,14 +460,18 @@ async def main():
                 )
             except Exception as e:
                 log.exception("Candidate analysis failed for %s: %s", token_id, e)
+                stats["lookup error"] += 1
                 continue
 
-            if not passes_hard_filters(pair):
-                log.info("Hard filter rejected: %s", token_id)
+            reason = hard_filter_reason(pair)
+            if reason:
+                log.info("Hard filter rejected (%s): %s", reason, token_id)
+                stats[f"rejected: {reason}"] += 1
                 continue
 
             score = calculate_discovery_score(pair)
             if score < MIN_DISCOVERY_SCORE:
+                stats["low score"] += 1
                 continue
 
             candidates.append({
@@ -483,9 +494,10 @@ async def main():
 
         # Telethon client: connect and verify the session instead of start(),
         # which can hang waiting for a phone number prompt on a CI runner.
-        client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
+        client = None
         group_ready = False
         try:
+            client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
             await client.connect()
             group_ready = await client.is_user_authorized()
             if not group_ready:
@@ -522,6 +534,8 @@ async def main():
 
                     # Only mark the token as seen if at least one delivery succeeded,
                     # so a failed delivery gets retried on the next run.
+                    stats["group sends"] += destinations
+                    stats["dm sends"] += 1 if dm_ok else 0
                     if destinations > 0 or dm_ok:
                         sent += 1
                         seen.append(token_id)
@@ -530,17 +544,31 @@ async def main():
                                  token_id, score, destinations, dm_ok)
                     else:
                         log.error("No delivery for %s, will retry next run", token_id)
+                        stats["no delivery"] += 1
                 except Exception as e:
                     log.exception("Alert failed for %s: %s", token_id, e)
         finally:
-            try:
-                await client.disconnect()
-            except Exception:
-                pass
+            if client is not None:
+                try:
+                    await client.disconnect()
+                except Exception:
+                    pass
 
     finally:
         seen = seen[-1000:]
         save_json(SEEN_FILE, seen)
+        rejected = ", ".join(
+            f"{k.replace('rejected: ', '')} {v}"
+            for k, v in sorted(stats.items()) if k.startswith("rejected: ")
+        ) or "none"
+        log.info(
+            "SUMMARY | profiles: %d | already seen: %d | no pair data: %d | not base token: %d | "
+            "lookup errors: %d | hard-filter rejects: [%s] | low score: %d | accepted: %d | "
+            "group sends: %d | dm sends: %d | no delivery: %d",
+            stats["profiles"], stats["already seen"], stats["no pair data"], stats["not base token"],
+            stats["lookup error"], rejected, stats["low score"], len(candidates),
+            stats["group sends"], stats["dm sends"], stats["no delivery"],
+        )
         log.info("Run complete | alerts sent: %d | candidates: %d", sent, len(candidates))
 
     # Make a dead session visible: the run shows red in Actions instead of looking healthy.
