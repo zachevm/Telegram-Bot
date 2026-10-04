@@ -48,6 +48,8 @@ ALERT_DELAY_SECONDS = 30
 MIN_LIQUIDITY_USD = 5_000
 MIN_TOTAL_TRADES = 20
 MIN_SELLS = 3  # near-zero sells is a classic honeypot signal
+MAX_PAIR_AGE_HOURS = 168  # reject pairs older than 7 days (profile feed returns many old tokens)
+MAX_PRICE_CHANGE_24H = 500  # reject if already up more than 500% in 24h (not early)
 
 # ============================================================
 # LOGGING
@@ -126,6 +128,28 @@ def passes_hard_filters(pair):
         return False
     if sells < MIN_SELLS:
         return False
+
+    # Age gate: unknown age is rejected because "early" can't be verified
+    created_at = pair.get("pairCreatedAt")
+    if not created_at:
+        return False
+    try:
+        created = datetime.fromtimestamp(created_at / 1000, tz=timezone.utc)
+        age_hours = (datetime.now(timezone.utc) - created).total_seconds() / 3600
+    except (ValueError, TypeError, OverflowError):
+        return False
+    if age_hours > MAX_PAIR_AGE_HOURS:
+        return False
+
+    # Price-change ceiling: a token already up massively is not early
+    change = (pair.get("priceChange") or {}).get("h24")
+    if change is not None:
+        try:
+            if float(change) > MAX_PRICE_CHANGE_24H:
+                return False
+        except (ValueError, TypeError):
+            pass
+
     return True
 
 def calculate_discovery_score(pair):
@@ -292,7 +316,7 @@ def build_message(token, pair):
     safe_address = html.escape(str(address))
 
     message = (
-        "🚨 <b>NEW TOKEN DETECTED</b>\n\n"
+        "🚨 <b>TOKEN ALERT</b>\n\n"
         f"🪙 <b>{safe_name}</b> <code>${safe_symbol}</code>\n\n"
         f"⛓ <b>Chain:</b> {safe_chain}\n"
         f"🏪 <b>DEX:</b> {safe_dex}\n"
@@ -411,6 +435,16 @@ async def main():
                 pairs = get_token_pairs(chain, address)
                 if not pairs:
                     log.warning("No pair data: %s", token_id)
+                    continue
+
+                # Keep only pairs where the profiled token is the base token,
+                # otherwise name/symbol shown would belong to the quote token.
+                pairs = [
+                    p for p in pairs
+                    if str((p.get("baseToken") or {}).get("address") or "").lower() == address.lower()
+                ]
+                if not pairs:
+                    log.info("Profiled token is not a base token in any pair: %s", token_id)
                     continue
 
                 pair = max(
