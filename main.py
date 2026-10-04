@@ -44,6 +44,11 @@ MAX_ALERTS_PER_RUN = 5
 MIN_DISCOVERY_SCORE = 35
 ALERT_DELAY_SECONDS = 30
 
+# Hard filters (a token failing any of these is rejected before scoring)
+MIN_LIQUIDITY_USD = 5_000
+MIN_TOTAL_TRADES = 20
+MIN_SELLS = 3  # near-zero sells is a classic honeypot signal
+
 # ============================================================
 # LOGGING
 # ============================================================
@@ -102,8 +107,26 @@ def get_token_pairs(chain, address):
     return data if isinstance(data, list) else []
 
 # ============================================================
-# DISCOVERY SCORING
+# FILTERS & DISCOVERY SCORING
 # ============================================================
+
+def passes_hard_filters(pair):
+    """Reject clearly unsuitable pairs before they are scored."""
+    try:
+        liquidity = float((pair.get("liquidity") or {}).get("usd") or 0)
+        tx = (pair.get("txns") or {}).get("h24") or {}
+        buys = int(tx.get("buys") or 0)
+        sells = int(tx.get("sells") or 0)
+    except (ValueError, TypeError):
+        return False
+
+    if liquidity < MIN_LIQUIDITY_USD:
+        return False
+    if buys + sells < MIN_TOTAL_TRADES:
+        return False
+    if sells < MIN_SELLS:
+        return False
+    return True
 
 def calculate_discovery_score(pair):
     score = 0
@@ -175,7 +198,7 @@ def format_age(timestamp):
         created = datetime.fromtimestamp(timestamp / 1000, tz=timezone.utc)
         now = datetime.now(timezone.utc)
         seconds = max(0, int((now - created).total_seconds()))
-        
+
         if seconds < 60: return f"{seconds}s"
         minutes = seconds // 60
         if minutes < 60: return f"{minutes}m"
@@ -224,7 +247,7 @@ def build_links_text(token, dex_url):
 
     if not links:
         return ""
-        
+
     return "🌐 <b>Links:</b>\n" + " | ".join(links[:6])
 
 # ============================================================
@@ -235,21 +258,21 @@ def build_message(token, pair):
     chain = token.get("chainId", "Unknown")
     address = token.get("tokenAddress", "Unknown")
     base_token = pair.get("baseToken") or {}
-    
+
     name = base_token.get("name") or "Unknown"
     symbol = base_token.get("symbol") or "???"
     dex = pair.get("dexId") or "Unknown"
     dex_url = pair.get("url") or token.get("url") or ""
-    
+
     price = pair.get("priceUsd")
     liquidity = (pair.get("liquidity") or {}).get("usd")
     volume = (pair.get("volume") or {}).get("h24")
     market_cap = pair.get("marketCap") or pair.get("fdv")
-    
+
     transactions = (pair.get("txns") or {}).get("h24") or {}
     buys = transactions.get("buys", 0)
     sells = transactions.get("sells", 0)
-    
+
     price_change = (pair.get("priceChange") or {}).get("h24")
     age = format_age(pair.get("pairCreatedAt"))
     description = clean_text(token.get("description"), 700)
@@ -299,14 +322,14 @@ def build_message(token, pair):
 # ============================================================
 
 def send_bot_dm(message):
-    """Sends the alert directly to your private bot chat using the Bot API."""
+    """Sends the alert to your private bot chat. Returns True only on success."""
     if not BOT_TOKEN:
         log.error("Bot DM skipped: TELEGRAM_BOT_TOKEN is missing from environment.")
-        return
+        return False
     if not USER_CHAT_ID:
         log.error("Bot DM skipped: TELEGRAM_USER_CHAT_ID is missing from environment.")
-        return
-        
+        return False
+
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": USER_CHAT_ID,
@@ -318,12 +341,15 @@ def send_bot_dm(message):
         response = requests.post(url, json=payload, timeout=10)
         if response.status_code != 200:
             log.error("Telegram Bot API Error %s: %s", response.status_code, response.text)
-        else:
-            log.info("Bot DM sent successfully to %s", USER_CHAT_ID)
+            return False
+        log.info("Bot DM sent successfully to %s", USER_CHAT_ID)
+        return True
     except Exception as e:
         log.exception("Failed to send DM via bot: %s", e)
+        return False
 
 async def send_telegram(client, message):
+    """Sends the alert to the group via Telethon. Returns the number of successful sends."""
     successful_sends = 0
 
     for chat_id in GROUP_IDS:
@@ -349,10 +375,11 @@ async def main():
     seen = load_json(SEEN_FILE)
     seen_set = set(seen)
     blacklist = {str(address).lower() for address in load_json(BLACKLIST_FILE)}
-    
+
     sent = 0
     run_processed = set()
     candidates = []
+    session_failed = False
 
     try:
         tokens = get_latest_tokens()
@@ -394,6 +421,10 @@ async def main():
                 log.exception("Candidate analysis failed for %s: %s", token_id, e)
                 continue
 
+            if not passes_hard_filters(pair):
+                log.info("Hard filter rejected: %s", token_id)
+                continue
+
             score = calculate_discovery_score(pair)
             if score < MIN_DISCOVERY_SCORE:
                 continue
@@ -416,9 +447,21 @@ async def main():
         if not candidates:
             return
 
-        # Initialize the Telegram Userbot Client
+        # Telethon client: connect and verify the session instead of start(),
+        # which can hang waiting for a phone number prompt on a CI runner.
         client = TelegramClient(StringSession(SESSION_STRING), API_ID, API_HASH)
-        await client.start()
+        group_ready = False
+        try:
+            await client.connect()
+            group_ready = await client.is_user_authorized()
+            if not group_ready:
+                log.error("Telethon session is invalid or expired. Generate a new TELEGRAM_SESSION. "
+                          "Group delivery is disabled for this run; DMs will still be sent.")
+        except Exception as e:
+            log.exception("Telethon connection failed: %s", e)
+
+        if not group_ready:
+            session_failed = True
 
         try:
             for alert_index, candidate in enumerate(candidates[:MAX_ALERTS_PER_RUN]):
@@ -434,29 +477,41 @@ async def main():
 
                 try:
                     message = build_message(token, pair)
-                    
-                    # 1. Telethon sends to the group (triggers Phanes)
-                    #    This is independent from the private bot delivery.
-                    destinations = await send_telegram(client, message)
-                    
-                    # 2. Bot API sends directly to your private chat
-                    #    This still runs even if the group send fails.
-                    send_bot_dm(message)
 
-                    sent += 1
-                    seen.append(token_id)
-                    seen_set.add(token_id)
+                    # 1. Telethon sends to the group (triggers Phanes).
+                    destinations = 0
+                    if group_ready:
+                        destinations = await send_telegram(client, message)
 
-                    log.info("Alert sent: %s | score=%d | destinations=%d", token_id, score, destinations)
+                    # 2. Bot API sends to your private chat. Runs even if the group send fails.
+                    dm_ok = send_bot_dm(message)
+
+                    # Only mark the token as seen if at least one delivery succeeded,
+                    # so a failed delivery gets retried on the next run.
+                    if destinations > 0 or dm_ok:
+                        sent += 1
+                        seen.append(token_id)
+                        seen_set.add(token_id)
+                        log.info("Alert sent: %s | score=%d | group=%d | dm=%s",
+                                 token_id, score, destinations, dm_ok)
+                    else:
+                        log.error("No delivery for %s, will retry next run", token_id)
                 except Exception as e:
-                    log.exception("Telegram send failed for %s: %s", token_id, e)
+                    log.exception("Alert failed for %s: %s", token_id, e)
         finally:
-            await client.disconnect()
+            try:
+                await client.disconnect()
+            except Exception:
+                pass
 
     finally:
         seen = seen[-1000:]
         save_json(SEEN_FILE, seen)
         log.info("Run complete | alerts sent: %d | candidates: %d", sent, len(candidates))
+
+    # Make a dead session visible: the run shows red in Actions instead of looking healthy.
+    if session_failed:
+        raise SystemExit(1)
 
 # ============================================================
 # ENTRY POINT
