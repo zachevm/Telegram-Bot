@@ -1,6 +1,4 @@
 [
-  "solana:95WF7wLb9gcET9kGYp3wSXekSdrYceLmJHSXonetpump",
-  "near:gus-4.nearlytrade.near",
   "near:batman-4.nearlytrade.near",
   "ethereum:0x07DB563340C60ba421B9802aa0369Dc5B70a1c91",
   "robinhood:0x44b5e3A7561f791073bf1A58B209C7f0e8748295",
@@ -998,5 +996,7 @@
   "bsc:0x75bA64BEb2d24A8b2841C71B633730e6be2E7777",
   "robinhood:0x602121B1F27Abc541BfaD3cbF6740BF64618725E",
   "solana:GGEcZHggsX595FJDTo4XJgXsJc5zm5dStz1uMc9QzyzW",
-  "bsc:0x76f8d6401f42c52AAF24b8894cD458CddC577777"
+  "bsc:0x76f8d6401f42c52AAF24b8894cD458CddC577777",
+  "solana:EJ8qTrW6rAu5W7p6xWYNSADeEcjNHGNBx8cMKQrhpump",
+  "solana:DLPm9yqR3qGFayetLKTqVtQm1nRfmFBFvntAQfzpump"
 ]
