@@ -1,6 +1,4 @@
 [
-  "solana:6H9wg9LgkWcedH5ZSAafJDwUj558SNmxoCfJLkqgpump",
-  "robinhood:0xba1A2d9783eBE2B76493c5C12eB9813a0e062843",
   "solana:CSkqNn6sYmqKxyg8Enh7pkmwDq4emHV4J767GjYBn8EJ",
   "solana:4YSbtjc7MokpXH3c6v8yEgSNKNKKcwcp4HPEnbcBc6Wi",
   "solana:2RKkd7aG13o926CTUNHjE3T43NwS9QyLMyf5pHa9pump",
@@ -998,5 +996,7 @@
   "solana:EBBJhTFLEueh1G4u52gF2DJaWEV43zqedNSEfLN4pump",
   "robinhood:0x897d151787ca84994ac8df68500f17e587794796",
   "solana:3JaBGAQ9hndQwdUyGkD1i1DCtiCTEBoPVY7tuWdMariK",
-  "solana:DraftX7s9Cgvfzi7Pbcojb2CALWHsFMBcWt9Wy4c8tiN"
+  "solana:DraftX7s9Cgvfzi7Pbcojb2CALWHsFMBcWt9Wy4c8tiN",
+  "bsc:0x9cAc075A3bF3bf2eB8972A9759604c99635A7777",
+  "solana:2HraspnyKvYhnHP6JfkXTMsfEmntwyEcqB1LQuZrpump"
 ]
