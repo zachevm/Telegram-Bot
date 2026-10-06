@@ -1,0 +1,2 @@
+time,token_id,chain,address,symbol,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h,max_price,min_price
+2026-10-06T14:50:19+00:00,bsc:0xe2f88E52e74CFC12c4711b8D05A1A03D0c707777,bsc,0xe2f88E52e74CFC12c4711b8D05A1A03D0c707777,MEMEQ,57,0.000007198,12389.46,6043.55,7198,0.54,52,32,57.82,57.82,,,,0.000007198,0.000007198
