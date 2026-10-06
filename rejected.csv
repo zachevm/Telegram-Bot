@@ -167,3 +167,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-06T20:00:19+00:00,solana:ESJ2xzYnwC3KrwUj3Dcc2x6TqBbd5X2hHi1my1ywpump,solana,ESJ2xzYnwC3KrwUj3Dcc2x6TqBbd5X2hHi1my1ywpump,PUMPERS,liquidity,30,0.000007165,,7297.71,7165.29,0.05,80,52,90.32,90.32,,,
 2026-10-06T20:00:19+00:00,solana:CVwZGuMzsorqEmkexPzw1e4ipBqvPF5tWHWW3wYrpump,solana,CVwZGuMzsorqEmkexPzw1e4ipBqvPF5tWHWW3wYrpump,Bailpad,liquidity,50,0.00001276,,62684.12,12760.9,0.41,474,399,255,255,,,
 2026-10-06T20:00:19+00:00,solana:6X7SMfHxws4VsmDofbUdyTG4iy65ZFBdtwZd1zmWpump,solana,6X7SMfHxws4VsmDofbUdyTG4iy65ZFBdtwZd1zmWpump,HvH,liquidity,50,0.000009283,,55214.55,9283.42,0.45,478,339,0.21,0.21,,,
+2026-10-06T20:10:11+00:00,solana:Aj1H494jh746RdkasV9NLdnZf51p8R4y65HmbV71pump,solana,Aj1H494jh746RdkasV9NLdnZf51p8R4y65HmbV71pump,SPOTTED,liquidity,45,0.000006070,,42862.68,6070.67,0.06,285,233,76.45,76.45,,,
+2026-10-06T20:10:11+00:00,solana:5TPucKGvGmxCu654r9joRC11dKFA6fmQ56vLHkiFpump,solana,5TPucKGvGmxCu654r9joRC11dKFA6fmQ56vLHkiFpump,CRAWLER,liquidity,30,0.000005940,,7263.61,5940.16,0.17,79,61,74.64,74.64,,,
+2026-10-06T20:10:11+00:00,solana:23u7b9SFTKzZXydapC8oMyWFfDhQrdGpLdAQYXcMpump,solana,23u7b9SFTKzZXydapC8oMyWFfDhQrdGpLdAQYXcMpump,memegram,liquidity,50,0.000005088,,78403.67,5088.86,0.24,843,627,-33.01,-33.01,,,
