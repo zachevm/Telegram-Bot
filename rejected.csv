@@ -59,3 +59,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-06T16:20:14+00:00,solana:F6LavBUfFPtufbcdTJufmGCSwopxoDtDuqvRSehppump,solana,F6LavBUfFPtufbcdTJufmGCSwopxoDtDuqvRSehppump,ERAHS,liquidity,50,0.00003625,,77129.48,36256.52,0.13,334,248,875,875,,,
 2026-10-06T16:20:14+00:00,solana:Hpuz6VaVd2M2pz17sCEgovMLHZV51sEtca2Ant4DNPDo,solana,Hpuz6VaVd2M2pz17sCEgovMLHZV51sEtca2Ant4DNPDo,HIROI,liquidity,55,0.00002593,,62143.26,25935.63,3.23,531,502,321,622,,,
 2026-10-06T16:20:14+00:00,solana:8eDUafc6g619Cz1wXQLDCEwLTrEjFncYaubiNttTPULL,solana,8eDUafc6g619Cz1wXQLDCEwLTrEjFncYaubiNttTPULL,PULL,liquidity,40,0.00002958,,35927.47,29580.93,0.24,190,172,593,593,,,
+2026-10-06T16:30:15+00:00,solana:7CFtDx8PfKMTtqrMKquHLF96crVaEsDRJGPUvsqcuZff,solana,7CFtDx8PfKMTtqrMKquHLF96crVaEsDRJGPUvsqcuZff,CUMMIES,liquidity,40,0.000006281,,29680.55,6281.14,0.1,241,231,-27.31,-27.31,,,
+2026-10-06T16:30:15+00:00,solana:AgNbqeAUqJt34HHdbHKeZsLoxJbcXNSSNRnUkjMtpump,solana,AgNbqeAUqJt34HHdbHKeZsLoxJbcXNSSNRnUkjMtpump,OATH,liquidity,50,0.00002361,,60114.11,23613.64,0.36,364,273,561,561,,,
