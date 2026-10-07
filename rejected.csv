@@ -357,3 +357,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-07T06:50:15+00:00,solana:3f7wnBQoGhPxoj2YMv3Xbng5w25hGVujTefxu1Rspump,solana,3f7wnBQoGhPxoj2YMv3Xbng5w25hGVujTefxu1Rspump,stash,liquidity,45,0.000003331,,36195.92,3331.95,0.13,270,253,-3.42,-3.42,,,
 2026-10-07T06:50:15+00:00,solana:8KTv2CcjtjHqnJSPdT3WKuiBaoQyHTwT7WG5SeM23HMk,solana,8KTv2CcjtjHqnJSPdT3WKuiBaoQyHTwT7WG5SeM23HMk,.,liquidity,40,0.000004731,,17974.38,4731.46,0.18,195,161,33.48,33.48,,,
 2026-10-07T07:00:19+00:00,solana:Ay3JaD5FLDrti9LrhtCbGX7G1FKRbowep5J6NDyGpump,solana,Ay3JaD5FLDrti9LrhtCbGX7G1FKRbowep5J6NDyGpump,RUFUS,liquidity,50,0.00002534,,79032.61,25342.87,0.12,393,294,527,527,,,
+2026-10-07T07:10:13+00:00,solana:J1tjLHnNFZQX3JccUxX4etq8sgtZ53rAWQZDCcNpump,solana,J1tjLHnNFZQX3JccUxX4etq8sgtZ53rAWQZDCcNpump,stash,liquidity,50,0.00002239,,59765.91,22392.65,0.17,591,454,574,574,,,
