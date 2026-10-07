@@ -335,3 +335,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-07T04:10:14+00:00,solana:8VuX44xmXrugHPBUWtuzx3kNxsC5L8qX9nwKhhohpump,solana,8VuX44xmXrugHPBUWtuzx3kNxsC5L8qX9nwKhhohpump,Jumper,liquidity,50,0.00002221,,81089.96,22217.72,0.12,1419,939,450,450,,,
 2026-10-07T04:10:14+00:00,solana:GjvVcDuP8Hy3dpZ7p8GT4fqfomWBKSAwc5XkdULmpump,solana,GjvVcDuP8Hy3dpZ7p8GT4fqfomWBKSAwc5XkdULmpump,pumpers,liquidity,40,0.000003766,,14627.26,3766.55,0.11,147,125,6.76,6.76,,,
 2026-10-07T04:10:14+00:00,solana:Ejo54qVgeqP5G9qEDbA2BDyqLCZLqy4Gy9gvJFVEpump,solana,Ejo54qVgeqP5G9qEDbA2BDyqLCZLqy4Gy9gvJFVEpump,PUMPHREY,liquidity,40,0.000003441,,17882.17,3441.74,0.16,128,119,-2.45,-2.45,,,
+2026-10-07T04:20:14+00:00,solana:FCiHeHFAhKzTJ9Sym9aYGJNneVxBuD81zGM3JzRt7iZi,solana,FCiHeHFAhKzTJ9Sym9aYGJNneVxBuD81zGM3JzRt7iZi,RSE2,liquidity,35,,,0,,0.08,438,361,44.1,44.1,,,
+2026-10-07T04:20:14+00:00,solana:1pPA5nCDw2akg95HhxTzwTM5tP8s2RbTUVC52HJpump,solana,1pPA5nCDw2akg95HhxTzwTM5tP8s2RbTUVC52HJpump,FOMY,liquidity,50,0.00001638,,80208.51,16383.14,0.19,1002,915,350,350,,,
