@@ -308,3 +308,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-07T02:30:15+00:00,solana:3LYdM8ckHFcYVmTRkz1UUpPAMrS9tBfy35CjAn1Rborn,solana,3LYdM8ckHFcYVmTRkz1UUpPAMrS9tBfy35CjAn1Rborn,BORN,liquidity,45,0.00001798,,42914.96,17984.89,0.1,327,240,415,415,,,
 2026-10-07T02:30:16+00:00,solana:GwK6mq4q1wuGWr4RG2Jv8auioewbwsdguxfUcW2opump,solana,GwK6mq4q1wuGWr4RG2Jv8auioewbwsdguxfUcW2opump,PUMPCRAFT,liquidity,40,0.000003398,,15786.99,3398.36,0.23,116,127,-3.27,-3.27,,,
 2026-10-07T02:30:16+00:00,solana:FZof3BVipUM2nTpw4C2v8cG9GA6nMAkZjL35u3YD9LQQ,solana,FZof3BVipUM2nTpw4C2v8cG9GA6nMAkZjL35u3YD9LQQ,SLOPCORE,liquidity,55,0.000004215,,140853.61,4215.67,0.25,1104,1052,-49.99,-49.99,,,
+2026-10-07T02:40:11+00:00,solana:B3LTdq3uMzChU8vmExUwF5LmYcpphNYJwWnqhfBBpump,solana,B3LTdq3uMzChU8vmExUwF5LmYcpphNYJwWnqhfBBpump,Virlx402,liquidity,30,,,0,,0.11,232,146,,,,,
+2026-10-07T02:40:11+00:00,solana:2giBC76ddQoT8LfDuajfRnvAZfZnbQda2y7x6Ywxpump,solana,2giBC76ddQoT8LfDuajfRnvAZfZnbQda2y7x6Ywxpump,RIPS,liquidity,40,0.000009965,,33368.9,9965.09,0.18,181,153,25.94,25.94,,,
+2026-10-07T02:40:11+00:00,solana:HsLSfm6NFyvnJQ55H6TDQTo1Yg8BwxtWxvwcUbz3pump,solana,HsLSfm6NFyvnJQ55H6TDQTo1Yg8BwxtWxvwcUbz3pump,WORTHLESS,liquidity,40,0.00001004,,27038.73,10048.81,0.43,267,144,157,157,,,
