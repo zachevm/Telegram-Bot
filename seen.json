@@ -1,7 +1,4 @@
 [
-  "solana:GszmgSqbt9huNYJfQtG1wbcqszKnmNkd6dxEJWrYpump",
-  "arc:0x558259D5A0BAc26bc7B9f087D95915fD20E16240",
-  "solana:2trQcQbEiSsNCGhjUKZ7cNtcREgjFdGeTHndet2kpump",
   "solana:6m62rVXo5KUyBTS4KURBSiUXxAJGNGhdyHLfZT11Wvg3",
   "solana:D9hoqrjgoAqR9JAF4KJwYzJUcoC3KGoxXgy6A4aPpump",
   "solana:B6BhSTjPV6CK7NTYmNsDYHCY7HxXCFH4honYwvuKpump",
@@ -998,5 +995,8 @@
   "solana:FiN6hDyD1FkQAXmnoLWAgV6GSws4pVocWvbCb82ppump",
   "solana:4sN5ek6KwNH39pgAusxz29YtcRBqvWH9baCUnP4cpump",
   "solana:GeoepSP9AvW3AKWvknybTXVWibhZ3W97shjtkQ9npump",
-  "solana:ArASSoxwdXjsw7MeBxr8rzo5tft94Xs4wyT5ukAupump"
+  "solana:ArASSoxwdXjsw7MeBxr8rzo5tft94Xs4wyT5ukAupump",
+  "solana:E1UvqiCjpZRFt4XRgNqu1FGCEEN4UFiRNwX9BnZd6cMW",
+  "ink:0x372c95F009c04bf7aC72EC9D9fa5D12bF543dBfB",
+  "solana:5dbFWnPbq8f3n6LyC8n1NL15h2ube9m5TBWcFWRDpump"
 ]
