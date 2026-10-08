@@ -1,5 +1,4 @@
 [
-  "ethereum:0xb5d1EC985A210659a5014B358aba999766aDFFFF",
   "solana:8vQv6G6QaxmcwHcuFGt6ZFjzww7WpFAm5pndUR1Lpump",
   "solana:GYFLuEAZMDdpUsTmyGdHstuXQC3JB9ZqtZbfktpppump",
   "solana:E4X5HjWLZfHe3i1HWWutFdA7ywW7ytXWaCvEJV5Mpump",
@@ -998,5 +997,6 @@
   "solana:Ca5VuKu5NyyFkixnewTnokmzXpmNuG8Mk5odwHJypRNq",
   "solana:63vCoVhdkjDvcAxcuDA4p8xgLN5ws8yHk4kDrqdQPBet",
   "bsc:0xc6D3C8A98DC4613cE010c8B0210D906fFc937777",
-  "solana:9AALmABCJjvKmaKBbSZZLYLeBsshphC69eM3DVJCpump"
+  "solana:9AALmABCJjvKmaKBbSZZLYLeBsshphC69eM3DVJCpump",
+  "solana:3jkqYnyZQYj4FHw48PmQu53WbLbfdSjx7wZhmmCQdTUm"
 ]
