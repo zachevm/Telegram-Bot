@@ -1,5 +1,4 @@
 [
-  "solana:7PtXm2DDZbdKYyGie3Yhe9MLYD94PshkrydZDdYCpump",
   "robinhood:0xB6152D8Dd8B1231D68605C8942B6dBE34F08f470",
   "solana:2mcV9yz46nQ78J3hqzi7kEMzVzudFGJYSEtJy81GJBMm",
   "solana:5mshATxwNFSHBcHcbyk3MkJwmFc7uJoXdedwKUFqpump",
@@ -998,5 +997,6 @@
   "near:wth-0b2227.launchpad.justhoot.near",
   "solana:7thxAzq4B9KwPe4NqMNAntF2Njgqb9FTKQb4z6fYpump",
   "robinhood:0x7422f86D11c2F3c8b99fdCFa1D49058323640F70",
-  "base:0x73dfAac3f78d2708d533B248c71C96FFE98fEF51"
+  "base:0x73dfAac3f78d2708d533B248c71C96FFE98fEF51",
+  "solana:2WNiZqRefcndEA9c1T6A1bdie31pbBGdFQpyR52h9TWr"
 ]
