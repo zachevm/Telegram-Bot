@@ -63,6 +63,14 @@ MAX_RUN_ROWS = 5000
 MAX_NEW_REJECTS_PER_RUN = 40    # cap on newly logged rejected tokens per run
 MAX_TRACKING_CALLS = 25         # cap on DexScreener price lookups per run for tracking
 
+# Tiering. Tier A alerts are sent. Tier B candidates (they passed every filter) are NOT sent;
+# they are logged to rejected.csv with reason "tier B" and their outcomes are still tracked,
+# so the tier rule keeps being tested on fresh data. Set TIERING_ENABLED = False to send everything.
+# Tier A = any non-Solana token, OR a Solana token with enough liquidity and a mature pair.
+TIERING_ENABLED = True
+TIER_A_MIN_LIQUIDITY_USD = 28_000
+TIER_A_MIN_AGE_HOURS = 0.56     # about 33 minutes
+
 # ============================================================
 # LOGGING
 # ============================================================
@@ -163,6 +171,31 @@ def hard_filter_reason(pair):
             pass
 
     return None
+
+def pair_age_hours(pair):
+    created_at = pair.get("pairCreatedAt")
+    if not created_at:
+        return None
+    try:
+        created = datetime.fromtimestamp(created_at / 1000, tz=timezone.utc)
+        return (datetime.now(timezone.utc) - created).total_seconds() / 3600
+    except (ValueError, TypeError, OverflowError):
+        return None
+
+def is_tier_a(chain, pair):
+    """Tier A: non-Solana, or Solana with liquidity >= the cut-off and a pair older than the age cut-off."""
+    if str(chain).lower() != "solana":
+        return True
+    try:
+        liquidity = float((pair.get("liquidity") or {}).get("usd") or 0)
+    except (ValueError, TypeError):
+        return False
+    age = pair_age_hours(pair)
+    return (
+        liquidity >= TIER_A_MIN_LIQUIDITY_USD
+        and age is not None
+        and age > TIER_A_MIN_AGE_HOURS
+    )
 
 def calculate_discovery_score(pair):
     score = 0
@@ -421,7 +454,7 @@ RUN_FIELDS = [
     "time", "profiles", "already_seen", "no_pair_data", "not_base_token", "lookup_errors",
     "rej_liquidity", "rej_trades", "rej_sells", "rej_no_age", "rej_age", "rej_price_change",
     "rej_bad_data", "low_score", "accepted", "alerts_sent", "group_sends", "dm_sends",
-    "no_delivery", "session_failed", "tracking_calls",
+    "no_delivery", "session_failed", "tracking_calls", "tier_b",
 ]
 
 # Outcome checks: a price is recorded when a row is 1h, 6h and 24h old.
@@ -672,13 +705,13 @@ async def main():
     new_alerts = []
     new_rejects = []
     existing_rejected = read_csv_rows(REJECTED_FILE) or []
-    rejected_ids = {r.get("token_id") for r in existing_rejected}
+    rejected_keys = {(r.get("token_id"), r.get("reason")) for r in existing_rejected}
 
     def log_reject(token, pair, token_id, reason, score=None):
-        # Log each rejected token once, so the same dead token isn't re-logged every run.
-        if token_id in rejected_ids or len(new_rejects) >= MAX_NEW_REJECTS_PER_RUN:
+        # Log each (token, reason) once, so the same dead token isn't re-logged every run.
+        if (token_id, reason) in rejected_keys or len(new_rejects) >= MAX_NEW_REJECTS_PER_RUN:
             return
-        rejected_ids.add(token_id)
+        rejected_keys.add((token_id, reason))
         new_rejects.append(make_reject_row(
             token, pair, token_id, reason, safe_score(pair) if score is None else score
         ))
@@ -750,6 +783,12 @@ async def main():
             if score < MIN_DISCOVERY_SCORE:
                 stats["low score"] += 1
                 log_reject(token, pair, token_id, "low score", score)
+                continue
+
+            if TIERING_ENABLED and not is_tier_a(chain, pair):
+                stats["tier B"] += 1
+                log.info("Tier B (logged, not sent): %s | score=%d", token_id, score)
+                log_reject(token, pair, token_id, "tier B", score)
                 continue
 
             candidates.append({
@@ -842,10 +881,10 @@ async def main():
         ) or "none"
         log.info(
             "SUMMARY | profiles: %d | already seen: %d | no pair data: %d | not base token: %d | "
-            "lookup errors: %d | hard-filter rejects: [%s] | low score: %d | accepted: %d | "
+            "lookup errors: %d | hard-filter rejects: [%s] | low score: %d | tier B: %d | accepted (tier A): %d | "
             "group sends: %d | dm sends: %d | no delivery: %d",
             stats["profiles"], stats["already seen"], stats["no pair data"], stats["not base token"],
-            stats["lookup error"], rejected, stats["low score"], len(candidates),
+            stats["lookup error"], rejected, stats["low score"], stats["tier B"], len(candidates),
             stats["group sends"], stats["dm sends"], stats["no delivery"],
         )
         log.info("Run complete | alerts sent: %d | candidates: %d", sent, len(candidates))
@@ -871,6 +910,7 @@ async def main():
             "dm_sends": stats["dm sends"],
             "no_delivery": stats["no delivery"],
             "session_failed": int(session_failed),
+            "tier_b": stats["tier B"],
         }
         save_tracking(new_alerts, new_rejects, run_row)
 
