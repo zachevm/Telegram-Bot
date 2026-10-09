@@ -37,3 +37,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-09T09:40:15+00:00,solana:Wm8zwfbWoYXHpziVCd1UrMANdZGpdr3htdArc4wpump,solana,Wm8zwfbWoYXHpziVCd1UrMANdZGpdr3htdArc4wpump,AMP,liquidity,45,0.00002143,,35756.27,21438.94,0.46,367,251,551,551,,,
 2026-10-09T09:50:17+00:00,solana:4DFMHQ28oyjDQtxYdCakP6Zd9WqmXHd2bmBP8c7cmoon,solana,4DFMHQ28oyjDQtxYdCakP6Zd9WqmXHd2bmBP8c7cmoon,QWORLD,liquidity,45,0.00001257,,40117.84,12578.95,0.11,550,301,147,147,,,
 2026-10-09T09:50:17+00:00,solana:F19jaEKTrSXhx6L8tzLZcLishuhUb9wM9yzPoYWvZhi4,solana,F19jaEKTrSXhx6L8tzLZcLishuhUb9wM9yzPoYWvZhi4,assmoji,liquidity,40,0.00001228,,11925.05,12289.14,0.24,175,97,175,175,,,
+2026-10-09T10:00:17+00:00,solana:HGHHH35t5sp5acD86DzAjRjYZiEGPqnNSUYGZngLoJCd,solana,HGHHH35t5sp5acD86DzAjRjYZiEGPqnNSUYGZngLoJCd,BUTTMOJI,liquidity,20,,,0,,0.36,11,15,,,,,
+2026-10-09T10:00:17+00:00,solana:HvujGAr3hRyhaMhZyFkTF1g8scTe95GwGhhLyfMxCb8z,solana,HvujGAr3hRyhaMhZyFkTF1g8scTe95GwGhhLyfMxCb8z,🦄,liquidity,40,0.00001652,,19191.07,16526.35,0.29,255,225,274,274,,,
