@@ -3,6 +3,11 @@ name: Memecoin Alerts
 on:
   repository_dispatch:
   workflow_dispatch:
+    inputs:
+      reset_tracking:
+        description: 'Start a new batch: move alerts.csv, rejected.csv and runs.csv into archive/ and begin fresh files'
+        type: boolean
+        default: false
 
 concurrency:
   group: memecoin-alerts
@@ -17,6 +22,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Archive tracking files (new batch)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.reset_tracking }}
+        run: |
+          dir="archive/batch-$(date -u +%Y%m%d-%H%M)"
+          mkdir -p "$dir"
+          for f in alerts.csv rejected.csv runs.csv; do
+            if [ -f "$f" ]; then
+              git mv "$f" "$dir/$f"
+            fi
+          done
+          echo "Archived tracking files to $dir"
 
       - name: Set up Python
         uses: actions/setup-python@v5
