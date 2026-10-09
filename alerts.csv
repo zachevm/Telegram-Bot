@@ -1,1 +1,2 @@
 time,token_id,chain,address,symbol,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h,max_price,min_price
+2026-10-09T09:50:19+00:00,bsc:0x2CDd4d440ba9796B956E10ef0490Da79E4557777,bsc,0x2CDd4d440ba9796B956E10ef0490Da79E4557777,BNBLP,62,0.03753,13011.91,2934.71,25869,31.85,50,46,45.57,36.05,,,,0.03753,0.03753
