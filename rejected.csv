@@ -81,3 +81,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-09T12:10:16+00:00,solana:CVw57tgADzThKWFma4ZEt1vb1CAqt5YU3UQY59NHLtiB,solana,CVw57tgADzThKWFma4ZEt1vb1CAqt5YU3UQY59NHLtiB,SI,liquidity,75,0.000005844,4917.2,198375.38,5672,1.94,2875,2359,-64.98,-86.16,,,
 2026-10-09T12:20:16+00:00,solana:PKKxkRBbQMT1jEEeu4pGqzd8mPUkLKCGdxddwS8cGEM,solana,PKKxkRBbQMT1jEEeu4pGqzd8mPUkLKCGdxddwS8cGEM,GEM,liquidity,25,0.00001173,,5015.29,11737.72,0.19,45,15,226,226,,,
 2026-10-09T12:20:16+00:00,solana:3x9Vkxh9f68Yc9BNQUntm3rn5hAnerfwyq5ztAJPpump,solana,3x9Vkxh9f68Yc9BNQUntm3rn5hAnerfwyq5ztAJPpump,HASH,liquidity,50,0.000009637,,51736.47,9637.71,0.13,592,415,205,205,,,
+2026-10-09T12:30:15+00:00,solana:zmvhp6GmmTgpkpL4v6sobHgAmuJkkZwUFDYLz5S1Bwz,solana,zmvhp6GmmTgpkpL4v6sobHgAmuJkkZwUFDYLz5S1Bwz,QBTC,liquidity,40,0.00002014,,24727.5,20142.13,0.36,185,123,547,547,,,
+2026-10-09T12:30:15+00:00,solana:CidKUWiXYYhiSbPX7HfFphXWf4JnynkDhceJf1jwrCmU,solana,CidKUWiXYYhiSbPX7HfFphXWf4JnynkDhceJf1jwrCmU,AI,liquidity,45,0.00001897,,45473.08,18978.65,0.17,633,405,188,188,,,
