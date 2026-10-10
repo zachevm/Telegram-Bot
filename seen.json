@@ -1,6 +1,4 @@
 [
-  "solana:3vUfSEHR6koiXFoS43RCov96RZpRT2P6NCiLC3w4pJbv",
-  "solana:CDZpLf9dfXFPcVYfhd5cpCfYAvZ19ZSnHvF8Whyb4Y7u",
   "solana:C6zXoVqL77p2ZLA4Bzdua1P2GGh5ngKj9GwCBupHxUdH",
   "solana:B3A4k63nD5SD4w9S718ffTgx3xcQ3WUHN6y3GyQG5kBA",
   "bsc:0xcBe8029b7C07B08751CC371b64Edd4b211937777",
@@ -998,5 +996,7 @@
   "robinhood:0xb862389Bf1aD271c70EdBc2249Bf1b0A6Cd8783b",
   "ethereum:0xD493A2315Ca1365f971647E6dd6668F3F0C12CD9",
   "robinhood:0x66fECc5A23679EF2327d865e13Fe605a5a067777",
-  "robinhood:0x184a9DAEF4333D03aE4cda78a1823B23f76A76a0"
+  "robinhood:0x184a9DAEF4333D03aE4cda78a1823B23f76A76a0",
+  "solana:HXHZT27p7C9t62QyDgPoEHiRFsLoqUTYnJAmZ16tpump",
+  "near:3digits-da1e65.launchpad.justhoot.near"
 ]
