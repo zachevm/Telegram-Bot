@@ -1162,3 +1162,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-11T06:20:13+00:00,solana:FsjS5gGTv8XfAeUyDhEto6nL2Q6saK6AYV5nk41Cpump,solana,FsjS5gGTv8XfAeUyDhEto6nL2Q6saK6AYV5nk41Cpump,69420,liquidity,50,0.00004492,,64305.94,44925.64,0.18,721,580,1104,1104,,,
 2026-10-11T06:30:18+00:00,solana:DwS9uzk62p5RMDWFF6hPykbq82t1QMtxK4eZ7j2jpump,solana,DwS9uzk62p5RMDWFF6hPykbq82t1QMtxK4eZ7j2jpump,Musk,liquidity,45,0.000008549,,33756.78,8549.62,0.19,418,374,74.35,74.35,,,
 2026-10-11T06:30:18+00:00,solana:G1EB9ZQSBjWuCTAci1HT226HcaaFBMJxnhW5MMcQpump,solana,G1EB9ZQSBjWuCTAci1HT226HcaaFBMJxnhW5MMcQpump,incoginu,liquidity,25,,,0,,0.29,75,49,,,,,
+2026-10-11T06:40:14+00:00,solana:Bb9mTop1po3gp38Age4oEvCLkL43vMBdzgHGrajWpump,solana,Bb9mTop1po3gp38Age4oEvCLkL43vMBdzgHGrajWpump,RPC,tier B,72,0.00005754,19376.43,32107.47,57547,0.1,303,247,26.56,26.56,,,
