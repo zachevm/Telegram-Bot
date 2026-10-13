@@ -2349,3 +2349,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-13T05:40:27+00:00,solana:5iuuyGB44rLQfxuQFdUvifXqgtdPHvYyfL97tUdapump,solana,5iuuyGB44rLQfxuQFdUvifXqgtdPHvYyfL97tUdapump,Nietzsche,tier B,82,0.00007179,22139.63,131725.7,71799,0.46,2075,1537,64.44,64.44,,,
 2026-10-13T05:40:27+00:00,solana:2P78pP2Y8LiyUkygf6u2ueFasQw59ftbLyFP6jeppump,solana,2P78pP2Y8LiyUkygf6u2ueFasQw59ftbLyFP6jeppump,NI,tier B,70,0.00001278,8692.29,57438.03,12765,0.19,953,781,-71.38,-71.38,,,
 2026-10-13T05:40:27+00:00,solana:3icjCdv74RTXnvwpdGg8YaLdQeXBkSXoXfCwjan5bonk,solana,3icjCdv74RTXnvwpdGg8YaLdQeXBkSXoXfCwjan5bonk,test,tier B,77,0.00001607,11803.11,70131.92,16073,0.64,702,531,-62.5,-62.5,,,
+2026-10-13T05:50:12+00:00,solana:4w5p5nq6MwKZJTtZV26txqqEQdUQ2ZmyHLMRf2Z8pump,solana,4w5p5nq6MwKZJTtZV26txqqEQdUQ2ZmyHLMRf2Z8pump,Mouse,liquidity,45,0.00001329,,27222.07,13290.06,0.13,351,308,170,170,,,
