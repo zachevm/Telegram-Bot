@@ -58,18 +58,20 @@ ALERTS_FILE = "alerts.csv"      # every delivered alert + what its price did aft
 REJECTED_FILE = "rejected.csv"  # tokens the filters rejected + what their price did afterwards
 RUNS_FILE = "runs.csv"          # one row per run with the SUMMARY counts
 MAX_ALERT_ROWS = 5000
-MAX_REJECTED_ROWS = 4000
+MAX_REJECTED_ROWS = 6000
 MAX_RUN_ROWS = 5000
 MAX_NEW_REJECTS_PER_RUN = 40    # cap on newly logged rejected tokens per run
-MAX_TRACKING_CALLS = 25         # cap on DexScreener price lookups per run for tracking
+MAX_TRACKING_CALLS = 40         # cap on DexScreener price lookups per run for tracking
 
 # Tiering. Tier A alerts are sent. Tier B candidates (they passed every filter) are NOT sent;
 # they are logged to rejected.csv with reason "tier B" and their outcomes are still tracked,
 # so the tier rule keeps being tested on fresh data. Set TIERING_ENABLED = False to send everything.
-# Tier A = any non-Solana token, OR a Solana token with enough liquidity and a mature pair.
+# Tier A = a token on one of TIER_A_CHAINS with liquidity at or above the cut-off.
+# (Batch 2 data: Robinhood-chain tokens with liquidity of $33k or more did best; Solana did worst.)
 TIERING_ENABLED = True
-TIER_A_MIN_LIQUIDITY_USD = 28_000
-TIER_A_MIN_AGE_HOURS = 0.56     # about 33 minutes
+TIER_A_CHAINS = {"robinhood"}
+TIER_A_MIN_LIQUIDITY_USD = 33_000
+MAX_PLAUSIBLE_MULTIPLE = 1000   # tracked prices above 1,000x the alert price are treated as bad data and ignored
 
 # ============================================================
 # LOGGING
@@ -183,19 +185,14 @@ def pair_age_hours(pair):
         return None
 
 def is_tier_a(chain, pair):
-    """Tier A: non-Solana, or Solana with liquidity >= the cut-off and a pair older than the age cut-off."""
-    if str(chain).lower() != "solana":
-        return True
+    """Tier A: a chain in TIER_A_CHAINS with liquidity at or above the cut-off."""
+    if str(chain).lower() not in TIER_A_CHAINS:
+        return False
     try:
         liquidity = float((pair.get("liquidity") or {}).get("usd") or 0)
     except (ValueError, TypeError):
         return False
-    age = pair_age_hours(pair)
-    return (
-        liquidity >= TIER_A_MIN_LIQUIDITY_USD
-        and age is not None
-        and age > TIER_A_MIN_AGE_HOURS
-    )
+    return liquidity >= TIER_A_MIN_LIQUIDITY_USD
 
 def calculate_discovery_score(pair):
     score = 0
@@ -643,6 +640,14 @@ def update_outcomes(alert_rows, rejected_rows):
         price = prices.get((row["chain"], str(row["address"]).lower()))
         if price is None:
             continue  # token not returned; a due check is retried next run until its window passes
+        try:
+            entry = float(row.get("price_usd") or 0)
+        except ValueError:
+            entry = 0
+        if price <= 0 or (entry > 0 and price / entry > MAX_PLAUSIBLE_MULTIPLE):
+            log.warning("Ignoring implausible price for %s: %s (alert price %s)",
+                        row.get("token_id"), price, row.get("price_usd"))
+            continue  # treated as bad data; the check expires to NA if it never gets a sane price
         for col in due:
             row[col] = f"{price:.12g}"
         if watching:
