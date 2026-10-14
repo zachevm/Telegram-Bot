@@ -2966,3 +2966,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-14T05:10:11+00:00,solana:BbBG5gvS5ZAVNwdyW69QvZvxsrTf8CCPK7MQ5Eaopump,solana,BbBG5gvS5ZAVNwdyW69QvZvxsrTf8CCPK7MQ5Eaopump,Holden,liquidity,35,,,0,,0.15,612,429,,,,,
 2026-10-14T05:10:11+00:00,solana:7M52nZe8FbUtPXwKWpdfwr65W1GKDsM5w3phb214pump,solana,7M52nZe8FbUtPXwKWpdfwr65W1GKDsM5w3phb214pump,Qore,liquidity,45,0.000003048,,34606.73,3048.41,0.15,306,274,-58.47,-58.47,,,
 2026-10-14T05:20:14+00:00,solana:65eCC3mLDWSfXthj6bcXF4mFpb44gsjzsA9AfPSvFvwr,solana,65eCC3mLDWSfXthj6bcXF4mFpb44gsjzsA9AfPSvFvwr,SYDNEYCAT,liquidity,40,0.00002812,,16585.25,28124.16,127.02,188,106,49.74,127,,,
+2026-10-14T05:30:13+00:00,solana:Aox6KfUowk6ANhBbx4R4mAbe1PTXgr1M7EjAgNBGpump,solana,Aox6KfUowk6ANhBbx4R4mAbe1PTXgr1M7EjAgNBGpump,UNVEIL,liquidity,45,0.00001572,,30376.11,15726.71,0.13,332,209,414,414,,,
+2026-10-14T05:30:13+00:00,solana:5fJ5xmREbC8QCkYnPyXiNsp1N242hwovC6jvXfKzpump,solana,5fJ5xmREbC8QCkYnPyXiNsp1N242hwovC6jvXfKzpump,Puffs,tier B,70,0.000007569,5864.39,98524.15,7569,0.2,1532,1200,-83.77,-83.77,,,
+2026-10-14T05:30:13+00:00,solana:HNL9Crnkh3xz3xDcRieurr5P6EbDJTpJWnqG5UTLpump,solana,HNL9Crnkh3xz3xDcRieurr5P6EbDJTpJWnqG5UTLpump,7:55,liquidity,60,0.000005363,4560.25,49409.01,5363,0.56,836,758,-87.86,-87.86,,,
