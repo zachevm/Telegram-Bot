@@ -1555,3 +1555,7 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-17T05:50:14+00:00,solana:8gfTMmfHoD6PnrWuZ3KsRLNQKahLamy5MTQVNejApump,solana,8gfTMmfHoD6PnrWuZ3KsRLNQKahLamy5MTQVNejApump,PRIME,liquidity,45,0.000003592,,33731.81,3592.69,0.17,274,391,-24.92,-24.92,,,
 2026-10-17T05:50:14+00:00,solana:CQtdrkMGyubaBVWea4ofrJB3B4ivMAohAHdeBAXbpump,solana,CQtdrkMGyubaBVWea4ofrJB3B4ivMAohAHdeBAXbpump,Perpd,liquidity,50,0.00002391,,81765.89,23912.77,0.33,859,600,672,672,,,
 2026-10-17T05:50:14+00:00,solana:DcMwUYnPrwz3QH9ZwafFWgVLtuCieHHcphZnD8iJhKUA,solana,DcMwUYnPrwz3QH9ZwafFWgVLtuCieHHcphZnD8iJhKUA,PRIME,liquidity,70,0.000004873,4240.48,199253.65,4874,0.38,3168,2904,-88.76,-88.76,,,
+2026-10-17T06:00:12+00:00,solana:rVWG97Yj6ZbuF9zeQo8TosQG6mUcUeL8BocfHu3pump,solana,rVWG97Yj6ZbuF9zeQo8TosQG6mUcUeL8BocfHu3pump,PRIME,tier B,82,0.0001099,27900.18,500567.98,109912,0.4,6439,4968,151,151,,,
+2026-10-17T06:00:12+00:00,solana:4egapru4zMUtjNuNqr66gn9CukWqPoeyeWbxH1Jxpump,solana,4egapru4zMUtjNuNqr66gn9CukWqPoeyeWbxH1Jxpump,OPTIMUS,liquidity,45,0.00003413,,49879.11,34131.93,0.16,733,504,799,799,,,
+2026-10-17T06:00:12+00:00,solana:3PqPi8Ejxpe3dC9547sWddDKoNLrnCfGfwdrFTRepump,solana,3PqPi8Ejxpe3dC9547sWddDKoNLrnCfGfwdrFTRepump,Antefolio,liquidity,45,0.000004406,,25353.7,4406.81,0.11,357,251,32.3,32.3,,,
+2026-10-17T06:00:12+00:00,solana:GqhHJcbcJDmkR7N52anVTqvAaS2bW9w6BTV6x7a5pump,solana,GqhHJcbcJDmkR7N52anVTqvAaS2bW9w6BTV6x7a5pump,ANGELSMAYCRY,liquidity,45,0.000007491,,49163.06,7491.42,0.16,639,451,112,112,,,
