@@ -2274,3 +2274,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-18T14:40:14+00:00,solana:vpeuuB7FF9WVmyenUQomPVVV5KVwHVYiqZKXAdkpump,solana,vpeuuB7FF9WVmyenUQomPVVV5KVwHVYiqZKXAdkpump,RIOTTER,liquidity,50,0.00002377,,59679.63,23773.01,0.21,928,529,629,629,,,
 2026-10-18T14:40:14+00:00,solana:33Sw4wmNjPMMraPq9aeYb3fGyFAxreXNFxXgqaAgpump,solana,33Sw4wmNjPMMraPq9aeYb3fGyFAxreXNFxXgqaAgpump,lepan,liquidity,45,0.000004611,,40002.9,4611.06,0.2,574,440,31.16,31.16,,,
 2026-10-18T14:40:14+00:00,solana:2SgHuwt9iFt9pv9YYdzfGzYti6syvvPjV5ca8jV5pump,solana,2SgHuwt9iFt9pv9YYdzfGzYti6syvvPjV5ca8jV5pump,SCHOOLBOOKS,liquidity,55,0.000008051,,118131.54,8051.63,0.24,1871,1481,113,113,,,
+2026-10-18T14:50:12+00:00,solana:5gYtAc9xjJxUqFbgEAM2JMuyEDGaaYivupcU5Y1Qpump,solana,5gYtAc9xjJxUqFbgEAM2JMuyEDGaaYivupcU5Y1Qpump,KRAWD,tier B,72,0.00004924,17120.9,45067.09,49244,0.12,705,426,16.05,16.05,,,
+2026-10-18T14:50:12+00:00,solana:C9LzpibzMRqK4rDZAa3jVj5MenfngAwSEPhX8QduWtUb,solana,C9LzpibzMRqK4rDZAa3jVj5MenfngAwSEPhX8QduWtUb,Mathieu,liquidity,45,0.00001032,,37640.31,10324.1,0.2,458,336,167,167,,,
+2026-10-18T14:50:12+00:00,solana:9r48Hr5PPVNnzsqtntGe63YRBnNoaWmiyBWA2LmCpump,solana,9r48Hr5PPVNnzsqtntGe63YRBnNoaWmiyBWA2LmCpump,Solana,liquidity,70,0.000003551,3300.03,162735.49,3385,0.65,2819,2607,-91.66,-91.66,,,
