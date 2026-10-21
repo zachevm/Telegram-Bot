@@ -4050,3 +4050,8 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-21T03:40:20+00:00,solana:836WHSkEp2KozMQ53MGPMci1zr2DHHsjQ6A7FEYzpump,solana,836WHSkEp2KozMQ53MGPMci1zr2DHHsjQ6A7FEYzpump,ATE,liquidity,70,0.000002641,2827.06,1161020.38,2639,0.52,6264,6425,-93.99,-93.99,,,
 2026-10-21T03:40:20+00:00,solana:FegYTsqy4DZssmqd2VzncCiHnjPQ8PfEUcdSkQaKpump,solana,FegYTsqy4DZssmqd2VzncCiHnjPQ8PfEUcdSkQaKpump,PILLED,tier B,77,0.00005373,18922.5,68794.25,53640,0.1,1189,886,27.08,27.08,,,
 2026-10-21T03:40:20+00:00,solana:9dAxxKvYRxLoLwq3v72JzsyE2b3xvKawmkEwTKxcpump,solana,9dAxxKvYRxLoLwq3v72JzsyE2b3xvKawmkEwTKxcpump,Auralized,tier B,65,0.00001752,9606.85,41815.39,17525,0.09,621,481,-59.16,-59.16,,,
+2026-10-21T03:50:13+00:00,solana:2TsHfSkz1nY98PXVzRxgSD8BsWMqWCJPrgzNeYhEpump,solana,2TsHfSkz1nY98PXVzRxgSD8BsWMqWCJPrgzNeYhEpump,CLAYTON,liquidity,35,,,0,,0.21,390,341,,,,,
+2026-10-21T03:50:13+00:00,solana:8bBQP9ngcjyr7g1ytggodjaaQSHSyNcnxCrm8YN9pump,solana,8bBQP9ngcjyr7g1ytggodjaaQSHSyNcnxCrm8YN9pump,smol,tier B,72,0.00005271,18619.44,41006.76,52716,0.04,514,450,19.44,19.44,,,
+2026-10-21T03:50:13+00:00,solana:2EQbBcFnHAoex34qLcWDAcw7YAXBjEvvjWU7A9jppump,solana,2EQbBcFnHAoex34qLcWDAcw7YAXBjEvvjWU7A9jppump,HUE,liquidity,45,0.00001359,,32008.66,13593.2,0.18,388,242,260,260,,,
+2026-10-21T03:50:13+00:00,solana:6KjWBTqdRhD7XKn7poB8DfHgSWZkakPuea32jsPweRpS,solana,6KjWBTqdRhD7XKn7poB8DfHgSWZkakPuea32jsPweRpS,SPWERPS,liquidity,40,0.000006878,,22636.26,6878.09,0.22,164,139,49.62,49.62,,,
+2026-10-21T03:50:13+00:00,solana:BpcfF47hpkfbydyPZaiHs9sLawzi6EpyMo4kyNf8pump,solana,BpcfF47hpkfbydyPZaiHs9sLawzi6EpyMo4kyNf8pump,LARPOOOR,liquidity,70,0.000005531,4604.78,134221.08,5521,0.53,2333,2073,-87.09,-87.09,,,
