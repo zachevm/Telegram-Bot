@@ -122,3 +122,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-22T04:40:15+00:00,solana:BGYCrJaXNZ746wjk4rdnYR8bEdWeMAz4SStiGoCrpump,solana,BGYCrJaXNZ746wjk4rdnYR8bEdWeMAz4SStiGoCrpump,PATCHED,tier B,72,0.00006742,20535.48,38695.64,67428,0.2,480,332,54.08,54.08,,,
 2026-10-22T04:40:15+00:00,solana:FmUbDE87tyGNeuWFxVG8YGgc8EjC3baPYk15QScjpump,solana,FmUbDE87tyGNeuWFxVG8YGgc8EjC3baPYk15QScjpump,PauseAI,liquidity,50,0.000005472,,81689.96,5472.61,0.22,1167,925,32.46,32.46,,,
 2026-10-22T04:40:15+00:00,solana:CPPJ4RmRZjiuuFsCT9mzQnqTgnaF4nH1bmcofDvppump,solana,CPPJ4RmRZjiuuFsCT9mzQnqTgnaF4nH1bmcofDvppump,GRAIL,liquidity,50,0.00003417,,55413.57,34179.76,0.35,425,260,734,734,,,
+2026-10-22T04:50:14+00:00,solana:2jYyA2HUmRsg83gq2Y1oS2J2zH5vK8WTbjPSuH3Npump,solana,2jYyA2HUmRsg83gq2Y1oS2J2zH5vK8WTbjPSuH3Npump,ANTH,liquidity,30,,,0,,0.02,156,109,-10.21,-10.21,,,
