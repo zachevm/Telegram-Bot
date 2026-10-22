@@ -40,3 +40,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-22T01:00:23+00:00,solana:J8hWgS9UGvbSujPYEwG1NJjfanztL3cLGw18dAgDpump,solana,J8hWgS9UGvbSujPYEwG1NJjfanztL3cLGw18dAgDpump,GIGA,tier B,82,0.00001742,10579.04,129990.24,17420,0.13,1445,1162,-61.43,-61.43,,,
 2026-10-22T01:00:23+00:00,solana:BmhGvQJ43MDuGSv3j7MsmZcFSo9PQgVPhP55ZNAfpump,solana,BmhGvQJ43MDuGSv3j7MsmZcFSo9PQgVPhP55ZNAfpump,DOCHI,liquidity,70,0.000002058,2178.83,714277.1,2059,0.45,3456,4400,-96.96,-96.96,,,
 2026-10-22T01:00:23+00:00,solana:4BsC98Zm5JAHDukgvqeSZaXvBgdmwyQvrRcDRpfBpump,solana,4BsC98Zm5JAHDukgvqeSZaXvBgdmwyQvrRcDRpfBpump,uwunald,liquidity,70,0.000004758,4397.76,426398.47,4637,0.94,4803,4201,-89.77,-89.77,,,
+2026-10-22T01:10:19+00:00,solana:coLdDsTiFricfFDWYbAkaX6GxcbUdxWE1t3aw5scNgM,solana,coLdDsTiFricfFDWYbAkaX6GxcbUdxWE1t3aw5scNgM,coldboot,liquidity,45,0.00001630,,39111.07,16309.12,0.18,409,447,409,409,,,
