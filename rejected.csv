@@ -41,3 +41,7 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-22T01:00:23+00:00,solana:BmhGvQJ43MDuGSv3j7MsmZcFSo9PQgVPhP55ZNAfpump,solana,BmhGvQJ43MDuGSv3j7MsmZcFSo9PQgVPhP55ZNAfpump,DOCHI,liquidity,70,0.000002058,2178.83,714277.1,2059,0.45,3456,4400,-96.96,-96.96,,,
 2026-10-22T01:00:23+00:00,solana:4BsC98Zm5JAHDukgvqeSZaXvBgdmwyQvrRcDRpfBpump,solana,4BsC98Zm5JAHDukgvqeSZaXvBgdmwyQvrRcDRpfBpump,uwunald,liquidity,70,0.000004758,4397.76,426398.47,4637,0.94,4803,4201,-89.77,-89.77,,,
 2026-10-22T01:10:19+00:00,solana:coLdDsTiFricfFDWYbAkaX6GxcbUdxWE1t3aw5scNgM,solana,coLdDsTiFricfFDWYbAkaX6GxcbUdxWE1t3aw5scNgM,coldboot,liquidity,45,0.00001630,,39111.07,16309.12,0.18,409,447,409,409,,,
+2026-10-22T01:20:20+00:00,solana:TruMPKdNddKAfguNcbHbZNcFwRknXMS9e63JEgoZVog,solana,TruMPKdNddKAfguNcbHbZNcFwRknXMS9e63JEgoZVog,TRUMPOG,liquidity,15,,,0,,53.79,23,3,,,,,
+2026-10-22T01:20:20+00:00,solana:Ex5GTZqGX1hs4iG6sRZzxzFBtNWu8us7aMseYoBJpump,solana,Ex5GTZqGX1hs4iG6sRZzxzFBtNWu8us7aMseYoBJpump,Charlie,liquidity,40,0.00001668,,17685.38,16686.01,0.46,176,110,401,401,,,
+2026-10-22T01:20:20+00:00,solana:jebnkrAULDzAxRHoHkE8vVmFsi5rNqv3xuriYWmpump,solana,jebnkrAULDzAxRHoHkE8vVmFsi5rNqv3xuriYWmpump,GTACHI,tier B,72,0.00008774,24441.54,305753.46,87749,0.27,7730,1318,77.13,77.13,,,
+2026-10-22T01:20:20+00:00,solana:J8hWgS9UGvbSujPYEwG1NJjfanztL3cLGw18dAgDpump,solana,J8hWgS9UGvbSujPYEwG1NJjfanztL3cLGw18dAgDpump,GIGA,liquidity,70,0.000003596,3467.13,166449.4,3596,0.47,1954,1714,-92.04,-92.04,,,
