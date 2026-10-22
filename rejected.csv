@@ -431,3 +431,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-22T17:30:29+00:00,solana:2CB48AjHWgSc8rA1ezXN9FfsCJUQ6wx6DGQLSGr3hQBr,solana,2CB48AjHWgSc8rA1ezXN9FfsCJUQ6wx6DGQLSGr3hQBr,BMR,liquidity,50,0.00001017,,116205.12,10171.06,1055.68,1359,1044,-5.44,227,,,
 2026-10-22T17:30:29+00:00,solana:9wkVpVZdnnaumpv1GaLgjWbnecZodgtG7uQABsQRpump,solana,9wkVpVZdnnaumpv1GaLgjWbnecZodgtG7uQABsQRpump,A,tier B,87,0.00005750,19859.36,323847.27,53114,1.57,3202,2517,22.18,26.68,,,
 2026-10-22T17:30:30+00:00,solana:B8oWh1zqjF45uoih7Ndq6138pwLvFTmyHDvxPD9opump,solana,B8oWh1zqjF45uoih7Ndq6138pwLvFTmyHDvxPD9opump,tinfoilcat,liquidity,70,0.000002141,2417.85,1524451.58,2124,1.68,23182,6594,-99.34,-96.24,,,
+2026-10-22T17:40:15+00:00,solana:6W9q5gCKgdGh1o2vqWyLnP6Nv7XhNoECxpkRba2Ppump,solana,6W9q5gCKgdGh1o2vqWyLnP6Nv7XhNoECxpkRba2Ppump,CYBERCOVID,liquidity,45,0.00001663,,85904.44,16632.82,13011.18,831,657,-22.61,404,,,
+2026-10-22T17:40:15+00:00,solana:6uXpCTxkHXn2TBu8EnyWtHvStjApVtmDjibcHQBepump,solana,6uXpCTxkHXn2TBu8EnyWtHvStjApVtmDjibcHQBepump,PULP,liquidity,45,0.00001370,,31278.74,13703.37,0.08,319,220,363,363,,,
+2026-10-22T17:40:16+00:00,solana:yNePjCgkGu3tje7xbQvtennGZE6Y6gYccN2R4a2pump,solana,yNePjCgkGu3tje7xbQvtennGZE6Y6gYccN2R4a2pump,1SHARE,price change,87,0.0003143,46958.63,290997.98,305438,2.25,2754,2080,39.25,524,,,
