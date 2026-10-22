@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       reset_tracking:
-        description: 'Start a new batch: move alerts.csv, rejected.csv and runs.csv into archive/ and begin fresh files'
+        description: 'Start a new batch: move the tracking CSVs into archive/ and begin fresh files'
         type: boolean
         default: false
 
@@ -28,7 +28,7 @@ jobs:
         run: |
           dir="archive/batch-$(date -u +%Y%m%d-%H%M)"
           mkdir -p "$dir"
-          for f in alerts.csv rejected.csv runs.csv; do
+          for f in alerts.csv rejected.csv runs.csv alert_paths.csv; do
             if [ -f "$f" ]; then
               git mv "$f" "$dir/$f"
             fi
@@ -60,7 +60,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          for f in seen.json alerts.csv rejected.csv runs.csv; do
+          for f in seen.json alerts.csv rejected.csv runs.csv alert_paths.csv; do
             if [ -f "$f" ]; then
               git add "$f"
             fi
