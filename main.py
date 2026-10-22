@@ -57,6 +57,8 @@ MAX_PRICE_CHANGE_24H = 500  # reject if already up more than 500% in 24h (not ea
 ALERTS_FILE = "alerts.csv"      # every delivered alert + what its price did afterwards
 REJECTED_FILE = "rejected.csv"  # tokens the filters rejected + what their price did afterwards
 RUNS_FILE = "runs.csv"          # one row per run with the SUMMARY counts
+PATHS_FILE = "alert_paths.csv"  # each alert's price every ~10 minutes for 24h (for testing exit rules)
+MAX_PATH_ROWS = 40000
 MAX_ALERT_ROWS = 5000
 MAX_REJECTED_ROWS = 6000
 MAX_RUN_ROWS = 5000
@@ -447,6 +449,7 @@ REJECTED_FIELDS = [
     "liquidity_usd", "volume_24h", "market_cap", "age_hours", "buys_24h", "sells_24h",
     "change_1h", "change_24h", "price_1h", "price_6h", "price_24h",
 ]
+PATH_FIELDS = ["token_id", "minutes", "price"]
 RUN_FIELDS = [
     "time", "profiles", "already_seen", "no_pair_data", "not_base_token", "lookup_errors",
     "rej_liquidity", "rej_trades", "rej_sells", "rej_no_age", "rej_age", "rej_price_change",
@@ -613,7 +616,7 @@ def horizon_state(row):
             due.append(col)
     return age, due, expired
 
-def update_outcomes(alert_rows, rejected_rows):
+def update_outcomes(alert_rows, rejected_rows, path_rows=None):
     """Fill in 1h/6h/24h prices. Alerts also get max/min price while they are under 24h old.
     Returns (lookup_calls, rows_updated)."""
     plans = []
@@ -629,14 +632,14 @@ def update_outcomes(alert_rows, rejected_rows):
             if due or watching:
                 chain, address = row.get("chain", ""), row.get("address", "")
                 if chain and address:
-                    plans.append((row, due, watching))
+                    plans.append((row, due, watching, age))
                     wanted.add((chain, address))
     if not wanted:
         return 0, 0
 
     prices, calls = fetch_prices(wanted)
     updated = 0
-    for row, due, watching in plans:
+    for row, due, watching, age in plans:
         price = prices.get((row["chain"], str(row["address"]).lower()))
         if price is None:
             continue  # token not returned; a due check is retried next run until its window passes
@@ -658,6 +661,9 @@ def update_outcomes(alert_rows, rejected_rows):
                 hi = lo = price
             row["max_price"] = f"{max(hi, price):.12g}"
             row["min_price"] = f"{min(lo, price):.12g}"
+            if path_rows is not None:
+                path_rows.append({"token_id": row.get("token_id", ""), "minutes": int(round(age * 60)),
+                                  "price": f"{price:.12g}"})
         updated += 1
     return calls, updated
 
@@ -667,11 +673,13 @@ def save_tracking(new_alerts, new_rejects, run_row):
         alert_rows = read_csv_rows(ALERTS_FILE)
         rejected_rows = read_csv_rows(REJECTED_FILE)
         run_rows = read_csv_rows(RUNS_FILE)
+        path_rows = read_csv_rows(PATHS_FILE)
+        new_paths = []
 
         calls = updated = 0
         if alert_rows is not None and rejected_rows is not None:
             try:
-                calls, updated = update_outcomes(alert_rows, rejected_rows)
+                calls, updated = update_outcomes(alert_rows, rejected_rows, new_paths)
             except Exception as e:
                 log.exception("Outcome update failed: %s", e)
         run_row["tracking_calls"] = calls
@@ -682,6 +690,11 @@ def save_tracking(new_alerts, new_rejects, run_row):
         if rejected_rows is not None:
             rejected_rows.extend(new_rejects)
             write_csv_rows(REJECTED_FILE, REJECTED_FIELDS, rejected_rows[-MAX_REJECTED_ROWS:])
+        for row in new_alerts:  # minute 0 = the alert price itself
+            new_paths.append({"token_id": row["token_id"], "minutes": 0, "price": row["price_usd"]})
+        if path_rows is not None:
+            path_rows.extend(new_paths)
+            write_csv_rows(PATHS_FILE, PATH_FIELDS, path_rows[-MAX_PATH_ROWS:])
         if run_rows is not None:
             run_rows.append(run_row)
             write_csv_rows(RUNS_FILE, RUN_FIELDS, run_rows[-MAX_RUN_ROWS:])
