@@ -856,3 +856,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-23T14:40:24+00:00,solana:8swwWxfw3r7dms2CmSqJELkfsb9XifnnsteSj1fKpump,solana,8swwWxfw3r7dms2CmSqJELkfsb9XifnnsteSj1fKpump,grok,liquidity,45,0.00002170,,45303.47,21705.14,0.19,609,489,452,452,,,
 2026-10-23T14:40:24+00:00,solana:2qPoPQQCHGtDbgdSxXfrzW1iRS3cGbKmMWSMapZ4pump,solana,2qPoPQQCHGtDbgdSxXfrzW1iRS3cGbKmMWSMapZ4pump,DOAS,price change,80,0.04999,605712.22,507219.84,49995577,17.28,49951,18300,4.48,114823,,,
 2026-10-23T14:40:24+00:00,solana:CmgcFZdh2opKAXXQUi4taxHBzCprcnq8W1LCnUPypump,solana,CmgcFZdh2opKAXXQUi4taxHBzCprcnq8W1LCnUPypump,Galt,tier B,57,0.00002618,11180.89,8306.4,26181,0.16,120,75,-24.43,-24.43,,,
+2026-10-23T14:50:17+00:00,solana:3w67qwokqjcS6KbZhzNonhmFNGjYbWneB7g5HTXwpump,solana,3w67qwokqjcS6KbZhzNonhmFNGjYbWneB7g5HTXwpump,mil,tier B,87,0.00005866,20184.79,420426.88,55641,1.39,5970,4139,-31.51,34.68,,,
+2026-10-23T14:50:17+00:00,solana:92oM56q4Xph95vRxEJNzfd4tRbEzmDTLQmavJNZgpump,solana,92oM56q4Xph95vRxEJNzfd4tRbEzmDTLQmavJNZgpump,LARPMAS,liquidity,45,0.000003062,,31899.66,3062.46,0.18,307,269,-1.77,-1.77,,,
+2026-10-23T14:50:17+00:00,solana:Dzc7sQZWMyJ2x6aa692swVRBK4Yi2YGW84KSYp7opump,solana,Dzc7sQZWMyJ2x6aa692swVRBK4Yi2YGW84KSYp7opump,Dell,liquidity,50,0.000003345,,50175.39,3345.33,0.26,1030,819,-0.03,-0.03,,,
