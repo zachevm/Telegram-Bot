@@ -1540,3 +1540,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-24T21:40:18+00:00,solana:GYFGHK9eiuwB8UJ3FqTSpGeUsykTxH97MfXBGDchpump,solana,GYFGHK9eiuwB8UJ3FqTSpGeUsykTxH97MfXBGDchpump,Chog,liquidity,35,,,0,,0.16,399,278,24.11,24.11,,,
 2026-10-24T21:50:21+00:00,solana:EfMZfcStz5oxorWLhBLcPzkePLz91BG5knrGAGiXpump,solana,EfMZfcStz5oxorWLhBLcPzkePLz91BG5knrGAGiXpump,Pablo,tier B,77,0.00006517,20232.93,233436.02,65130,0.21,204,232,-1.01,-1.01,,,
 2026-10-24T21:50:21+00:00,solana:3897FV2RB3tBwizbrskniVmx78spQLyGUV3fYTW9pump,solana,3897FV2RB3tBwizbrskniVmx78spQLyGUV3fYTW9pump,Higher,liquidity,45,0.000005392,,35152.3,5392.05,0.36,472,344,56.58,56.58,,,
+2026-10-24T22:00:14+00:00,solana:9aCEyigFdPKDJ1GSwYmnSZdJrMj6AbgGAvjY79Fupump,solana,9aCEyigFdPKDJ1GSwYmnSZdJrMj6AbgGAvjY79Fupump,iFruit,liquidity,25,0.00001799,,8528.7,17997.45,406.11,101,78,12.48,-0.42,,,
