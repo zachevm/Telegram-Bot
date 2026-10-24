@@ -1214,3 +1214,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-24T06:30:22+00:00,solana:GoLpdpR9X66mC8m2hYYHsuMDs5trNNVv9ze21gzXpump,solana,GoLpdpR9X66mC8m2hYYHsuMDs5trNNVv9ze21gzXpump,GSIR,price change,80,0.0009983,85760.47,1068329.13,995944,0.99,362,172,1335,1335,,,
 2026-10-24T06:30:22+00:00,solana:E3PAjaemAmDhmK78Zapsd1Vbs4Y4DDGFq1gk84dBpump,solana,E3PAjaemAmDhmK78Zapsd1Vbs4Y4DDGFq1gk84dBpump,KIMWARE,liquidity,10,0.00004201,,8692.64,42016.61,0.19,6,0,1365,1365,,,
 2026-10-24T06:30:22+00:00,solana:73FghpmeSeSUgLebDVDynLWEALnTDm5GaGTjNajpump,solana,73FghpmeSeSUgLebDVDynLWEALnTDm5GaGTjNajpump,Sigil,liquidity,45,0.000007384,,49165.79,7384.95,0.28,650,393,142,142,,,
+2026-10-24T06:40:14+00:00,solana:45ofFMQgwE5vsK2GxCCwHLepa9BwxvexhBmTxmbupump,solana,45ofFMQgwE5vsK2GxCCwHLepa9BwxvexhBmTxmbupump,DOGERUMP,price change,80,0.0003770,51439.03,523520.73,377008,0.23,6362,751,571,571,,,
+2026-10-24T06:40:14+00:00,solana:61R7Ua1W2mrrdxiHaKNJJkqWbuD6cAPQx47jGRGbpump,solana,61R7Ua1W2mrrdxiHaKNJJkqWbuD6cAPQx47jGRGbpump,PINU,liquidity,50,0.000008247,,56975.84,8247.21,0.19,761,582,63.29,63.29,,,
