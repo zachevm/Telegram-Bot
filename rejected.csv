@@ -1625,7 +1625,7 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-25T01:50:16+00:00,solana:3eXPwtKdKqCjR2ucm35n6gKYLKqycukiNLpJW3qCpump,solana,3eXPwtKdKqCjR2ucm35n6gKYLKqycukiNLpJW3qCpump,SOL,liquidity,35,,,0,,0.39,1390,862,,,NA,NA,NA
 2026-10-25T01:50:16+00:00,solana:28ZdKbDwAWSsKPFMwxJTUiB9HbjWxetsHvK1NYwtpump,solana,28ZdKbDwAWSsKPFMwxJTUiB9HbjWxetsHvK1NYwtpump,PUMP,tier B,82,0.00009520,26861.29,371283.46,95202,0.48,5899,4371,109,109,0.0001875,2.884e-05,1.46e-05
 2026-10-25T01:50:16+00:00,solana:GBZcCHK8ny1vdFzTW6oqmaMAz2rHzs6f84cHPRQbpump,solana,GBZcCHK8ny1vdFzTW6oqmaMAz2rHzs6f84cHPRQbpump,bBTC,liquidity,30,,,0,,0.5,261,179,,,NA,NA,NA
-2026-10-25T02:00:14+00:00,solana:EAbQiWL2v2PPHJv3zBkM1aV1QQhE8bKaV2xYgjYxpump,solana,EAbQiWL2v2PPHJv3zBkM1aV1QQhE8bKaV2xYgjYxpump,BTC,liquidity,35,,,0,,0.33,597,382,,,NA,NA,
+2026-10-25T02:00:14+00:00,solana:EAbQiWL2v2PPHJv3zBkM1aV1QQhE8bKaV2xYgjYxpump,solana,EAbQiWL2v2PPHJv3zBkM1aV1QQhE8bKaV2xYgjYxpump,BTC,liquidity,35,,,0,,0.33,597,382,,,NA,NA,NA
 2026-10-25T02:00:14+00:00,solana:Hu7rBHqUrH17iJcQxBg4c3nu5BgBR88mKn7bDuc7pump,solana,Hu7rBHqUrH17iJcQxBg4c3nu5BgBR88mKn7bDuc7pump,BLINTRUMP,tier B,72,0.0001042,26109.3,228243.33,104245,0.19,4602,720,120,120,2.143e-06,2.104e-06,1.973e-06
 2026-10-25T02:10:11+00:00,solana:92a7oRhNyhq2McpHdZZZN6MWzMXqzMz2kN2husWcpump,solana,92a7oRhNyhq2McpHdZZZN6MWzMXqzMz2kN2husWcpump,Microduck,liquidity,40,,,0,,4.04,5287,4270,48,38.07,NA,NA,
 2026-10-25T02:10:11+00:00,solana:B1DPPHcPymoitLeHPjyDeKjKf4hs9ubtVrncobpspump,solana,B1DPPHcPymoitLeHPjyDeKjKf4hs9ubtVrncobpspump,Bambo,liquidity,50,0.00001115,,86931.65,11150.32,0.21,1388,1139,171,171,3.648e-06,3.479e-06,3.054e-06
