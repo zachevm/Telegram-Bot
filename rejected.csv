@@ -2695,3 +2695,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-27T03:20:19+00:00,solana:Ecx9c59agmjDeFgiNoGY1fz3qTj6JeushRiZNK6npump,solana,Ecx9c59agmjDeFgiNoGY1fz3qTj6JeushRiZNK6npump,NagiChan,liquidity,60,0.000005741,4633.5,47424.5,5741,0.39,976,898,-85.86,-85.86,,,
 2026-10-27T03:20:19+00:00,solana:2BS3r41ma2cJMFBVhXCpcbwhEko4LuYqGdjAh9fLpump,solana,2BS3r41ma2cJMFBVhXCpcbwhEko4LuYqGdjAh9fLpump,Rape ,tier B,77,0.00008904,24125.88,55252.94,89043,0.12,638,412,99.34,99.34,,,
 2026-10-27T03:20:19+00:00,solana:CufvRbdcYz3zRHYhAp4efhYu7TA3KkoqAFWqnzsVuh9V,solana,CufvRbdcYz3zRHYhAp4efhYu7TA3KkoqAFWqnzsVuh9V,Leverage,tier B,77,0.00006971,22409.89,75942.48,68306,0.15,836,718,72.15,72.15,,,
+2026-10-27T03:30:15+00:00,solana:GgQkMxSG6zEnJDEWuRP8qXeemuBHupo1WMfSL8KWpump,solana,GgQkMxSG6zEnJDEWuRP8qXeemuBHupo1WMfSL8KWpump,MUSK2028,liquidity,65,0.000005755,4829.87,91530.52,5424,0.97,1724,1414,-87.19,-87.19,,,
