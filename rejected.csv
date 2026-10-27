@@ -2890,3 +2890,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-27T15:30:18+00:00,solana:7wKNhej9P1trJwuXKbFooD7snv6h6meLr14qoEg8pump,solana,7wKNhej9P1trJwuXKbFooD7snv6h6meLr14qoEg8pump,NAGI,tier B,82,0.0002017,37140.59,221366.96,201796,0.36,2205,1234,376,376,,,
 2026-10-27T15:40:18+00:00,solana:985ZsufAhdeew9R1DsCDHJb6PzjfSvEwHoe1w1nepump,solana,985ZsufAhdeew9R1DsCDHJb6PzjfSvEwHoe1w1nepump,Blackcat,tier B,82,0.0001208,28257.06,453388.09,120891,0.3,2291,1264,128,128,,,
 2026-10-27T15:40:18+00:00,solana:7wKNhej9P1trJwuXKbFooD7snv6h6meLr14qoEg8pump,solana,7wKNhej9P1trJwuXKbFooD7snv6h6meLr14qoEg8pump,NAGI,liquidity,70,0.000001941,3249.99,301589.12,1941,0.53,2746,1652,-95.42,-95.42,,,
+2026-10-27T15:50:14+00:00,solana:6GG4v1zkuN7qcj7vo32W4TDvoneh3jdHxcML3PUQpump,solana,6GG4v1zkuN7qcj7vo32W4TDvoneh3jdHxcML3PUQpump,DOGHOUSE,liquidity,50,0.000004658,,52163.7,4658.92,0.23,701,601,-35.32,-35.32,,,
+2026-10-27T15:50:14+00:00,solana:985ZsufAhdeew9R1DsCDHJb6PzjfSvEwHoe1w1nepump,solana,985ZsufAhdeew9R1DsCDHJb6PzjfSvEwHoe1w1nepump,Blackcat,liquidity,70,0.000001907,2007.76,483900.57,1907,0.47,2425,2103,-96.4,-96.4,,,
+2026-10-27T15:50:15+00:00,solana:8ULZXvZMXcrpnwQo87aQVMNKf7HzgMQSEwr3ZUQKpump,solana,8ULZXvZMXcrpnwQo87aQVMNKf7HzgMQSEwr3ZUQKpump,Maxxing,liquidity,70,0.000001986,2173.87,653885.61,1952,0.84,3584,2377,-95.33,-95.33,,,
