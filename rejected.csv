@@ -3898,3 +3898,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-29T12:00:23+00:00,solana:vRJNbvpdcv4TzcXTEuHkdPWsQKGXn6VEyatQKU2pump,solana,vRJNbvpdcv4TzcXTEuHkdPWsQKGXn6VEyatQKU2pump,ShuBao,liquidity,45,0.000009289,,27145.91,9289.03,0.48,378,276,210,210,,,
 2026-10-29T12:10:22+00:00,solana:AbkkDdXT2qmpnevBNyeHN3mpxcvrqz9qJtoc8bGvpump,solana,AbkkDdXT2qmpnevBNyeHN3mpxcvrqz9qJtoc8bGvpump,Niggerfish,liquidity,50,0.00001867,,99843.98,18673.5,0.14,1356,957,363,363,,,
 2026-10-29T12:10:22+00:00,solana:57vAaMsnAJXkvULtAz7fsi6gRn3bHRJFJsJV1okNpump,solana,57vAaMsnAJXkvULtAz7fsi6gRn3bHRJFJsJV1okNpump,OREN,tier B,75,0.00001550,8789.85,130828.33,15503,0.25,2290,1813,-63.82,-63.82,,,
+2026-10-29T12:20:18+00:00,solana:8hQwRKHjaqnUDGAdsrYyE3CHdziD6mTUpdMxjzHZpump,solana,8hQwRKHjaqnUDGAdsrYyE3CHdziD6mTUpdMxjzHZpump,FOMO,liquidity,70,0.000001929,2057.3,341422.87,1897,0.7,3152,2371,-95.44,-95.44,,,
+2026-10-29T12:20:18+00:00,bsc:0x5B43B6bea03Ed7303ADb98c3c7c670128dA0bFD0,bsc,0x5B43B6bea03Ed7303ADb98c3c7c670128dA0bFD0,BEE,liquidity,50,0.00005557,216.24,48198.94,55567,1.04,480,262,1321,1443,,,
