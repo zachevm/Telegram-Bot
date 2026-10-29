@@ -4170,3 +4170,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-29T21:50:21+00:00,solana:5LMEf2o59JALn1iqYYosh6J8ahsevZhhyPPyiX8fpump,solana,5LMEf2o59JALn1iqYYosh6J8ahsevZhhyPPyiX8fpump,4,liquidity,75,0.000004643,4013.04,264591.38,4299,1.23,3319,3090,-68.65,-88.63,,,
 2026-10-29T21:50:21+00:00,solana:6eccVGkbi8cvAYBGzfDmUwFYrMj8eGZF2xyZqZLkpump,solana,6eccVGkbi8cvAYBGzfDmUwFYrMj8eGZF2xyZqZLkpump,HYPEINU,price change,90,0.0003247,60244.08,1246991.89,324704,0.49,4404,3325,640,640,,,
 2026-10-29T21:50:22+00:00,solana:2orqEGSdkm5BMmhdM8TpKCpACk32a3Zaj3Lef7ceqsc6,solana,2orqEGSdkm5BMmhdM8TpKCpACk32a3Zaj3Lef7ceqsc6,ETF,tier B,67,0.00006354,21197.33,20732.71,63544,0.15,171,304,47.56,47.56,,,
+2026-10-29T22:00:20+00:00,solana:GTukywV127Qw35tYD29wTxpKMNbMJ5DYdodz3xK2pump,solana,GTukywV127Qw35tYD29wTxpKMNbMJ5DYdodz3xK2pump,HYPED,tier B,57,0.00005150,18050.12,6277.35,48603,0.06,100,65,11.09,11.09,,,
