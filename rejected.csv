@@ -4674,3 +4674,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-30T23:40:20+00:00,solana:9t4JYVrNW8pyjhSqAdSM57svukMFYmnrXziHtjaxpump,solana,9t4JYVrNW8pyjhSqAdSM57svukMFYmnrXziHtjaxpump,iApe,liquidity,50,0.00002039,,89367.28,20399.24,0.33,1915,1161,535,535,,,
 2026-10-30T23:40:20+00:00,solana:5ahor7yZ9EdXLzfS43aEPsfBsLtgocsi5sGc2Rsa58PG,solana,5ahor7yZ9EdXLzfS43aEPsfBsLtgocsi5sGc2Rsa58PG,NATIONS,liquidity,45,0.000009432,,41041.2,9432.53,0.1,547,358,-1.35,-1.35,,,
 2026-10-30T23:40:20+00:00,solana:663R8DS144nSPbZNZVyc2LHCBKUPNoLBV7BW6Bojpump,solana,663R8DS144nSPbZNZVyc2LHCBKUPNoLBV7BW6Bojpump,retARDmAx,liquidity,50,0.000003813,,75684.43,3813.68,0.26,1107,938,-44.31,-44.31,,,
+2026-10-30T23:50:18+00:00,solana:2dv3Wy41QX5Rps9pfqmQjNEgdbaXTmPbNPW6pqBkdBTC,solana,2dv3Wy41QX5Rps9pfqmQjNEgdbaXTmPbNPW6pqBkdBTC,BTC,liquidity,40,,,0,,1.55,495,470,,,,,
+2026-10-30T23:50:18+00:00,solana:4poKLzPuwjKJgXM6eF3EqBbMzWgkapi96vbNSkZipump,solana,4poKLzPuwjKJgXM6eF3EqBbMzWgkapi96vbNSkZipump,George,tier B,77,0.00003528,14066.24,64562.43,35289,0.08,1132,721,-14.85,-14.85,,,
+2026-10-30T23:50:19+00:00,solana:AZfKuArxqjPLJoADpRBMxUsbD9mE5Wvwtji9hPaYpump,solana,AZfKuArxqjPLJoADpRBMxUsbD9mE5Wvwtji9hPaYpump,iWould,liquidity,50,0.00003245,,90373.76,32452.11,0.32,1372,937,737,737,,,
