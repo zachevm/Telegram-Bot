@@ -4829,3 +4829,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-10-31T10:30:19+00:00,solana:HAJcmgd5Y4r3Y6yzLSf3sSW18TJEkwvZy2awjaDypump,solana,HAJcmgd5Y4r3Y6yzLSf3sSW18TJEkwvZy2awjaDypump,ㅤㅤㅤ,liquidity,45,0.00001526,,43028.7,15269.06,0.1,858,574,334,334,,,
 2026-10-31T10:30:19+00:00,solana:AX4RduywXJFixrFqs4Ye1B8s76TDHGHKeQNzGyztpump,solana,AX4RduywXJFixrFqs4Ye1B8s76TDHGHKeQNzGyztpump,Sazanka,liquidity,50,0.00001331,,42268.22,13319.14,23.09,525,423,101,308,,,
 2026-10-31T10:30:19+00:00,solana:FcZuu76twm89BKVN6WoWhFwfCmAVFPx24NkT8hKvpump,solana,FcZuu76twm89BKVN6WoWhFwfCmAVFPx24NkT8hKvpump,FUN,tier B,77,0.0001877,34613.25,217249.74,187781,0.33,1707,831,367,367,,,
+2026-10-31T10:40:17+00:00,solana:419P2wrVug9cW5hMwsjEEdhM5aLBt7YFnwn1p7dypump,solana,419P2wrVug9cW5hMwsjEEdhM5aLBt7YFnwn1p7dypump,ATI,liquidity,75,0.000002531,2743,1222360.12,2478,2.02,7174,5152,-99.26,-93.7,,,
