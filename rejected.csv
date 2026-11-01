@@ -5289,3 +5289,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-01T14:30:19+00:00,solana:4s8PpvyFsg1EnZxSpogVdsVwMU2R8gg46rKABG3Bs6Tt,solana,4s8PpvyFsg1EnZxSpogVdsVwMU2R8gg46rKABG3Bs6Tt,Dante,tier B,77,0.00003400,13770.2,67168.92,34002,0.13,1433,1143,-9.46,-9.46,,,
 2026-11-01T14:30:19+00:00,solana:F4rbj1erkDbUp7ifK8gqJfs9ixDyqDTNACqAkHqQpump,solana,F4rbj1erkDbUp7ifK8gqJfs9ixDyqDTNACqAkHqQpump,Ghost,liquidity,70,0.000001854,1930.64,203857.53,1854,0.3,1523,969,-95.36,-95.36,,,
 2026-11-01T14:40:19+00:00,solana:Ccm5ZnTrKY7YNskkiQJ4nrL4GHSGoXniik9pyV4Jpump,solana,Ccm5ZnTrKY7YNskkiQJ4nrL4GHSGoXniik9pyV4Jpump,SOL,tier B,77,0.0002014,35942.65,284430.11,201411,0.21,2037,1046,404,404,,,
+2026-11-01T14:50:17+00:00,solana:DgkKGYiJZMCah6iphatZeqCGJ5S51ND7qxQZQdP5pump,solana,DgkKGYiJZMCah6iphatZeqCGJ5S51ND7qxQZQdP5pump,SA,price change,90,0.0006206,65151.2,980390.9,617555,2.82,25436,11461,31.55,1087,,,
+2026-11-01T14:50:17+00:00,solana:9d4vccabSECYYYpaz5fFGEPBzMBS1mzmoQbnAMKqpump,solana,9d4vccabSECYYYpaz5fFGEPBzMBS1mzmoQbnAMKqpump,Stone,liquidity,35,0.000004796,,7960.31,4796.16,1.5,103,282,14.06,58.76,,,
