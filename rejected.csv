@@ -1,6 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-10-22T22:50:19+00:00,solana:5cZ5jEZmdhJhLgUAV84n6H4v4BmnADPg5TfcNSGqpump,solana,5cZ5jEZmdhJhLgUAV84n6H4v4BmnADPg5TfcNSGqpump,CITY,liquidity,70,0.000004805,4429.71,432151.39,4643,0.61,5186,4751,-89.2,-89.2,6.123e-06,5.307e-06,2.959e-06
-2026-10-22T22:50:19+00:00,solana:5eYWnj49iRrW4JetwGFLveHhcwWXSqxJzwY7BiHPpump,solana,5eYWnj49iRrW4JetwGFLveHhcwWXSqxJzwY7BiHPpump,Kimchi,liquidity,75,0.000002132,2400.53,1092105.59,2108,1.51,7522,4957,-98.98,-95.12,2.117e-06,2.115e-06,2.112e-06
 2026-10-22T23:00:19+00:00,solana:4yjJzT6LdcHidJ2hjUNUKmay6LHVDbFKwDcmmUxvpump,solana,4yjJzT6LdcHidJ2hjUNUKmay6LHVDbFKwDcmmUxvpump,KAME,liquidity,30,0.000009323,,12695.12,9323.43,0.11,128,63,154,154,3.208e-06,3.276e-06,3.381e-06
 2026-10-22T23:10:16+00:00,solana:8wDZtKyMHV8XZokfiV13n6apuuUskvi2tP1r7H4pump,solana,8wDZtKyMHV8XZokfiV13n6apuuUskvi2tP1r7H4pump,ELON,price change,85,0.0008395,78061.06,481959.13,839550,0.09,4259,3258,1392,1392,1.303e-05,7.967e-06,4.274e-06
 2026-10-22T23:10:16+00:00,solana:EK12A4bPsfSSWcfcYxS5hDXyFwmnPxzwuGZ4Exivpump,solana,EK12A4bPsfSSWcfcYxS5hDXyFwmnPxzwuGZ4Exivpump,Christine,liquidity,55,0.000004059,,123796.95,4059.07,0.29,1564,1372,16.31,16.31,3.348e-06,3.122e-06,3.058e-06
@@ -5999,3 +5997,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-04T08:20:22+00:00,solana:BM1Q9KfjgVoERj1eipkPqueMvhz1kfkUfE835ZjJpump,solana,BM1Q9KfjgVoERj1eipkPqueMvhz1kfkUfE835ZjJpump,CHATBLT,tier B,77,0.00006796,20321.61,128422.01,67969,0.37,4187,2174,73.37,73.37,,,
 2026-11-04T08:20:23+00:00,solana:5fgJwPNtsohc1FwjkjvmVWoXTbSzD8Z3zzbcuXdepump,solana,5fgJwPNtsohc1FwjkjvmVWoXTbSzD8Z3zzbcuXdepump,icapy,liquidity,70,0.000002025,2222.05,1051702.82,2026,0.61,4892,3719,-94.75,-94.75,,,
 2026-11-04T08:20:23+00:00,solana:72QNkZqiTBsq5dvn4DEwaC5qBPDkc7SZJ38xXy4jpump,solana,72QNkZqiTBsq5dvn4DEwaC5qBPDkc7SZJ38xXy4jpump,RAM,tier B,72,0.0001221,26834.81,21089.1,122102,0.13,271,296,219,219,,,
+2026-11-04T08:30:18+00:00,solana:HuTYA2G5ToJsjaUhqBcfvDF2VzPiw5FYAybdD2Lbpump,solana,HuTYA2G5ToJsjaUhqBcfvDF2VzPiw5FYAybdD2Lbpump,LOOT,liquidity,45,0.00001086,,43225.05,10866.28,0.83,562,477,312,312,,,
+2026-11-04T08:30:18+00:00,solana:8ZehpeBs3RG7bNck3HowFybXA5NTZrHMKvE1Qq48pump,solana,8ZehpeBs3RG7bNck3HowFybXA5NTZrHMKvE1Qq48pump,DJT,liquidity,60,0.00003687,,304429.04,36876.52,17.83,4017,3307,416,628,,,
