@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-10-23T20:00:17+00:00,solana:5VgqezoDWkY41aj5BnBAnETgZdeMMeAkQijR7QGgpump,solana,5VgqezoDWkY41aj5BnBAnETgZdeMMeAkQijR7QGgpump,pilled,liquidity,50,0.00002547,,51679.67,25476.1,0.13,802,554,582,582,3.61e-06,3e-06,2.938e-06
 2026-10-23T20:00:17+00:00,solana:nze7qRoU1R2x3qHJaatB5Gm2VvSfXmtXxvQQAA5pump,solana,nze7qRoU1R2x3qHJaatB5Gm2VvSfXmtXxvQQAA5pump,YMB,tier B,82,0.00002808,12577.23,140565.79,24546,0.88,1446,1258,-35.78,-35.78,1.861e-05,8.53e-06,3.261e-06
 2026-10-23T20:00:20+00:00,solana:JDdDcSnHZ6eE82uvcR6WPtnbbUmVACg6CaC4iSXjpump,solana,JDdDcSnHZ6eE82uvcR6WPtnbbUmVACg6CaC4iSXjpump,pilled,tier B,62,0.00003373,13894.9,8804.06,33676,0.01,115,120,-17.33,-17.33,5.866e-06,3.494e-06,2.468e-06
 2026-10-23T20:10:19+00:00,solana:F8Pu9dhYfQjm4mkcCEUF4xwuY8tn6T5dZMNTAmfLpump,solana,F8Pu9dhYfQjm4mkcCEUF4xwuY8tn6T5dZMNTAmfLpump,GD,tier B,67,0.00002999,13329.43,11916.22,29992,0.06,88,120,-35.53,-35.53,2.713e-05,3.869e-05,6.282e-06
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-05T04:50:21+00:00,solana:WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair,solana,WecNBsywJKQLGfBKZzBSix3ykXJ11DfAGUiXCLypair,PAIRS,tier B,82,0.00005329,31782.26,165963.5,53295,0.31,1841,1283,-33.83,-33.83,,,
 2026-11-05T04:50:21+00:00,solana:5mH1uJuffiRFXhyVpnf1qYFLSUU3c71H3rARE9NMV59W,solana,5mH1uJuffiRFXhyVpnf1qYFLSUU3c71H3rARE9NMV59W,SAPPER,tier B,57,0.00004958,16693.58,6134.02,49502,0.01,88,52,24.12,24.12,,,
 2026-11-05T04:50:21+00:00,solana:8LE65NsUJk3QfR385RLZKwTC2DRmX65CVRKmDkvvpump,solana,8LE65NsUJk3QfR385RLZKwTC2DRmX65CVRKmDkvvpump,Look,liquidity,70,0.000005719,4598.96,182966.97,5464,0.87,2547,2186,-85.67,-85.67,,,
+2026-11-05T05:00:20+00:00,solana:BHNQ7ksa218YvGoUtH6tyYatULTnocPpp2rE3LPtpump,solana,BHNQ7ksa218YvGoUtH6tyYatULTnocPpp2rE3LPtpump,حلال,liquidity,50,0.00001827,,58266.67,18276.34,0.42,908,650,463,463,,,
