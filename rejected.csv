@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-10-24T18:50:16+00:00,solana:5urtZSdyA4NreUvNatq4ZV14djo5ohuWNG415YxBpump,solana,5urtZSdyA4NreUvNatq4ZV14djo5ohuWNG415YxBpump,MOONERO,tier B,57,0.00004458,16795.49,3454.61,44582,0.05,42,31,-0.34,-0.34,0.0001015,5.554e-06,4.469e-06
 2026-10-24T18:50:16+00:00,solana:HrCgMD8jBD722S3iUt4Y2Ptsdqk7g7vJTx1AbAd2pump,solana,HrCgMD8jBD722S3iUt4Y2Ptsdqk7g7vJTx1AbAd2pump,SOL,liquidity,55,0.000007652,,157489.4,7652.64,0.18,2784,2539,111,111,3.201e-06,2.973e-06,2.917e-06
 2026-10-24T19:00:13+00:00,solana:A73U9ZTL9RiSUAaNFYFgLoE2Cs8iYckL4Ld68E63pump,solana,A73U9ZTL9RiSUAaNFYFgLoE2Cs8iYckL4Ld68E63pump,BLINK,liquidity,45,0.00001043,,29069.77,10434.06,0.2,407,285,204,204,2.988e-06,2.98e-06,2.928e-06
 2026-10-24T19:00:13+00:00,ethereum:0x104087D3E23849900636d2d0cbA0adFf04D744de,ethereum,0x104087D3E23849900636d2d0cbA0adFf04D744de,UNICORN,tier B,62,0.00001786,12633.75,16844.37,17857,4.1,106,40,-5.8,294,2.017e-05,8.463e-05,7.646e-05
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-06T08:00:21+00:00,solana:qiXxj2wUKXXVcqJjjibubXkX33NA83Wyfg3onJppump,solana,qiXxj2wUKXXVcqJjjibubXkX33NA83Wyfg3onJppump,KRUN,tier B,67,0.00002260,10396.04,6583.2,20373,57.19,262,164,19.07,6.18,,,
 2026-11-06T08:00:21+00:00,solana:EW1b9rcLAJe634mgxb5r4bVYxDoGU37o7YazBzjTpump,solana,EW1b9rcLAJe634mgxb5r4bVYxDoGU37o7YazBzjTpump,RM,tier B,82,0.0001745,34812.47,1232311.61,169901,1.0,13530,11175,366,366,,,
 2026-11-06T08:10:19+00:00,solana:GNNhU2SEArd5RGN49Yjo4YHTipRA3E5gMJeUPE4Gpump,solana,GNNhU2SEArd5RGN49Yjo4YHTipRA3E5gMJeUPE4Gpump,BP,liquidity,70,0.000005969,4946.04,81694.42,5683,1.63,1054,843,-74.31,-86.18,,,
+2026-11-06T08:30:16+00:00,solana:8jaj3rXyuMKsyiKz2eXX4eEDh1qWuptEXmqmnsyapump,solana,8jaj3rXyuMKsyiKz2eXX4eEDh1qWuptEXmqmnsyapump,Gobbler,liquidity,30,,,0,,3.67,264,125,,,,,
