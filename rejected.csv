@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-10-25T19:40:15+00:00,solana:ABTGtvVT28SAxRM22EdwrxzywgqKAfPTuhR6QJ3dpump,solana,ABTGtvVT28SAxRM22EdwrxzywgqKAfPTuhR6QJ3dpump,AAPL,tier B,77,0.0001817,34800.96,236453.15,181748,0.26,5189,1338,273,273,0.0006169,2.079e-06,2.059e-06
 2026-10-25T19:40:15+00:00,solana:D2MSYa6LnnhJ7WdqAfux4DAK7stmYig7DaeuEeKVpump,solana,D2MSYa6LnnhJ7WdqAfux4DAK7stmYig7DaeuEeKVpump,BabyBTC,liquidity,50,0.00002525,,88210.18,25258.81,0.22,1431,948,488,488,3.587e-06,2.756e-06,2.492e-06
 2026-10-25T19:40:15+00:00,solana:CwuRaDTkMgE76xtNitvRDZrjAAJUkvRZNjoFeKh5pump,solana,CwuRaDTkMgE76xtNitvRDZrjAAJUkvRZNjoFeKh5pump,CAKE,liquidity,70,0.000002052,2206.79,585539.91,2012,0.94,3813,2392,-95.24,-95.24,2.052e-06,1.986e-06,1.986e-06
 2026-10-25T19:50:16+00:00,solana:3w11tAFCwBtKM95gr9RgeTsh9cEjmWmFsPoRhuiX1WeT,solana,3w11tAFCwBtKM95gr9RgeTsh9cEjmWmFsPoRhuiX1WeT,VERMIO,liquidity,30,0.000005903,,6766.41,5903.86,0.33,41,42,42.08,42.08,4.511e-06,4.311e-06,4.311e-06
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-07T14:30:22+00:00,solana:DcXV3P93qjyy3qMExtbnSWZncnf9VHBfP9bmNZfepump,solana,DcXV3P93qjyy3qMExtbnSWZncnf9VHBfP9bmNZfepump,LOOTC,liquidity,20,0.000007020,,2110.95,7020.68,761.36,18,18,18.33,17.14,,,
 2026-11-07T14:40:22+00:00,solana:5CVJ8W52Z41KRfAYHnpJTSMx4eP5ZThGDZ5tW7R8pump,solana,5CVJ8W52Z41KRfAYHnpJTSMx4eP5ZThGDZ5tW7R8pump,SHANE,tier B,77,0.00003709,14347.19,77151.45,37023,0.1,1494,999,-0.3,-0.3,,,
 2026-11-07T14:40:22+00:00,solana:EojZ5VyZfQf473SKqM8fFgEi68b1ebrh7pkkzeZTpump,solana,EojZ5VyZfQf473SKqM8fFgEi68b1ebrh7pkkzeZTpump,ket,liquidity,65,0.000004755,4169.11,76501.75,4749,0.19,1459,1522,-86.96,-86.96,,,
+2026-11-07T14:50:15+00:00,solana:FkCsLU7TVDFBex8oubEau2iq1wdLQiagjdBMqv8jpump,solana,FkCsLU7TVDFBex8oubEau2iq1wdLQiagjdBMqv8jpump,debtdog,tier B,77,0.0001326,27876.89,182760.63,132576,0.28,3425,1697,250,250,,,
