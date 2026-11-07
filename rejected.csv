@@ -1,6 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-10-25T16:10:14+00:00,solana:13oMb1i2tTNo9Vj3Z9BWgoRjHwZygQ1xWXEa4DoCpump,solana,13oMb1i2tTNo9Vj3Z9BWgoRjHwZygQ1xWXEa4DoCpump,LMAO!,tier B,72,0.0001186,27730.68,217168.1,118603,0.22,5266,868,132,132,2.005e-06,2.094e-06,2.08e-06
-2026-10-25T16:10:14+00:00,solana:m4i1g2cP4zaD2XaqLpwKNoCptU7iYW3598Pekyopump,solana,m4i1g2cP4zaD2XaqLpwKNoCptU7iYW3598Pekyopump,Goonfolio,liquidity,50,0.00001764,,59856.78,17649.58,0.13,785,567,511,511,3.504e-06,3.035e-06,2.988e-06
 2026-10-25T16:10:14+00:00,solana:G4QBB3JBvChm4Su3WebEx3PdcrLBcaqMUxApau4mpump,solana,G4QBB3JBvChm4Su3WebEx3PdcrLBcaqMUxApau4mpump,AMC,tier B,87,0.0001244,38662.12,102452.53,117793,1.05,994,840,217,216,6.751e-05,1.725e-05,1.337e-05
 2026-10-25T16:10:14+00:00,solana:F2ZgkMDvCKhpxwLciMaVCVjXuB8UdwJMm2AwZmSHpump,solana,F2ZgkMDvCKhpxwLciMaVCVjXuB8UdwJMm2AwZmSHpump,cracked,liquidity,50,0.00001655,,72401.93,16550.97,0.22,1205,777,158,158,3.684e-05,5.536e-06,3.632e-06
 2026-10-25T16:10:14+00:00,solana:EyX3HYebzwqW8VT1SZi7HmaWPpbSAfatWp18bEZipump,solana,EyX3HYebzwqW8VT1SZi7HmaWPpbSAfatWp18bEZipump,Dig,tier B,67,0.00003485,13996.42,13339.15,34632,0.05,247,147,-16.75,-16.75,8.727e-06,4.05e-06,3.328e-06
@@ -5999,3 +5997,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-07T07:10:23+00:00,solana:6psruuGkna3YAcyh6gEK7XaHqiKiruR5B9qxWUgXpump,solana,6psruuGkna3YAcyh6gEK7XaHqiKiruR5B9qxWUgXpump,TIMOTHY,liquidity,50,0.00001457,,86095.41,14571.44,0.25,1415,931,341,341,,,
 2026-11-07T07:10:23+00:00,solana:SMsXhePJF6uRgSAxzcKxQa4siGa9yEpqAN1iupCpump,solana,SMsXhePJF6uRgSAxzcKxQa4siGa9yEpqAN1iupCpump,BERNTHAL,liquidity,45,0.00001077,,61068.67,10772.11,0.19,1252,650,301,301,,,
 2026-11-07T07:10:23+00:00,solana:ARDTsgPv7YbDmTfYPhgJ47a8bofGwBsoE31jyKFypump,solana,ARDTsgPv7YbDmTfYPhgJ47a8bofGwBsoE31jyKFypump,Whites,liquidity,45,0.000004115,,22930.2,4115.1,0.24,405,268,35.22,35.22,,,
+2026-11-07T07:20:17+00:00,solana:FFgnd8bifG8zGBE7dij7g3HWp4gveJS4gDyjdk5epump,solana,FFgnd8bifG8zGBE7dij7g3HWp4gveJS4gDyjdk5epump,trauma ,tier B,77,0.00002735,11774.97,99654.17,27351,0.2,1446,1067,-27.59,-27.59,,,
+2026-11-07T07:20:17+00:00,solana:E5uKc6uneG7xeVaXst5oW7Pzh1g7E95b3vKnSzN3pump,solana,E5uKc6uneG7xeVaXst5oW7Pzh1g7E95b3vKnSzN3pump,TAILER,liquidity,45,0.00001865,,42031.65,18655.11,0.14,928,532,552,552,,,
