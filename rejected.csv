@@ -1,7 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-10-30T10:20:23+00:00,solana:9ZRHMXqFTucBLuCs3TqmDEPjQCzhSuZ3bQR6dqpepump,solana,9ZRHMXqFTucBLuCs3TqmDEPjQCzhSuZ3bQR6dqpepump,ZERODAY,liquidity,75,0.000002182,3026.01,729918.3,2133,1.26,6369,4063,-98.02,-94.67,2.343e-06,2.212e-06,2.007e-06
-2026-10-30T10:40:21+00:00,solana:DGtDAjPdn5LqxDXgi7J6enAjh22MeJbi8ZmaFCvvpump,solana,DGtDAjPdn5LqxDXgi7J6enAjh22MeJbi8ZmaFCvvpump,SeaZ,liquidity,55,0.00001020,,121470.02,10204.52,0.79,1817,1628,177,177,4.507e-06,3.56e-06,2.967e-06
-2026-10-30T10:50:18+00:00,solana:25MxGYB464N6PcGj7xjVCzSNQc7ftF9YXih4Kx9Lpump,solana,25MxGYB464N6PcGj7xjVCzSNQc7ftF9YXih4Kx9Lpump,SEC,liquidity,20,0.000004415,,2383.03,4415.88,0.21,25,12,35.06,35.06,7.647e-06,5.719e-06,2.947e-06
 2026-10-30T10:50:18+00:00,solana:5ANpBFZjmhTv48dvU18sCLmgQS9mwJ7meU6aMYSZpump,solana,5ANpBFZjmhTv48dvU18sCLmgQS9mwJ7meU6aMYSZpump,BURN,liquidity,45,0.000006098,,40030.67,6098.75,0.28,733,695,99.04,99.04,1.123e-05,3.076e-06,2.902e-06
 2026-10-30T11:00:20+00:00,solana:5yappSXzEFBAqJufBqhpRJq29BVFbd5iyAkLvZgBpump,solana,5yappSXzEFBAqJufBqhpRJq29BVFbd5iyAkLvZgBpump,DAEMON,tier B,77,0.00006065,19106.78,97733.98,60655,0.16,1633,1101,50.6,50.6,2.133e-05,4.455e-06,2.715e-06
 2026-10-30T11:00:20+00:00,solana:HftEwseBtcbgxj9j7AfgsA5ZiTEhSK9qWXZs8rzfpump,solana,HftEwseBtcbgxj9j7AfgsA5ZiTEhSK9qWXZs8rzfpump,CTO,tier B,82,0.0001647,33095.44,169686.2,164774,0.3,2365,1339,303,303,1.997e-06,1.925e-06,1.93e-06
@@ -5999,3 +5996,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-12T19:30:21+00:00,solana:6fCpzJrFQzx3p6jncbAcuR9RiDqdFGe1vGnk3GBipump,solana,6fCpzJrFQzx3p6jncbAcuR9RiDqdFGe1vGnk3GBipump,Mihao,liquidity,35,,,0,,0.3,586,377,,,,,
 2026-11-12T19:30:21+00:00,solana:CmPE3yKAsAENfB5YcJNQN1NEWGbgbimMazm9yeitpump,solana,CmPE3yKAsAENfB5YcJNQN1NEWGbgbimMazm9yeitpump,Lori,liquidity,35,,,0,,0.33,1624,1251,,,,,
 2026-11-12T19:30:21+00:00,solana:9MNd7YeJdKiEsHhwj9uVLw54ZqyJEz5rcP7TprX3RVqJ,solana,9MNd7YeJdKiEsHhwj9uVLw54ZqyJEz5rcP7TprX3RVqJ,DacityCoin,liquidity,25,,,0,,0.38,294,121,,,,,
+2026-11-12T19:40:18+00:00,solana:BswEqVsp76gfCrA9fG4sA1KGeCYBwBo8iZGJh6e4pump,solana,BswEqVsp76gfCrA9fG4sA1KGeCYBwBo8iZGJh6e4pump,JENSWAN,liquidity,45,0.000002706,,34582.23,2706.13,0.12,650,466,-1.9,-1.9,,,
+2026-11-12T19:40:18+00:00,solana:E19KsBsmkqWFL1k7byEF2rxrYn2Rn3bs8EVHKCF2pump,solana,E19KsBsmkqWFL1k7byEF2rxrYn2Rn3bs8EVHKCF2pump,AMC,tier B,77,0.0001231,25462.78,162330.14,123119,0.18,3549,1047,202,202,,,
+2026-11-12T19:40:18+00:00,robinhood:0xfd3D608d75DA677216622a334D3939939F32cFD5,robinhood,0xfd3D608d75DA677216622a334D3939939F32cFD5,Dickcoin,price change,82,0.0001387,48237.97,220957.02,138775,0.73,728,441,2609,2609,,,
