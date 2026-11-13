@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-10-30T20:40:19+00:00,solana:6C1JdN6V7B4beZGxZxjhCGCncmWt22zD8i4Q4cq1pump,solana,6C1JdN6V7B4beZGxZxjhCGCncmWt22zD8i4Q4cq1pump,Pumpfluencer,tier B,72,0.00003686,15156.62,26101.78,36860,0.05,382,309,-20.29,-20.29,1.367e-05,6.062e-06,7.411e-06
 2026-10-30T20:40:19+00:00,solana:8iifkN8P7wvJB58XxrsERqY24wWP7TEWWwtee5Kxpump,solana,8iifkN8P7wvJB58XxrsERqY24wWP7TEWWwtee5Kxpump,POOLZ,tier B,57,0.00003680,14015.79,5105.72,36762,0.08,72,60,-6.4,-6.4,2.468e-06,2.057e-06,2.041e-06
 2026-10-30T20:40:19+00:00,solana:94Uri6g5xK3E3av7hkcNB88qUp6XANtfRfxArrbkpump,solana,94Uri6g5xK3E3av7hkcNB88qUp6XANtfRfxArrbkpump,ROPAD,liquidity,65,0.000001904,1934.91,115114.23,1904,0.3,162,169,-95.75,-95.75,1.832e-06,1.888e-06,1.933e-06
 2026-10-30T20:40:19+00:00,solana:GmnJeWjQGNd4q9HsWVYahGNeCn8CYkzghKB2HxSVpump,solana,GmnJeWjQGNd4q9HsWVYahGNeCn8CYkzghKB2HxSVpump,PUMPBUCKS,liquidity,70,0.000005120,4555.39,213896.78,4919,0.73,3177,2424,-88.89,-88.89,3.801e-06,3.576e-06,2.592e-06
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-13T05:30:24+00:00,solana:83N7xu7hWyPPsgkdkyhwcCWjQUi2mJFwSKRPAMawpump,solana,83N7xu7hWyPPsgkdkyhwcCWjQUi2mJFwSKRPAMawpump,AI,liquidity,45,0.000005215,,17947.45,5215.45,0.12,310,213,96.24,96.24,,,
 2026-11-13T05:30:24+00:00,solana:tmR3txWWN9XwZgX8XZmStRs7o88mJbQnsZ7qC6mpump,solana,tmR3txWWN9XwZgX8XZmStRs7o88mJbQnsZ7qC6mpump,MOGE,liquidity,70,0.000001450,1519.1,457780.32,1443,0.81,3402,3526,-96.85,-96.85,,,
 2026-11-13T05:30:24+00:00,solana:ByCUjGx4FkhK7ac8Vdqzb41yScUtvG78GBYSXKsMpump,solana,ByCUjGx4FkhK7ac8Vdqzb41yScUtvG78GBYSXKsMpump,dca,price change,87,0.0002049,34495.39,518330.69,188627,1.32,7026,5079,158,562,,,
+2026-11-13T05:40:16+00:00,solana:4k5odjodBZAGsL7NWMTV1eg5aH5GkhujuLJjCTxQpump,solana,4k5odjodBZAGsL7NWMTV1eg5aH5GkhujuLJjCTxQpump,LEAP,tier B,87,0.00004196,14058.43,140708.32,41292,1.0,1237,806,-0.77,-0.77,,,
