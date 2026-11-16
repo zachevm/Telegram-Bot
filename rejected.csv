@@ -1,7 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-02T17:20:26+00:00,solana:AYDL7DTa6AidQ1nUSAEAnzVAFDDewDXbSyy8Hh2wpump,solana,AYDL7DTa6AidQ1nUSAEAnzVAFDDewDXbSyy8Hh2wpump,Slingoor,liquidity,70,0.000001857,1929.96,263618.23,1831,0.86,5589,3618,-95.98,-95.98,1.716e-06,1.712e-06,1.71e-06
-2026-11-02T17:20:27+00:00,solana:3Z8mK9QRy3ZphSTqoi1Duzok8an4WCND9XrHWfgKpump,solana,3Z8mK9QRy3ZphSTqoi1Duzok8an4WCND9XrHWfgKpump,FEAR,liquidity,75,0.000002157,2324.17,608741.46,2101,1.21,5496,3650,-98.17,-94.53,2.096e-06,2.089e-06,1.891e-06
-2026-11-02T17:30:21+00:00,solana:Cbq6R3dzTzWbwjqugSwu9uq3DXj9y1NXnDxQdemkK6yS,solana,Cbq6R3dzTzWbwjqugSwu9uq3DXj9y1NXnDxQdemkK6yS,$USAVE,liquidity,15,0.000003386,3153.6,180.68,3387,309.1,5,0,26.12,26.12,4.065e-06,3.195e-06,3.209e-06
 2026-11-02T17:30:21+00:00,solana:9ueEeBuYUc9X1GrNCyWHbKGnHJq1kaD2nvDapDsMpump,solana,9ueEeBuYUc9X1GrNCyWHbKGnHJq1kaD2nvDapDsMpump,DMOTH,liquidity,40,0.000008725,,26709.18,8725.13,0.47,263,202,222,222,7.708e-06,7.627e-06,1.903e-05
 2026-11-02T17:30:21+00:00,solana:3q4QK2LamNkMXULquJzHLqitMHyBHJ2ga52WSQ1nhpos,solana,3q4QK2LamNkMXULquJzHLqitMHyBHJ2ga52WSQ1nhpos,ETHEREUM,liquidity,25,0.0001674,340.25,222.54,167461,5.66,22,52,-1.41,16.19,0.0001674,0.0001956,0.000186
 2026-11-02T17:30:21+00:00,solana:HzwxT5ETJnPLNpCJTUWxEzR533uokh7ErJwSxqnZpump,solana,HzwxT5ETJnPLNpCJTUWxEzR533uokh7ErJwSxqnZpump,UI,liquidity,35,,,0,,0.23,409,291,-23.64,-23.64,NA,NA,NA
@@ -5999,3 +5996,6 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-16T06:20:19+00:00,solana:CNqsVZXiEspYizDtg8SbC2MjikCKF3XCLxyJbfGMpump,solana,CNqsVZXiEspYizDtg8SbC2MjikCKF3XCLxyJbfGMpump,nut,liquidity,45,0.000005586,,15330.79,5586.58,0.04,267,429,129,129,,,
 2026-11-16T06:20:19+00:00,solana:7sEL1yzHQDnF2C3AoLxq6j7WoskZwWsmwMtfJbp9fund,solana,7sEL1yzHQDnF2C3AoLxq6j7WoskZwWsmwMtfJbp9fund,FUND,liquidity,45,0.00001389,,28645.12,13897.43,0.11,476,279,556,556,,,
 2026-11-16T06:20:19+00:00,solana:73Ku6hbDFRFh7vymND9sXGSNXqtDpCnCqikqbDVRpump,solana,73Ku6hbDFRFh7vymND9sXGSNXqtDpCnCqikqbDVRpump,Town,liquidity,40,,,0,,7.27,982,696,10.65,-2.63,,,
+2026-11-16T06:30:15+00:00,solana:7KpFhZkvD2ikUVh2hGL7HJb78rNdvE267zjQhMcMpump,solana,7KpFhZkvD2ikUVh2hGL7HJb78rNdvE267zjQhMcMpump,STOCKODILE,liquidity,30,,,0,,0.16,219,172,,,,,
+2026-11-16T06:30:15+00:00,solana:FUrKeKgxQibFv3s6vGLZaYsUPFVY3Sj3YZtc3ApMpump,solana,FUrKeKgxQibFv3s6vGLZaYsUPFVY3Sj3YZtc3ApMpump,GATSBY,liquidity,45,0.00001110,,16573.57,11102.44,0.4,327,217,427,427,,,
+2026-11-16T06:30:15+00:00,solana:8ehHaMNXcYM6HgU7nyebg15p61k4SFr9C8B7sguZpump,solana,8ehHaMNXcYM6HgU7nyebg15p61k4SFr9C8B7sguZpump,PUP,liquidity,45,0.000004421,,20261.42,4421.41,0.19,327,267,73.7,73.7,,,
