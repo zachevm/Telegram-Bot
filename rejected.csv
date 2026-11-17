@@ -1,6 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-03T15:30:22+00:00,solana:DMj9KSUrZzQXxrmkTheGvkBW4rSwHsNSpJWgjGC3pump,solana,DMj9KSUrZzQXxrmkTheGvkBW4rSwHsNSpJWgjGC3pump,LARVA,liquidity,50,0.00001271,,41215.33,12713.64,1.66,700,532,107,241,9.576e-06,5.635e-06,6.272e-06
-2026-11-03T15:30:22+00:00,solana:A9VWPRrLTVv5QF4HYmNmG7bXMZyeZQZ3WW5XgTnqpump,solana,A9VWPRrLTVv5QF4HYmNmG7bXMZyeZQZ3WW5XgTnqpump,FIGHT,liquidity,45,0.000003751,,42834.51,3751.1,0.22,779,545,28.33,28.33,3.089e-06,3.047e-06,3.181e-06
 2026-11-03T15:30:22+00:00,solana:A78rRtMTz8NpoEctuERvAZwt8rm67wAW2gmnEZUBahtD,solana,A78rRtMTz8NpoEctuERvAZwt8rm67wAW2gmnEZUBahtD,RED,liquidity,50,0.00002231,,96925.29,22315.62,0.91,1346,1135,461,461,2.609e-05,1.205e-05,2.544e-06
 2026-11-03T15:30:22+00:00,solana:89ZLaW7uR8vf6nZjmfZ63cWWtXzt4J7uqkmLYrRFpump,solana,89ZLaW7uR8vf6nZjmfZ63cWWtXzt4J7uqkmLYrRFpump,KITTY,tier B,65,0.000007288,5416.51,27957.18,7289,0.09,512,539,-80.45,-80.45,3.57e-06,2.904e-06,2.669e-06
 2026-11-03T15:30:22+00:00,solana:96dzMNxHP2eJdpBr8VfR719PnQyStE31pMVTgXc6pump,solana,96dzMNxHP2eJdpBr8VfR719PnQyStE31pMVTgXc6pump,PMT,liquidity,65,0.000001952,2225.3,447120.96,1906,0.62,6888,2768,-96.71,-96.71,2.146e-06,1.893e-06,1.832e-06
@@ -5999,3 +5997,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-17T07:00:24+00:00,ethereum:0x2f8e2F2874D9e5C2ebf73867798757aFcD94e307,ethereum,0x2f8e2F2874D9e5C2ebf73867798757aFcD94e307,KATIA,price change,62,0.0002025,36639.08,60900.14,202525,0.43,176,34,10261,10261,,,
 2026-11-17T07:00:24+00:00,solana:Bu2rhDgH5aLWn2ayAFyARtpnEJDAex8qkG8Y7Sp2pump,solana,Bu2rhDgH5aLWn2ayAFyARtpnEJDAex8qkG8Y7Sp2pump,DacityWheel,liquidity,45,0.00001928,,49842.69,19287.45,0.1,669,608,394,394,,,
 2026-11-17T07:00:24+00:00,solana:8rkatUGY8nJPpSLa14vFEBCeuGy9kpfYkLos1wsJLcrg,solana,8rkatUGY8nJPpSLa14vFEBCeuGy9kpfYkLos1wsJLcrg,gamercat,liquidity,40,0.00002073,,35067.17,20737.59,0.19,816,415,461,461,,,
+2026-11-17T07:10:17+00:00,solana:2uqeze8xT3SnxRHioM5MKwqb23e4Z3cuaRzUntimpump,solana,2uqeze8xT3SnxRHioM5MKwqb23e4Z3cuaRzUntimpump,CLOUT,liquidity,40,0.00001603,,33757.25,16031.99,0.17,620,328,577,577,,,
+2026-11-17T07:10:17+00:00,solana:8rkatUGY8nJPpSLa14vFEBCeuGy9kpfYkLos1wsJLcrg,solana,8rkatUGY8nJPpSLa14vFEBCeuGy9kpfYkLos1wsJLcrg,gamercat,tier B,57,0.00003656,14828.38,4847.12,36516,0.03,69,39,-22.63,-22.63,,,
