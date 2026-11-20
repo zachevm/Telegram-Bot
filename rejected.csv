@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-06T18:00:21+00:00,solana:Cgs33XVwju57dToPZSRxAiEMxj9qWGxR7CT8j44pump,solana,Cgs33XVwju57dToPZSRxAiEMxj9qWGxR7CT8j44pump,PICASSO,liquidity,75,0.000001775,1928.92,576718.86,1746,2.46,8860,5306,-98.57,-95.35,1.779e-06,1.824e-06,1.814e-06
 2026-11-06T18:10:23+00:00,solana:3rxXFMNgXgefmncUJnbmt9CWNyknbD6q7uZfZza3pump,solana,3rxXFMNgXgefmncUJnbmt9CWNyknbD6q7uZfZza3pump,BORDERLESS,liquidity,55,0.00002609,,70268,26094.05,1.1,841,530,66.72,868,6.383e-05,3.932e-05,3.33e-05
 2026-11-06T18:10:23+00:00,solana:Hzd8aipeiiB7txuG9yYnAw4SbDpn9dJbFX514WSrpump,solana,Hzd8aipeiiB7txuG9yYnAw4SbDpn9dJbFX514WSrpump,HABIBI,liquidity,50,0.00001764,,75938.63,17643.23,0.24,1406,918,482,482,4.031e-06,4.494e-06,3.791e-06
 2026-11-06T18:10:23+00:00,solana:2XHe8XaNzbKEPmiZWqqBLhDKEKYa9xFdros6DFbrpump,solana,2XHe8XaNzbKEPmiZWqqBLhDKEKYa9xFdros6DFbrpump,FOMO,liquidity,30,0.00003682,,18049.02,36827.19,0.56,140,52,1354,1354,3.682e-05,3.682e-05,1.763e-06
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-20T19:00:22+00:00,solana:B4C3Jbueio385X9zH3ezXRLZpuAKJcVcjH2ZaDhapump,solana,B4C3Jbueio385X9zH3ezXRLZpuAKJcVcjH2ZaDhapump,FIONAWIF,tier B,67,0.0001106,22145.62,81357.88,110672,0.38,2795,432,223,223,,,
 2026-11-20T19:00:22+00:00,solana:G6H8DjYRPomfmG5KrEAMpxoUU2uRLxdeTrkxnSiXpump,solana,G6H8DjYRPomfmG5KrEAMpxoUU2uRLxdeTrkxnSiXpump,MIC,tier B,82,0.00003893,13989.44,203922.02,38885,0.2,2982,3014,38.46,38.46,,,
 2026-11-20T19:00:22+00:00,solana:9WcGenJJraGbS3x8bAvHp1bk9Zg2DV3NYcePbD9jpump,solana,9WcGenJJraGbS3x8bAvHp1bk9Zg2DV3NYcePbD9jpump,DOG,liquidity,70,0.000003006,2713.71,128626.87,3006,0.36,2297,2017,-89.39,-89.39,,,
+2026-11-20T19:10:18+00:00,solana:7KUg78hyohckj8i728YuCu6CweTArxhwRrVrFyvHpump,solana,7KUg78hyohckj8i728YuCu6CweTArxhwRrVrFyvHpump,Singularity,tier B,72,0.0001631,28703.45,199982.78,163144,0.14,3197,596,330,330,,,
