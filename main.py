@@ -4,6 +4,8 @@ import html
 import json
 import logging
 import os
+import re
+import xml.etree.ElementTree as ET
 from collections import Counter
 from datetime import datetime, timezone
 from urllib.parse import urlparse
@@ -65,14 +67,17 @@ MAX_RUN_ROWS = 5000
 MAX_NEW_REJECTS_PER_RUN = 40    # cap on newly logged rejected tokens per run
 MAX_TRACKING_CALLS = 40         # cap on DexScreener price lookups per run for tracking
 
-# Tiering. Tier A alerts are sent. Tier B candidates (they passed every filter) are NOT sent;
-# they are logged to rejected.csv with reason "tier B" and their outcomes are still tracked,
-# so the tier rule keeps being tested on fresh data. Set TIERING_ENABLED = False to send everything.
-# Tier A = a token on one of TIER_A_CHAINS with liquidity at or above the cut-off.
-# (Batch 2 data: Robinhood-chain tokens with liquidity of $33k or more did best; Solana did worst.)
+# Chains. Only tokens on ALLOWED_CHAINS are sent, each labelled with its chain (e.g. "SOLANA CALL").
+# Everything else that passes the filters is NOT sent; it is logged to rejected.csv with reason
+# "other chain" or "tier B" and still tracked, so you can see what you skipped.
+# CHAIN_MIN_LIQUIDITY_USD sets a higher liquidity floor for a chain; other chains use the global floor.
+# MAX_ALERTS_PER_CHAIN_PER_RUN stops one busy chain (Solana) from using up all the slots in a run.
+# Set TIERING_ENABLED = False to send every chain's tokens.
 TIERING_ENABLED = True
-TIER_A_CHAINS = {"robinhood"}
-TIER_A_MIN_LIQUIDITY_USD = 33_000
+ALLOWED_CHAINS = {"solana", "ethereum", "bsc", "base", "robinhood"}
+CHAIN_MIN_LIQUIDITY_USD = {"robinhood": 33_000}
+CHAIN_LABELS = {"solana": "SOLANA", "ethereum": "ETH", "bsc": "BSC", "base": "BASE", "robinhood": "ROBINHOOD"}
+MAX_ALERTS_PER_CHAIN_PER_RUN = 2
 MAX_PLAUSIBLE_MULTIPLE = 1000   # tracked prices above 1,000x the alert price are treated as bad data and ignored
 
 # ============================================================
@@ -186,15 +191,20 @@ def pair_age_hours(pair):
     except (ValueError, TypeError, OverflowError):
         return None
 
-def is_tier_a(chain, pair):
-    """Tier A: a chain in TIER_A_CHAINS with liquidity at or above the cut-off."""
-    if str(chain).lower() not in TIER_A_CHAINS:
-        return False
-    try:
-        liquidity = float((pair.get("liquidity") or {}).get("usd") or 0)
-    except (ValueError, TypeError):
-        return False
-    return liquidity >= TIER_A_MIN_LIQUIDITY_USD
+def chain_reject_reason(chain, pair):
+    """None if the token may be sent; otherwise why it is held back (logged, not sent)."""
+    chain = str(chain).lower()
+    if chain not in ALLOWED_CHAINS:
+        return "other chain"
+    floor = CHAIN_MIN_LIQUIDITY_USD.get(chain)
+    if floor is not None:
+        try:
+            liquidity = float((pair.get("liquidity") or {}).get("usd") or 0)
+        except (ValueError, TypeError):
+            return "tier B"
+        if liquidity < floor:
+            return "tier B"
+    return None
 
 def calculate_discovery_score(pair):
     score = 0
@@ -322,7 +332,7 @@ def build_links_text(token, dex_url):
 # TELEGRAM MESSAGE
 # ============================================================
 
-def build_message(token, pair):
+def build_message(token, pair, tags=None):
     chain = token.get("chainId", "Unknown")
     address = token.get("tokenAddress", "Unknown")
     base_token = pair.get("baseToken") or {}
@@ -359,8 +369,14 @@ def build_message(token, pair):
     safe_dex = html.escape(str(dex))
     safe_address = html.escape(str(address))
 
+    tag_lines = ""
+    if tags and tags.get("topic"):
+        tag_lines += f"🔥 <b>TRENDING TOPIC:</b> {html.escape(str(tags['topic']))}\n"
+    if tags and tags.get("onchain"):
+        tag_lines += "📈 <b>TRENDING ON-CHAIN</b>\n"
+
     message = (
-        "🚨 <b>TOKEN ALERT</b>\n\n"
+        f"🚨 <b>{html.escape(CHAIN_LABELS.get(str(chain).lower(), str(chain).upper()))} CALL</b>\n{tag_lines}\n"
         f"🪙 <b>{safe_name}</b> <code>${safe_symbol}</code>\n\n"
         f"⛓ <b>Chain:</b> {safe_chain}\n"
         f"🏪 <b>DEX:</b> {safe_dex}\n"
@@ -442,7 +458,7 @@ async def send_telegram(client, message):
 ALERT_FIELDS = [
     "time", "token_id", "chain", "address", "symbol", "score", "price_usd",
     "liquidity_usd", "volume_24h", "market_cap", "age_hours", "buys_24h", "sells_24h",
-    "change_1h", "change_24h", "price_1h", "price_6h", "price_24h", "max_price", "min_price",
+    "change_1h", "change_24h", "price_1h", "price_6h", "price_24h", "max_price", "min_price", "tag",
 ]
 REJECTED_FIELDS = [
     "time", "token_id", "chain", "address", "symbol", "reason", "score", "price_usd",
@@ -455,6 +471,7 @@ RUN_FIELDS = [
     "rej_liquidity", "rej_trades", "rej_sells", "rej_no_age", "rej_age", "rej_price_change",
     "rej_bad_data", "low_score", "accepted", "alerts_sent", "group_sends", "dm_sends",
     "no_delivery", "session_failed", "tracking_calls", "tier_b",
+    "trend_topics", "topic_tokens", "gecko_tokens", "tagged",
 ]
 
 # Outcome checks: a price is recorded when a row is 1h, 6h and 24h old.
@@ -527,7 +544,7 @@ def safe_score(pair):
     except Exception:
         return ""
 
-def make_alert_row(token, pair, token_id, score):
+def make_alert_row(token, pair, token_id, score, tag=""):
     row = {
         "time": now_iso(),
         "token_id": token_id,
@@ -535,6 +552,7 @@ def make_alert_row(token, pair, token_id, score):
         "address": token.get("tokenAddress", ""),
         "symbol": (pair.get("baseToken") or {}).get("symbol", ""),
         "score": score,
+        "tag": tag,
         "price_1h": "", "price_6h": "", "price_24h": "",
     }
     row.update(pair_metrics(pair))
@@ -705,6 +723,131 @@ def save_tracking(new_alerts, new_rejects, run_row):
         log.exception("Tracking update failed (alerts are unaffected): %s", e)
 
 # ============================================================
+# TRENDING TAGS (free sources only)
+#   1. Topic match: Google's trending searches -> DexScreener search -> best token per topic.
+#   2. On-chain trending: tokens on GeckoTerminal's trending-pools lists.
+# These only add a label to an alert (and, for topic matches, surface tokens the profile feed
+# missed). Any failure here is logged and ignored: it never stops normal alerts.
+# ============================================================
+
+TRENDS_ENABLED = True
+TREND_FEED_URLS = ["https://trends.google.com/trending/rss?geo=US"]
+TREND_MAX_TOPICS = 20            # topics checked per run
+TREND_MAX_TOPIC_TOKENS = 3       # most topic-matched tokens added per run
+TOPIC_MAX_PAIR_AGE_HOURS = 72    # a token named after an event must be a recent launch
+SEARCH_URL = "https://api.dexscreener.com/latest/dex/search"
+GECKO_URL = "https://api.geckoterminal.com/api/v2"
+GECKO_NETWORKS = ["solana", "eth", "bsc", "base"]
+TREND_STOPWORDS = {"the", "and", "for", "with", "from", "that", "this", "vs", "live", "news", "today", "score",
+                   "game", "news", "update", "updates", "highlights", "weather", "near", "what", "when"}
+
+def norm_words(text):
+    return re.sub(r"[^a-z0-9 ]+", " ", str(text or "").lower()).split()
+
+def fetch_trending_topics():
+    topics, seen_topics = [], set()
+    for url in TREND_FEED_URLS:
+        try:
+            r = session.get(url, timeout=20)
+            r.raise_for_status()
+            root = ET.fromstring(r.content)
+        except Exception as e:
+            log.warning("Trending topics feed failed (%s): %s", url, e)
+            continue
+        for item in root.iter("item"):
+            words = norm_words(item.findtext("title"))
+            phrase = " ".join(words)
+            if len("".join(words)) < 4 or phrase in seen_topics:
+                continue
+            seen_topics.add(phrase)
+            topics.append(phrase)
+    return topics[:TREND_MAX_TOPICS]
+
+def name_matches_topic(topic_words, name, symbol):
+    topic_flat = "".join(topic_words)
+    name_flat = "".join(norm_words(name))
+    sym_flat = "".join(norm_words(symbol))
+    if len(topic_flat) >= 4 and (topic_flat in name_flat or topic_flat in sym_flat):
+        return True
+    sig = [w for w in topic_words if len(w) >= 4 and w not in TREND_STOPWORDS]
+    return len(sig) >= 2 and all(w in name_flat for w in sig)
+
+def find_topic_tokens(topics):
+    """For each topic, search DexScreener and keep the single best matching token
+    (highest liquidity, then volume) on an allowed chain that launched recently."""
+    found, used = [], set()
+    for topic in topics:
+        if len(found) >= TREND_MAX_TOPIC_TOKENS:
+            break
+        words = topic.split()
+        try:
+            r = session.get(SEARCH_URL, params={"q": topic}, timeout=20)
+            r.raise_for_status()
+            pairs = r.json().get("pairs") or []
+        except Exception as e:
+            log.warning("Topic search failed for %r: %s", topic, e)
+            continue
+        best = None
+        for pr in pairs:
+            if not isinstance(pr, dict):
+                continue
+            if str(pr.get("chainId", "")).lower() not in ALLOWED_CHAINS:
+                continue
+            base = pr.get("baseToken") or {}
+            if not name_matches_topic(words, base.get("name"), base.get("symbol")):
+                continue
+            age = pair_age_hours(pr)
+            if age is None or age > TOPIC_MAX_PAIR_AGE_HOURS:
+                continue
+            try:
+                key = (float((pr.get("liquidity") or {}).get("usd") or 0),
+                       float((pr.get("volume") or {}).get("h24") or 0))
+            except (ValueError, TypeError):
+                continue
+            if best is None or key > best[0]:
+                best = (key, pr)
+        if best:
+            pr = best[1]
+            addr = (pr.get("baseToken") or {}).get("address")
+            ident = (str(pr.get("chainId")), str(addr).lower())
+            if addr and ident not in used:
+                used.add(ident)
+                found.append(({"chainId": pr["chainId"], "tokenAddress": addr, "description": "",
+                               "links": [], "url": pr.get("url", "")}, topic))
+    return found
+
+def fetch_gecko_trending():
+    """Addresses (lower-case) of base tokens in GeckoTerminal's trending pools."""
+    addrs = set()
+    urls = [f"{GECKO_URL}/networks/trending_pools"] + [f"{GECKO_URL}/networks/{n}/trending_pools" for n in GECKO_NETWORKS]
+    for url in urls:
+        try:
+            r = session.get(url, headers={"accept": "application/json"}, timeout=20)
+            r.raise_for_status()
+            data = r.json().get("data") or []
+        except Exception as e:
+            log.warning("GeckoTerminal trending failed (%s): %s", url, e)
+            continue
+        for pool in data:
+            try:
+                tid = str(pool["relationships"]["base_token"]["data"]["id"])
+            except (KeyError, TypeError):
+                continue
+            if "_" in tid:
+                addrs.add(tid.split("_", 1)[1].lower())
+    return addrs
+
+def tags_to_text(tags):
+    if not tags:
+        return ""
+    parts = []
+    if tags.get("topic"):
+        parts.append(f"topic: {tags['topic']}")
+    if tags.get("onchain"):
+        parts.append("onchain")
+    return " + ".join(parts)
+
+# ============================================================
 # MAIN
 # ============================================================
 
@@ -738,6 +881,27 @@ async def main():
         tokens = get_latest_tokens()
         log.info("DexScreener returned %d token profiles", len(tokens))
         stats["profiles"] = len(tokens)
+
+        # Trending tags: free sources, failures ignored
+        tag_map, gecko_set = {}, set()
+        if TRENDS_ENABLED:
+            try:
+                topics = fetch_trending_topics()
+                stats["trend topics"] = len(topics)
+                topic_tokens = find_topic_tokens(topics)
+                for tok, topic in topic_tokens:
+                    tag_map[f"{tok['chainId']}:{tok['tokenAddress']}"] = topic
+                tokens = [tok for tok, _ in topic_tokens] + list(tokens)
+                stats["topic tokens"] = len(topic_tokens)
+                for tok, topic in topic_tokens:
+                    log.info("Topic match: %r -> %s:%s", topic, tok["chainId"], tok["tokenAddress"])
+            except Exception as e:
+                log.warning("Topic matching failed: %s", e)
+            try:
+                gecko_set = fetch_gecko_trending()
+                stats["gecko trending"] = len(gecko_set)
+            except Exception as e:
+                log.warning("GeckoTerminal tagging failed: %s", e)
 
         # ----------------------------------------------------
         # DISCOVERY
@@ -803,17 +967,19 @@ async def main():
                 log_reject(token, pair, token_id, "low score", score)
                 continue
 
-            if TIERING_ENABLED and not is_tier_a(chain, pair):
+            hold_reason = chain_reject_reason(chain, pair) if TIERING_ENABLED else None
+            if hold_reason:
                 stats["tier B"] += 1
-                log.info("Tier B (logged, not sent): %s | score=%d", token_id, score)
-                log_reject(token, pair, token_id, "tier B", score)
+                log.info("Held back (%s), logged not sent: %s | score=%d", hold_reason, token_id, score)
+                log_reject(token, pair, token_id, hold_reason, score)
                 continue
 
             candidates.append({
                 "token": token,
                 "pair": pair,
                 "token_id": token_id,
-                "score": score
+                "score": score,
+                "tags": {"topic": tag_map.get(token_id), "onchain": str(address).lower() in gecko_set},
             })
 
             log.info("Candidate accepted: %s | score=%d", token_id, score)
@@ -845,7 +1011,17 @@ async def main():
             session_failed = True
 
         try:
-            for alert_index, candidate in enumerate(candidates[:MAX_ALERTS_PER_RUN]):
+            chosen, per_chain = [], Counter()
+            for cand in candidates:
+                ch = str(cand["token"].get("chainId", "")).lower()
+                if per_chain[ch] >= MAX_ALERTS_PER_CHAIN_PER_RUN:
+                    stats["chain cap"] += 1
+                    continue  # not marked seen, so it is reconsidered next run
+                chosen.append(cand)
+                per_chain[ch] += 1
+                if len(chosen) >= MAX_ALERTS_PER_RUN:
+                    break
+            for alert_index, candidate in enumerate(chosen):
                 # Pace consecutive scanner alerts; the first alert is sent immediately.
                 if alert_index > 0 and ALERT_DELAY_SECONDS > 0:
                     log.info("Waiting %s seconds before the next alert", ALERT_DELAY_SECONDS)
@@ -857,7 +1033,7 @@ async def main():
                 score = candidate["score"]
 
                 try:
-                    message = build_message(token, pair)
+                    message = build_message(token, pair, candidate.get("tags"))
 
                     # 1. Telethon sends to the group (triggers Phanes).
                     destinations = 0
@@ -875,7 +1051,10 @@ async def main():
                         sent += 1
                         seen.append(token_id)
                         seen_set.add(token_id)
-                        new_alerts.append(make_alert_row(token, pair, token_id, score))
+                        tag_str = tags_to_text(candidate.get("tags"))
+                        if tag_str:
+                            stats["tagged"] += 1
+                        new_alerts.append(make_alert_row(token, pair, token_id, score, tag_str))
                         log.info("Alert sent: %s | score=%d | group=%d | dm=%s",
                                  token_id, score, destinations, dm_ok)
                     else:
@@ -899,10 +1078,11 @@ async def main():
         ) or "none"
         log.info(
             "SUMMARY | profiles: %d | already seen: %d | no pair data: %d | not base token: %d | "
-            "lookup errors: %d | hard-filter rejects: [%s] | low score: %d | tier B: %d | accepted (tier A): %d | "
+            "lookup errors: %d | hard-filter rejects: [%s] | low score: %d | tier B: %d | accepted (tier A): %d | trend topics: %d | topic tokens: %d | gecko trending: %d | tagged: %d | "
             "group sends: %d | dm sends: %d | no delivery: %d",
             stats["profiles"], stats["already seen"], stats["no pair data"], stats["not base token"],
             stats["lookup error"], rejected, stats["low score"], stats["tier B"], len(candidates),
+            stats["trend topics"], stats["topic tokens"], stats["gecko trending"], stats["tagged"],
             stats["group sends"], stats["dm sends"], stats["no delivery"],
         )
         log.info("Run complete | alerts sent: %d | candidates: %d", sent, len(candidates))
@@ -929,6 +1109,10 @@ async def main():
             "no_delivery": stats["no delivery"],
             "session_failed": int(session_failed),
             "tier_b": stats["tier B"],
+            "trend_topics": stats["trend topics"],
+            "topic_tokens": stats["topic tokens"],
+            "gecko_tokens": stats["gecko trending"],
+            "tagged": stats["tagged"],
         }
         save_tracking(new_alerts, new_rejects, run_row)
 
