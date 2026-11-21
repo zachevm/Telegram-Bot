@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-07T02:20:17+00:00,solana:41WpXn15fxQXEGhiKnkqHcoJn14tNXXgmymLKE57pump,solana,41WpXn15fxQXEGhiKnkqHcoJn14tNXXgmymLKE57pump,scamsem,price change,90,0.0008436,82904.89,952248.06,836977,1.16,10402,8186,120,1348,0.0007733,0.0006842,0.0003902
 2026-11-07T02:20:17+00:00,solana:6pUeTjF5emkd86EsfMiTRvgYbALT2Xp7hgbEXHrrpump,solana,6pUeTjF5emkd86EsfMiTRvgYbALT2Xp7hgbEXHrrpump,scamgoor,liquidity,35,,,0,,0.89,2446,1518,,,NA,NA,NA
 2026-11-07T02:20:17+00:00,solana:6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump,solana,6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump,PIRATE,tier B,82,0.0001601,35200.35,374506.12,152340,105.01,3375,3145,33.23,93.61,0.0001507,0.0001321,0.0001311
 2026-11-07T02:20:17+00:00,solana:FzmSx4UuG8Jhsrxvyt1xNtk6qFxo7KY4zGwPifKZpump,solana,FzmSx4UuG8Jhsrxvyt1xNtk6qFxo7KY4zGwPifKZpump,Busted,liquidity,75,0.000001841,1922.96,462163.6,1823,1.93,3191,3150,-99.34,-95.34,1.785e-06,1.87e-06,1.791e-06
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-21T06:40:17+00:00,solana:2ftiRezhjyU7x9qp4eneJPKWfUqcbcsdSLJDS6vgpump,solana,2ftiRezhjyU7x9qp4eneJPKWfUqcbcsdSLJDS6vgpump,RED,liquidity,55,0.00001084,,101584.25,10842.95,0.17,2290,1300,288,288,,,
 2026-11-21T06:50:16+00:00,solana:5gCboejDjSdfXcPQrwReUPw8vFmqWxyPtQZLHZ2npump,solana,5gCboejDjSdfXcPQrwReUPw8vFmqWxyPtQZLHZ2npump,JEWIE,liquidity,25,,,,,0.3,132,71,,,,,
 2026-11-21T06:50:16+00:00,solana:H9yG3dirMGTpV7hPiHavXYVbX7gzF5MnrvrboFTopump,solana,H9yG3dirMGTpV7hPiHavXYVbX7gzF5MnrvrboFTopump,KYS,age,55,0.00001719,8139,15503.71,16478,170.11,351,172,558,953,,,
+2026-11-21T07:30:17+00:00,solana:9fdXUWzmCXG5awmc11FNPWDthTngcqU9kd1whEPPXiJ6,solana,9fdXUWzmCXG5awmc11FNPWDthTngcqU9kd1whEPPXiJ6,SINGULARITY,liquidity,20,0.000005030,,3877.23,5030.78,6552.79,211,30,148,148,,,
