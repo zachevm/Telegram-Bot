@@ -1,6 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-07T12:40:19+00:00,solana:FHCntFVzzGmbcUNmf1jBGaBsi4duboB1cwjg4yrcpump,solana,FHCntFVzzGmbcUNmf1jBGaBsi4duboB1cwjg4yrcpump,trauma,liquidity,75,0.000001803,1979.99,570433.92,1768,1.23,5830,3895,-98.25,-95.23,1.805e-06,1.803e-06,1.798e-06
-2026-11-07T12:40:19+00:00,solana:4LHAeHbziM2KAcdmsiaWPSgz2oMdiHAqPhpB68xbpump,solana,4LHAeHbziM2KAcdmsiaWPSgz2oMdiHAqPhpB68xbpump,Burn,liquidity,75,0.000005381,4291.05,115048.8,4927,1.26,2865,2077,-83.36,-85.75,2.639e-06,2.519e-06,2.138e-06
 2026-11-07T12:50:21+00:00,solana:X7vvi2scAYDftprhfRf2ij2YHHbaL3Noenpzmrypump,solana,X7vvi2scAYDftprhfRf2ij2YHHbaL3Noenpzmrypump,cig,liquidity,55,0.00002052,,109953.99,20524.48,0.17,1784,1234,702,702,6.287e-06,2.13e-06,1.883e-06
 2026-11-07T13:00:16+00:00,solana:9m7DdaxLjDhdCXwrvfiEkJ4bjuitwoboiW9pAaqcpump,solana,9m7DdaxLjDhdCXwrvfiEkJ4bjuitwoboiW9pAaqcpump,memecoin,liquidity,50,0.00001481,,99054.08,14817.9,0.79,1960,1450,310,310,4.079e-06,3.062e-06,2.965e-06
 2026-11-07T13:00:16+00:00,solana:EphCWcWcVcG7fjtGhvk2UjCUqhRcRfpuTbCyn5xoBAGS,solana,EphCWcWcVcG7fjtGhvk2UjCUqhRcRfpuTbCyn5xoBAGS,DACITY,tier B,87,0.0001929,33799.87,483652.4,192963,1.29,9452,5752,-5.78,329,0.0001712,5.503e-05,2.885e-05
@@ -5999,3 +5997,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-21T20:00:21+00:00,solana:35UtpPrQLSZD6jgRj1ch4JrPPjmdQowFD3zAHf9Fpump,solana,35UtpPrQLSZD6jgRj1ch4JrPPjmdQowFD3zAHf9Fpump,ZVERMED,liquidity,25,0.000001965,,381.47,1965.52,5.72,5,6,,-5.97,,,
 2026-11-21T20:00:21+00:00,solana:5ijcUtBJt67661q8RToziZrquQh8L9dQuQG1izVpump,solana,5ijcUtBJt67661q8RToziZrquQh8L9dQuQG1izVpump,VEXA,age,50,0.000009667,5722.14,6105.31,9058,241.55,116,86,20.8,62.71,,,
 2026-11-21T20:00:21+00:00,robinhood:0x8bAF69d14707631fd33c3a7CEd81eE615c9dcADA,robinhood,0x8bAF69d14707631fd33c3a7CEd81eE615c9dcADA,Bigfoot,price change,82,0.00009333,33471.08,110350.41,93333,0.52,656,492,2421,2421,,,
+2026-11-21T20:10:21+00:00,solana:DdfxRvNXDfAByV9vDNao2dqZqSBcAyoJMZfVaCwGpump,solana,DdfxRvNXDfAByV9vDNao2dqZqSBcAyoJMZfVaCwGpump,QBIT,liquidity,45,0.000009133,,31514.12,9133.98,0.19,309,202,361,361,,,
+2026-11-21T20:10:21+00:00,solana:2WRcivgspC93QFStKZkToMDoGt7Bfs1LbrcPNABupump,solana,2WRcivgspC93QFStKZkToMDoGt7Bfs1LbrcPNABupump,NWB,liquidity,45,0.00001548,,37533.59,15487.31,98.22,471,365,-18.85,645,,,
