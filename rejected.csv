@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-07T23:40:21+00:00,solana:AdcN6x4M4ujrcAam1kgApn7XAssbDGtG8zX5Tgc9pump,solana,AdcN6x4M4ujrcAam1kgApn7XAssbDGtG8zX5Tgc9pump,PMUP,liquidity,50,0.000007162,,67564.28,7162.07,0.25,899,609,130,130,3.275e-06,3.224e-06,3.101e-06
 2026-11-07T23:40:21+00:00,robinhood:0x7884742276cB841Fe8E77aA25C7b7747Dea8DFb7,robinhood,0x7884742276cB841Fe8E77aA25C7b7747Dea8DFb7,TITRE,liquidity,5,0.0002070,0,0.17,207088,0.39,0,1,,,0.000207,0.000207,1.206e-05
 2026-11-07T23:40:21+00:00,ethereum:0xBe7038A9f31C86A8b09879D90e55ad77Ff0d8f8b,ethereum,0xBe7038A9f31C86A8b09879D90e55ad77Ff0d8f8b,DacityCoin,price change,85,0.007849,262761.33,1933745.56,7849489,3.15,825,271,15.59,327973,0.006819,0.005621,2.475e-06
 2026-11-07T23:40:21+00:00,solana:6nGocDUtGSJoSz1gUPgFGTpHtUSK3s7FN6zhB6AfLoat,solana,6nGocDUtGSJoSz1gUPgFGTpHtUSK3s7FN6zhB6AfLoat,APU,tier B,95,0.0004333,134149.91,590805.67,433391,0.15,4336,3104,228,228,7.249e-05,0.0003967,0.0001993
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-22T22:50:21+00:00,solana:DmmpWvKgipQwQTBdeouWq59XpppNjCip2dFoDQQwpump,solana,DmmpWvKgipQwQTBdeouWq59XpppNjCip2dFoDQQwpump,ZCAT,liquidity,35,,,,,0.19,289,219,,,,,
 2026-11-22T22:50:21+00:00,solana:3kFnvwHQcdxsiDHJi5fen5Z67gv3qny8LVCmZVXJpump,solana,3kFnvwHQcdxsiDHJi5fen5Z67gv3qny8LVCmZVXJpump,ZOL,liquidity,35,,,,,0.3,9376,7131,283,283,,,
 2026-11-22T22:50:21+00:00,bsc:0x8bea530150675c1eC537Bde45c0480164590c898,bsc,0x8bea530150675c1eC537Bde45c0480164590c898,TAMIYANOIA,liquidity,35,0.00000000002348,1539.58,899.25,11742,48316.95,21,35,-7.42,12.47,,,
+2026-11-22T23:00:21+00:00,solana:8VNNcni2hjFSEnXWFCcHwCRYRhYjsm8s56dJhR8ipump,solana,8VNNcni2hjFSEnXWFCcHwCRYRhYjsm8s56dJhR8ipump,ZCAT,liquidity,35,,,,,0.23,1550,1231,,,,,
