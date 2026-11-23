@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-08T03:00:18+00:00,solana:AzZmzinvmjsRdTRDVFTdJ99kJDCgWmWKuAmRsMgwpump,solana,AzZmzinvmjsRdTRDVFTdJ99kJDCgWmWKuAmRsMgwpump,PORKE,liquidity,15,,,0,,0.1,102,20,,,NA,NA,NA
 2026-11-08T03:00:18+00:00,solana:GDRSWpEeKWngc26CVLFXZyZCUwo9fEzctZoEAp1qpump,solana,GDRSWpEeKWngc26CVLFXZyZCUwo9fEzctZoEAp1qpump,HABIBI,tier B,72,0.0001968,33974.84,186705.01,194897,0.65,3384,688,347,347,0.0002065,1.699e-06,1.67e-06
 2026-11-08T03:00:18+00:00,solana:G1evzzdxVXa7q3ypytdrEWstKdaS2rvDG8q76jDTpump,solana,G1evzzdxVXa7q3ypytdrEWstKdaS2rvDG8q76jDTpump,ABDUL,tier B,77,0.00003455,13447.5,57958.82,34512,0.17,1242,777,-6.27,-6.27,1.843e-05,8.219e-06,2.93e-06
 2026-11-08T03:00:18+00:00,robinhood:0x20429Af7cA3b0cE4d99EDBAA0693f26C5df05195,robinhood,0x20429Af7cA3b0cE4d99EDBAA0693f26C5df05195,QHOOKS,tier B,62,0.00003707,13790.41,15470.34,37072,0.95,150,72,393,393,5.929e-05,9.589e-05,0.0002391
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-23T08:10:31+00:00,solana:BZwrCuFew29oCGhDfZ5Va7numydraG718bND1VNTpump,solana,BZwrCuFew29oCGhDfZ5Va7numydraG718bND1VNTpump,INCEST,liquidity,20,0.000001994,,355.71,1994.04,4.23,3,5,,-8.77,,,
 2026-11-23T08:10:31+00:00,solana:DAsTfxWswYnYj2e4qDxoXATZ6yhK1AnwdR9RVKwJpump,solana,DAsTfxWswYnYj2e4qDxoXATZ6yhK1AnwdR9RVKwJpump,suscat,liquidity,60,0.00002095,,167383.46,20957.93,15.6,3290,2937,194,685,,,
 2026-11-23T08:30:23+00:00,solana:4rfgjNRPMpxct4kaq3zaTX2kQzCvFvpwWgQp4Qxupump,solana,4rfgjNRPMpxct4kaq3zaTX2kQzCvFvpwWgQp4Qxupump,BOSS,liquidity,10,0.0000000001827,0.66,0.06,,33.07,0,3,,-17.71,,,
+2026-11-23T08:40:22+00:00,bsc:0x74346aE29A2823DA37695d35A6d47cC4F57C06b4,bsc,0x74346aE29A2823DA37695d35A6d47cC4F57C06b4,ANTS,price change,75,0.4038,765786.78,16313657.44,40381939,19.79,1554,216,318,53717,,,
