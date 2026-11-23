@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-08T02:00:17+00:00,solana:HxAyQ3CH4fpYE3gRAvaaDvbx4b1XyX87MyAGwgdipump,solana,HxAyQ3CH4fpYE3gRAvaaDvbx4b1XyX87MyAGwgdipump,Respect,price change,87,0.0003476,46202.21,424584.65,344756,1.3,1732,1280,69.97,750,0.0004209,0.0003732,1.991e-06
 2026-11-08T02:10:23+00:00,solana:A2BE2nUe32d21rpPPYmk1DF9DhTVX7c2ofyMrffcpump,solana,A2BE2nUe32d21rpPPYmk1DF9DhTVX7c2ofyMrffcpump,Raymond,tier B,52,0.00002925,11996.35,4372.25,29224,0.01,68,33,-20.54,-20.54,6.306e-06,2.838e-06,1.936e-06
 2026-11-08T02:10:23+00:00,solana:AxVwrg2rMh85gEGHezr8SBZGFTeLpQvC9MaEQ4pLpump,solana,AxVwrg2rMh85gEGHezr8SBZGFTeLpQvC9MaEQ4pLpump,Slingpad,liquidity,45,0.00001908,,44498.44,19084.59,0.1,670,389,598,598,2.42e-05,1.054e-05,2.586e-06
 2026-11-08T02:10:23+00:00,solana:9pdGroSihctnCdhQyBCz2isKM4KzXpihy3jsww8rpump,solana,9pdGroSihctnCdhQyBCz2isKM4KzXpihy3jsww8rpump,RNUT,liquidity,50,0.00002210,,80288.98,22102.89,0.16,1551,849,553,553,2.558e-06,2.522e-06,2.467e-06
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-23T05:30:23+00:00,solana:Csu5jtHmWJFuYXP2cB3AEUwia6tYrDffdUknLuxqpump,solana,Csu5jtHmWJFuYXP2cB3AEUwia6tYrDffdUknLuxqpump,BELLA,price change,77,0.00002275,11225.94,52328.41,22416,154.72,892,618,597,596,,,
 2026-11-23T05:40:24+00:00,solana:93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump,solana,93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump,PumpMeme,price change,85,0.001362,82717.04,372462.15,1362197,0.27,3552,1938,3691,3691,,,
 2026-11-23T06:00:22+00:00,solana:GsmBPpmc1C42uu22iKqUPqdUTmHzPbsWzNU93thwpump,solana,GsmBPpmc1C42uu22iKqUPqdUTmHzPbsWzNU93thwpump,Huang,liquidity,45,0.000008784,,33531.45,8784.47,0.34,526,408,189,189,,,
+2026-11-23T06:30:19+00:00,solana:FQMPPXWqSbBtcssZBaUSJRAsJX6M7ghmHv34LQ3Vpump,solana,FQMPPXWqSbBtcssZBaUSJRAsJX6M7ghmHv34LQ3Vpump,Flywheel,liquidity,40,,,,,1.84,386,221,,,,,
