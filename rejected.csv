@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-08T17:40:19+00:00,solana:BytHaNHdoD2ecJRrgTQGJHhsLbSAnQ25zxhDBG7wpump,solana,BytHaNHdoD2ecJRrgTQGJHhsLbSAnQ25zxhDBG7wpump,scamoor,liquidity,30,0.000004480,,7976.12,4480.39,0.11,99,72,20.11,20.11,3.079e-06,3.116e-06,3.116e-06
 2026-11-08T17:40:19+00:00,solana:J7UXuwewfvP5YptiAy3qwkuMovEFcWZCcQ7n73bwpump,solana,J7UXuwewfvP5YptiAy3qwkuMovEFcWZCcQ7n73bwpump,Slingoor,liquidity,50,0.000009147,,90823.24,9147.91,0.17,1693,1227,220,220,2.777e-06,2.552e-06,2.451e-06
 2026-11-08T17:40:19+00:00,solana:GtSzzXjUqJpooi1p9ji3iteYmfvYzPkqBXKG5avkpump,solana,GtSzzXjUqJpooi1p9ji3iteYmfvYzPkqBXKG5avkpump,scamoor,liquidity,50,0.000004189,,75309.69,4189.56,0.36,1082,835,-11.62,-11.62,2.891e-06,2.545e-06,2.464e-06
 2026-11-08T17:50:18+00:00,solana:7LHZo4sALH2pTeM1PqEo9YYNDfWdmZ467w1cBwsApump,solana,7LHZo4sALH2pTeM1PqEo9YYNDfWdmZ467w1cBwsApump,Scamgoor,tier B,72,0.00002498,12060.69,45040.62,24946,0.18,276,259,-41.91,-41.91,1.238e-05,1.19e-05,1.172e-05
@@ -5963,7 +5962,7 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-23T23:20:26+00:00,solana:4Uv7H7jY2UADoTb9W4m4ra7f8kTKoNyBRkYkmpahnAUF,solana,4Uv7H7jY2UADoTb9W4m4ra7f8kTKoNyBRkYkmpahnAUF,greg,liquidity,45,0.00002988,,33126.17,29888.24,0.24,377,270,1243,1243,2.988e-05,,
 2026-11-23T23:20:26+00:00,solana:9xueD8utCxFp98BFr9fcj7qqAo4zpPXHbTEThsV1pump,solana,9xueD8utCxFp98BFr9fcj7qqAo4zpPXHbTEThsV1pump,SOLANA,liquidity,50,0.000004835,,90236.56,4835.4,0.16,1588,1436,22.59,22.59,2.191e-06,,
 2026-11-23T23:40:23+00:00,solana:DvGqEDSxa1MFsDJADnzbU4Qfs7ayTqkcncP4CiWGpump,solana,DvGqEDSxa1MFsDJADnzbU4Qfs7ayTqkcncP4CiWGpump,SYMBIO  ,liquidity,45,0.00001294,,45692.05,12944.82,0.29,728,518,519,519,2.476e-06,,
-2026-11-23T23:50:25+00:00,solana:HUJVaQHvZRsxrZzRNQmUb1QhEs2SUsuqqiXD4Kwupump,solana,HUJVaQHvZRsxrZzRNQmUb1QhEs2SUsuqqiXD4Kwupump,CHILLHOUSE,liquidity,15,,,,,314.36,66,24,,,,,
+2026-11-23T23:50:25+00:00,solana:HUJVaQHvZRsxrZzRNQmUb1QhEs2SUsuqqiXD4Kwupump,solana,HUJVaQHvZRsxrZzRNQmUb1QhEs2SUsuqqiXD4Kwupump,CHILLHOUSE,liquidity,15,,,,,314.36,66,24,,,NA,,
 2026-11-23T23:50:25+00:00,solana:9WyjDc2NrfiTSkBBoFDeS6ytuo5nd7aHRBB12RoJpump,solana,9WyjDc2NrfiTSkBBoFDeS6ytuo5nd7aHRBB12RoJpump,BABYFIONA,liquidity,35,,,,,0.12,768,524,,,1.533e-06,,
 2026-11-24T00:00:27+00:00,solana:3uiodaXi8dg7CBaNHeRTUqhX46k2BCFuYq9iabD4pump,solana,3uiodaXi8dg7CBaNHeRTUqhX46k2BCFuYq9iabD4pump,Tribe,price change,77,0.0003537,41729.35,293323.97,353662,0.38,6294,1574,795,795,1.32e-06,,
 2026-11-24T00:00:27+00:00,solana:7ZR7Le1QgSD2enqRVRW1n5Ds3czDbURqC97oJyqrc3v4,solana,7ZR7Le1QgSD2enqRVRW1n5Ds3czDbURqC97oJyqrc3v4,VRAM,liquidity,35,0.00003003,,21782.96,30038.89,0.16,174,85,1227,1227,3.003e-05,,
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-24T02:50:23+00:00,solana:5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump,solana,5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump,DONJENSEN,price change,80,0.0006815,57961.14,302090.86,681521,0.27,4321,1793,1807,1807,,,
 2026-11-24T02:50:23+00:00,solana:81F3a7CihhMQEsk4TnEs34XVQgRr8QcbghBjNAZnpump,solana,81F3a7CihhMQEsk4TnEs34XVQgRr8QcbghBjNAZnpump,VIctory,liquidity,50,0.00001378,,52664.35,13785.17,0.73,681,445,288,288,,,
 2026-11-24T02:50:23+00:00,solana:7B72JE9fgEiwGfpj3BuAMCC8NhtuyFbi7d9E8mWWpump,solana,7B72JE9fgEiwGfpj3BuAMCC8NhtuyFbi7d9E8mWWpump,GOOBIE,liquidity,50,0.00001944,,57104.82,19442.93,0.26,1146,750,617,617,,,
+2026-11-24T03:00:26+00:00,solana:4n7rKycAxGqtifiaKm9A3vhPJKkpvSiUDM3ZjGPopump,solana,4n7rKycAxGqtifiaKm9A3vhPJKkpvSiUDM3ZjGPopump,catalyst,liquidity,50,0.000008333,,54970.9,8333.09,0.17,873,660,137,137,,,
