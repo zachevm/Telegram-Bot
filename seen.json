@@ -1,5 +1,4 @@
 [
-  "solana:6WpWchQ9BvDRdEBXSaSZ5DszEwTDBqv29V4Gvtwxpump",
   "robinhood:0x1898D84c200943bB21A76306E611dd23515653aB",
   "near:qi.nearlytrade.near",
   "bsc:0xf5614DE5D4db414C16Ed7e4fA320d775151E7777",
@@ -998,5 +997,6 @@
   "solana:Bf9BsNw4NEQR4L28BApWnxvCy1gk9wPBnK8xy4Khpump",
   "solana:GVzahMEr1XjpE3aoRQvPViuVKWHSXASpdDAh7xJypump",
   "solana:CGJUUXmWgHaCp3ZVfX6rQJKQbNvLj7gXp3mBbUtJpump",
-  "solana:81F3a7CihhMQEsk4TnEs34XVQgRr8QcbghBjNAZnpump"
+  "solana:81F3a7CihhMQEsk4TnEs34XVQgRr8QcbghBjNAZnpump",
+  "solana:7B72JE9fgEiwGfpj3BuAMCC8NhtuyFbi7d9E8mWWpump"
 ]
