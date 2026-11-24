@@ -1,6 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-08T19:50:22+00:00,solana:Aw8wMQoVE2fp7RKECDLwVmHQrx4KZ88J2DiaeFdPpump,solana,Aw8wMQoVE2fp7RKECDLwVmHQrx4KZ88J2DiaeFdPpump,FROG,liquidity,45,0.00001748,,44962.69,17487.87,0.92,711,542,515,515,3.099e-06,2.465e-06,2.458e-06
-2026-11-08T19:50:22+00:00,solana:2Sy3G53qeqDQctyhxwaGc7BRaQTRpwhJGQPo1FMSpump,solana,2Sy3G53qeqDQctyhxwaGc7BRaQTRpwhJGQPo1FMSpump,Forever,liquidity,35,0.00001199,,11671.59,11992.33,0.42,142,76,89.18,89.18,2.561e-06,2.552e-06,2.445e-06
 2026-11-08T20:00:18+00:00,solana:EKK2FyuMt51t5Ksquga8boam6p8LQ2S686vj9ayupump,solana,EKK2FyuMt51t5Ksquga8boam6p8LQ2S686vj9ayupump,GOAT,liquidity,50,0.000003710,,54014.12,3710.59,0.15,875,771,-36.08,-36.08,3.143e-06,3.025e-06,3.04e-06
 2026-11-08T20:00:18+00:00,solana:HMKBqmMXLe4Nt2mmFZEWdWY2dbgrcTuopBmi6xVfpump,solana,HMKBqmMXLe4Nt2mmFZEWdWY2dbgrcTuopBmi6xVfpump,GROKIA,tier B,82,0.00006379,21135.66,101635.16,63703,0.07,1243,979,31.21,31.21,4.939e-05,1.063e-05,6.25e-06
 2026-11-08T20:10:21+00:00,solana:GMQxsBcrKHfBkofMmn9wQakTc8bk48w3LgwJRLfPpump,solana,GMQxsBcrKHfBkofMmn9wQakTc8bk48w3LgwJRLfPpump,flok,liquidity,45,0.000005815,,39382.43,5815.41,0.08,583,409,70.95,70.95,2.516e-06,2.46e-06,2.432e-06
@@ -5999,3 +5997,5 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-24T10:10:23+00:00,solana:ETK8NSdg4Va29Roj1UcChqwCVSarq2CZSPbgeTKCpump,solana,ETK8NSdg4Va29Roj1UcChqwCVSarq2CZSPbgeTKCpump,black,liquidity,45,0.000004299,,36345.92,4299.58,0.32,779,487,17.11,17.11,,,
 2026-11-24T10:20:28+00:00,bsc:0x9d7917D777f86f302BF2DDD10cA2ab13EC43a37F,bsc,0x9d7917D777f86f302BF2DDD10cA2ab13EC43a37F,MUSTANG,liquidity,30,0.0000000009766,0.07,2166.96,10,21.26,35,16,,-99.77,,,
 2026-11-24T10:30:45+00:00,solana:6AqxUg7adxVrs1p3ugiZ2a8hyRtsmgayRSKjrojLpump,solana,6AqxUg7adxVrs1p3ugiZ2a8hyRtsmgayRSKjrojLpump,HACKINU,liquidity,50,0.000005203,,48778.98,5203.95,1.15,699,539,-12.92,-1.47,,,
+2026-11-24T10:40:20+00:00,solana:SJKLMXVvCbtQ3YBgrDrNY1MYsyQHZJ6EnYTbjoApump,solana,SJKLMXVvCbtQ3YBgrDrNY1MYsyQHZJ6EnYTbjoApump,MIRROR,liquidity,10,0.000001974,,0.07,1974.36,48.69,0,1,,,,,
+2026-11-24T10:40:20+00:00,solana:3gCSVzfyBYrHBHniGCrgsP7GkfgXBTdbgPT6pojmpump,solana,3gCSVzfyBYrHBHniGCrgsP7GkfgXBTdbgPT6pojmpump,SUPER,liquidity,45,0.000008813,,28235.07,8813.67,0.32,490,363,282,282,,,
