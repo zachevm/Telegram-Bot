@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-09T05:50:29+00:00,solana:8QusKiKZVX3zogu6qdCnM2jAzBPMxo4U6miNQCfXpump,solana,8QusKiKZVX3zogu6qdCnM2jAzBPMxo4U6miNQCfXpump,Graft,liquidity,30,,,0,,0.25,280,170,,,NA,NA,NA
 2026-11-09T06:00:27+00:00,solana:Fwagv9buEaaMr9mUZcB6Hit8K9JpWyiS8Q1DYGr5pump,solana,Fwagv9buEaaMr9mUZcB6Hit8K9JpWyiS8Q1DYGr5pump,Percolator,liquidity,45,0.00001192,,32717.15,11923.86,0.37,433,288,171,171,3.286e-06,4.558e-06,3.184e-06
 2026-11-09T06:10:25+00:00,solana:kHb2wHWdXqWnuQkj7WjyjMh6m2WLSnbpdpbEvpHpump,solana,kHb2wHWdXqWnuQkj7WjyjMh6m2WLSnbpdpbEvpHpump,TRUMP,liquidity,65,0.000004566,4300.92,63611.32,4559,0.19,1328,1034,-90.28,-90.28,3.499e-06,3.204e-06,2.467e-06
 2026-11-09T06:10:25+00:00,solana:CJ88vgZxFcaKwwTNktXK48wAi9fNHxrvKfwK1N9pump,solana,CJ88vgZxFcaKwwTNktXK48wAi9fNHxrvKfwK1N9pump,HUNG,liquidity,70,0.000002217,2288.02,336961.77,2161,0.66,3542,2132,-93.96,-93.96,2.165e-06,2.185e-06,2.165e-06
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-25T04:30:24+00:00,solana:6jh921iRAeQ3YUAN7VBwxVqJ5ZMZd3sti25StNJxpump,solana,6jh921iRAeQ3YUAN7VBwxVqJ5ZMZd3sti25StNJxpump,Goyim,liquidity,35,,,,,0.21,885,592,,,,,
 2026-11-25T04:40:27+00:00,solana:F2VoAigAkAWdG6NNc7R44hyp9Ad3SNx3dAFe6faUpump,solana,F2VoAigAkAWdG6NNc7R44hyp9Ad3SNx3dAFe6faUpump,Goyim,liquidity,30,,,,,0.1,210,123,,,,,
 2026-11-25T04:50:25+00:00,solana:FJThvR3CekspNJXkgZ1XUKFVitGnrpCSkp95jhpopump,solana,FJThvR3CekspNJXkgZ1XUKFVitGnrpCSkp95jhpopump,Pepe,liquidity,45,0.000001981,1797.45,3298.18,1981,0.14,71,60,-92.58,-92.58,,,
+2026-11-25T05:00:24+00:00,solana:4UMErmfmKzDCVmHrwBUbnDnbQnVKVYAcT7X5AdTkpump,solana,4UMErmfmKzDCVmHrwBUbnDnbQnVKVYAcT7X5AdTkpump,FUCKCANCER,liquidity,45,0.00002435,,31238.52,24350.74,0.41,382,236,587,587,,,
