@@ -5993,7 +5993,7 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-25T04:30:24+00:00,solana:6jh921iRAeQ3YUAN7VBwxVqJ5ZMZd3sti25StNJxpump,solana,6jh921iRAeQ3YUAN7VBwxVqJ5ZMZd3sti25StNJxpump,Goyim,liquidity,35,,,,,0.21,885,592,,,,,
 2026-11-25T04:40:27+00:00,solana:F2VoAigAkAWdG6NNc7R44hyp9Ad3SNx3dAFe6faUpump,solana,F2VoAigAkAWdG6NNc7R44hyp9Ad3SNx3dAFe6faUpump,Goyim,liquidity,30,,,,,0.1,210,123,,,,,
 2026-11-25T04:50:25+00:00,solana:FJThvR3CekspNJXkgZ1XUKFVitGnrpCSkp95jhpopump,solana,FJThvR3CekspNJXkgZ1XUKFVitGnrpCSkp95jhpopump,Pepe,liquidity,45,0.000001981,1797.45,3298.18,1981,0.14,71,60,-92.58,-92.58,1.133e-06,,
-2026-11-25T05:00:24+00:00,solana:4UMErmfmKzDCVmHrwBUbnDnbQnVKVYAcT7X5AdTkpump,solana,4UMErmfmKzDCVmHrwBUbnDnbQnVKVYAcT7X5AdTkpump,FUCKCANCER,liquidity,45,0.00002435,,31238.52,24350.74,0.41,382,236,587,587,,,
+2026-11-25T05:00:24+00:00,solana:4UMErmfmKzDCVmHrwBUbnDnbQnVKVYAcT7X5AdTkpump,solana,4UMErmfmKzDCVmHrwBUbnDnbQnVKVYAcT7X5AdTkpump,FUCKCANCER,liquidity,45,0.00002435,,31238.52,24350.74,0.41,382,236,587,587,5.414e-05,,
 2026-11-25T05:10:27+00:00,solana:aetiDzWARu2U6Z8oKFRudi8rA4AQRUyeAhy1HPTpump,solana,aetiDzWARu2U6Z8oKFRudi8rA4AQRUyeAhy1HPTpump,LANDWOLF,liquidity,25,,,,,0.13,87,78,,,,,
 2026-11-25T05:20:26+00:00,solana:F4p47HW6RmkmVAEszyGtVyRrqyj6AfUCHe1assZSpump,solana,F4p47HW6RmkmVAEszyGtVyRrqyj6AfUCHe1assZSpump,CLOVER,liquidity,45,0.000001935,,20648.81,1935.96,0.19,261,363,0.29,0.29,,,
 2026-11-25T05:30:21+00:00,solana:FH1rfK3YU9pMd9Jyko9PjT6eAUGVLpwnksHMB3KXVomp,solana,FH1rfK3YU9pMd9Jyko9PjT6eAUGVLpwnksHMB3KXVomp,VOMP,liquidity,30,0.000002061,,6883.65,2061.66,0.09,70,64,0.07,0.07,,,
