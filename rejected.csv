@@ -1,5 +1,4 @@
 time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_24h,market_cap,age_hours,buys_24h,sells_24h,change_1h,change_24h,price_1h,price_6h,price_24h
-2026-11-09T18:20:19+00:00,solana:8wjUey1t19PbuPdhPg1F5X7dTi2KGhd5Z1eY4i92pump,solana,8wjUey1t19PbuPdhPg1F5X7dTi2KGhd5Z1eY4i92pump,TREMP,liquidity,55,0.00001036,,153488.17,10364.58,0.16,1600,1537,214,214,7.408e-06,3.141e-06,2.705e-06
 2026-11-09T18:20:19+00:00,solana:A5oX91q9LdyJpzRvLH7xdMPCxw6qMPkLu9hd58tVpump,solana,A5oX91q9LdyJpzRvLH7xdMPCxw6qMPkLu9hd58tVpump,SI,tier B,77,0.0001515,29289.77,210264.36,151530,0.3,4251,1097,287,287,1.634e-06,1.631e-06,1.579e-06
 2026-11-09T18:20:19+00:00,solana:FjNotAgWAD3UPQRXvzjSsjPC4JuFQkqLJvfj68a1pump,solana,FjNotAgWAD3UPQRXvzjSsjPC4JuFQkqLJvfj68a1pump,BEAUTY,tier B,77,0.0001035,24975.38,383723.32,103531,0.15,3637,1538,200,200,0.0001917,2.598e-06,2.409e-06
 2026-11-09T18:20:20+00:00,solana:3mCvCUtgELaFwWjkeDQn3bkTYnKquec732dJFsCUpump,solana,3mCvCUtgELaFwWjkeDQn3bkTYnKquec732dJFsCUpump,Cupsey,price change,77,0.0003378,44891.66,348152.52,333637,0.81,13412,3723,681,681,7.959e-05,1.667e-06,1.582e-06
@@ -5999,3 +5998,4 @@ time,token_id,chain,address,symbol,reason,score,price_usd,liquidity_usd,volume_2
 2026-11-26T03:30:25+00:00,solana:J4jSC3SSutcpdD4sT57KV8L4xWAStkRudTWDkaTADfvc,solana,J4jSC3SSutcpdD4sT57KV8L4xWAStkRudTWDkaTADfvc,TRM,liquidity,20,0.000001986,,1.45,1986.21,2.04,1,1,,-0.07,,,
 2026-11-26T03:50:30+00:00,solana:HkywsKMf5FDj7QpgRE3BoE2nJqJauxEVbGjpnYe6pump,solana,HkywsKMf5FDj7QpgRE3BoE2nJqJauxEVbGjpnYe6pump,2,liquidity,45,0.00001742,,44632.57,17429.47,0.12,916,501,364,364,,,
 2026-11-26T03:50:30+00:00,solana:2xoJEBPrfhNm6DbrUHj4EvMyZKEEZgXHxEK9DNXxpump,solana,2xoJEBPrfhNm6DbrUHj4EvMyZKEEZgXHxEK9DNXxpump,Bull,liquidity,50,0.00001167,,70116.81,11674.08,0.34,1684,1016,333,333,,,
+2026-11-26T04:00:18+00:00,solana:6mctjLR559n8vWzmcm2Wj72xYSvcm8og3cFGy3RXpump,solana,6mctjLR559n8vWzmcm2Wj72xYSvcm8og3cFGy3RXpump,wocket,liquidity,50,0.00003216,,64985.64,32164.52,0.2,1066,792,869,869,,,
