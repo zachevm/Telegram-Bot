@@ -1,5 +1,4 @@
 [
-  "ethereum:0xCBC6588b45632F6c392E7d862b3b075021714EE7",
   "robinhood:0x5e0ebD45bA2c35D8940659CDdDE0b0fE5Df5a03d",
   "robinhood:0xD0f3cc23Ba2815705Be5129c595520aAEd094706",
   "ethereum:0xb85b1f48DcC41F93A9FA931De06360Dc66268E9e",
@@ -998,5 +997,6 @@
   "solana:HAP9FcXubD88SjRHMY1kr5iukpRZgeMAgCBam3Vtpump",
   "solana:6J3m4E2AvckGpMypHoBmT9JdPA6QZJ66X9AfzYwWZttc",
   "bsc:0xDf1206E7af05Df9F39716f84Dc2303D296a9b6Eb",
-  "solana:8sAxwsNzhRj6LF5npy1HtPir94TzSgP1QaczUmGcpump"
+  "solana:8sAxwsNzhRj6LF5npy1HtPir94TzSgP1QaczUmGcpump",
+  "solana:4an4F8Wdi1tXUCFarrhcQvZY4MCVvixcRhT4pANusbha"
 ]
