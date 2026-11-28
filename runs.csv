@@ -1,5 +1,4 @@
 time,profiles,already_seen,no_pair_data,not_base_token,lookup_errors,rej_liquidity,rej_trades,rej_sells,rej_no_age,rej_age,rej_price_change,rej_bad_data,low_score,accepted,alerts_sent,group_sends,dm_sends,no_delivery,session_failed,tracking_calls,tier_b,trend_topics,topic_tokens,gecko_tokens,tagged
-2026-10-24T08:40:16+00:00,30,0,1,0,0,21,0,0,0,0,1,0,0,0,0,0,0,0,0,3,7,,,,
 2026-10-24T08:50:16+00:00,30,0,1,0,0,22,0,0,0,0,1,0,0,0,0,0,0,0,0,2,6,,,,
 2026-10-24T09:00:18+00:00,30,0,1,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,2,5,,,,
 2026-10-24T09:10:20+00:00,30,0,1,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,2,5,,,,
@@ -4999,3 +4998,4 @@ time,profiles,already_seen,no_pair_data,not_base_token,lookup_errors,rej_liquidi
 2026-11-28T04:00:26+00:00,30,8,2,0,0,9,0,0,0,0,7,0,0,0,0,0,0,0,0,8,4,9,0,84,0
 2026-11-28T04:10:24+00:00,30,8,2,0,0,10,0,0,0,0,7,0,0,0,0,0,0,0,0,8,3,9,0,83,0
 2026-11-28T04:20:57+00:00,30,7,1,0,0,10,0,0,0,0,7,0,0,2,2,2,2,0,0,8,3,10,0,83,0
+2026-11-28T04:30:23+00:00,30,9,1,0,0,11,0,0,0,0,5,0,0,1,1,1,1,0,0,8,3,10,0,83,0
